@@ -1,5 +1,6 @@
 import Jumbotron from './ui/home/jumbotron/jumbotron';
 import NavBar from './ui/home/navbar/navbar';
+import Trusted from './ui/home/trusted/trusted';
 
 export default function Home() {
 	return (
@@ -10,6 +11,7 @@ export default function Home() {
 			/>
 			<NavBar />
 			<Jumbotron />
+			<Trusted />
 		</main>
 	);
 }

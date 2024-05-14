@@ -22,7 +22,7 @@ export default function NavBar() {
 						<a className=''>Harga</a>
 					</li>
 				</ul>
-				<button className='btn btn-lg btn-ghost bg-light-gray-dimata1 hover:bg-gray-300 text-black-dimata text-md uppercase rounded-4xl px-10'>
+				<button className='btn btn-lg btn-ghost bg-light-gray-dimata1 hover:bg-gray-200 text-black-dimata text-md uppercase rounded-4xl px-10'>
 					Login
 				</button>
 			</div>
