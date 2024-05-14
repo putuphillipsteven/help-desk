@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function NavBar() {
 	return (
 		<div className='navbar bg-transparent flex justify-between h-fit px-24 py-6 z-20'>
-			<a className='centering-flex hover:cursor-pointer'>
+			<a className='centering-flex hover:cursor-pointer gap-x-2'>
 				<Image src='dimata-logo.svg' alt='Dimata Logo' width={32} height={32} />
 				<p className='font-bold'>Dimata Help Desk</p>
 			</a>

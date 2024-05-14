@@ -1,14 +1,11 @@
 import Image from 'next/image';
+import OrangeButton from '../components/orange-button';
 
 export default function About() {
 	return (
 		<div className='w-full centering-flex justify-between px-[240px] py-8'>
 			<div className='flex flex-col gap-y-4 w-[50%]'>
-				<button className='w-fit px-4 py-2 bg-orange-dimata1 rounded-box hover:cursor-default'>
-					<p className='text-orange-dimata uppercase text-sm font-bold'>
-						About Our Dimata Help Desk
-					</p>
-				</button>
+				<OrangeButton text='About Our Dimata Help Desk' />
 				<h2 className='text-4xl font-light'>
 					Transforming{' '}
 					<span className='font-bold'>

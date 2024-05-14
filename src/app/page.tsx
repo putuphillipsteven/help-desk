@@ -1,6 +1,7 @@
 import About from './ui/home/about/about';
 import Jumbotron from './ui/home/jumbotron/jumbotron';
 import NavBar from './ui/home/navbar/navbar';
+import Platform from './ui/home/platform/platform';
 import Trusted from './ui/home/trusted/trusted';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
 			<Jumbotron />
 			<Trusted />
 			<About />
+			<Platform />
 		</main>
 	);
 }
