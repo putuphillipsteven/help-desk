@@ -18,6 +18,7 @@ const config: Config = {
 			colors: {
 				'black-dimata': '#303030',
 				'black-dimata1': '#263238',
+				'black-dimata2': '#4E4E4E',
 				'purple-dimata': '#625FFB',
 				'light-gray-dimata': '#F6F6F6',
 				'light-gray-dimata1': '#FAFAFA',

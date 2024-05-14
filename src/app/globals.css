@@ -27,5 +27,13 @@
 }
 
 .centering-flex {
-	@apply flex items-center gap-x-2;
+	@apply flex items-center;
+}
+
+.centering-flex-col {
+	@apply flex flex-col items-center gap-y-2;
+}
+
+.jumbotron-dashed-border {
+	border-top: 2px dashed black;
 }
