@@ -1,4 +1,5 @@
 import About from './ui/home/about/about';
+import Integration from './ui/home/integration/integration';
 import Jumbotron from './ui/home/jumbotron/jumbotron';
 import NavBar from './ui/home/navbar/navbar';
 import Platform from './ui/home/platform/platform';
@@ -16,6 +17,7 @@ export default function Home() {
 			<Trusted />
 			<About />
 			<Platform />
+			<Integration />
 		</main>
 	);
 }

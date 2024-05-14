@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import OrangeButton from '../components/orange-button';
+import SectionButton from '../components/section-button';
 
 export default function About() {
 	return (
 		<div className='w-full centering-flex justify-between px-[240px] py-8'>
 			<div className='flex flex-col gap-y-4 w-[50%]'>
-				<OrangeButton text='About Our Dimata Help Desk' />
+				<SectionButton colour='orange' text='About Our Dimata Help Desk' />
 				<h2 className='text-4xl font-light'>
 					Transforming{' '}
 					<span className='font-bold'>
