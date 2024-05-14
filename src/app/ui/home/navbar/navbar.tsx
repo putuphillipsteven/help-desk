@@ -8,21 +8,21 @@ export default function NavBar() {
 				<p className='font-bold'>Dimata Help Desk</p>
 			</a>
 			<div className='centering-flex'>
-				<ul className='menu menu-horizontal px-1 font-medium text-white'>
+				<ul className='centering-flex gap-x-8 px-1 font-medium text-white mr-16'>
 					<li>
-						<a>Home</a>
+						<a className=''>Home</a>
 					</li>
 					<li>
-						<a>Fitur</a>
+						<a className=''>Fitur</a>
 					</li>
 					<li>
-						<a>Solusi</a>
+						<a className=''>Solusi</a>
 					</li>
 					<li>
-						<a>Harga</a>
+						<a className=''>Harga</a>
 					</li>
 				</ul>
-				<button className='btn btn-lg btn-ghost text-sm text-black-dimata bg-white rounded-4xl uppercase'>
+				<button className='btn btn-lg btn-ghost bg-light-gray-dimata1 hover:bg-gray-300 text-black-dimata text-md uppercase rounded-4xl px-10'>
 					Login
 				</button>
 			</div>
