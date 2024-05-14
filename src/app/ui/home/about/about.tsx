@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import SectionButton from '../components/section-button';
+import GradientButton from '../components/gradient-button';
 
 export default function About() {
 	return (
@@ -23,19 +24,11 @@ export default function About() {
 					Save time, reduce repetitive tasks, and empower your agents with workforce automation and
 					knowledge-driven solutions.
 				</p>
-				<button className='w-fit px-4 py-2 bg-orange-gradient rounded-box hover:cursor-default'>
-					<p className='text-orange-dimata uppercase text-sm font-bold'>Swift Ticket Resolution</p>
-				</button>
-				<button className='w-fit px-4 py-2 bg-purple-gradient rounded-box hover:cursor-default'>
-					<p className='text-purple-dimata uppercase text-sm font-bold'>
-						SEAMLESS MULTI-CHANNEL ENGAGEMENT
-					</p>
-				</button>
-				<button className='w-fit px-4 py-2 bg-green-gradient rounded-box hover:cursor-default'>
-					<p className='text-green-dimata uppercase text-sm font-bold'>
-						EFFICIENTLY SCALE OPERATIONS
-					</p>
-				</button>
+
+				<GradientButton colour='orange' text='Swift Ticket Resolution' />
+				<GradientButton colour='purple' text='Seamless Multi-Channel Engagement' />
+				<GradientButton colour='green' text='Efficiently Scale Operations' />
+
 				<button className='btn btn-lg w-fit text-white text-sm uppercase rounded-4xl'>
 					Try For Free
 				</button>

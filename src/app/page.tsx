@@ -7,10 +7,10 @@ import Trusted from './ui/home/trusted/trusted';
 
 export default function Home() {
 	return (
-		<main className='centering-flex-col min-h-screen w-full bg-white left-0 z-0'>
+		<main className='centering-flex-col min-h-screen w-full bg-white left-0'>
 			<img
 				src={'banner/background-gradient.svg'}
-				className='-z- absolute inset-y-0 right-0 w-[940px]'
+				className='absolute inset-y-0 right-0 w-[940px]'
 			/>
 			<NavBar />
 			<Jumbotron />
