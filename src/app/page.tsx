@@ -8,7 +8,7 @@ export default function Home() {
 		<main className='centering-flex-col min-h-screen w-full bg-white left-0 z-0'>
 			<img
 				src={'banner/background-gradient.svg'}
-				className='-z- absolute inset-y-0 right-0 w-[960px]'
+				className='-z- absolute inset-y-0 right-0 w-[940px]'
 			/>
 			<NavBar />
 			<Jumbotron />
