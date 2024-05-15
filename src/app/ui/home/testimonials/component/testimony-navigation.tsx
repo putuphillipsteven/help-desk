@@ -35,7 +35,7 @@ export default function TestimonyNavigation() {
 				></a>
 			</div>
 			<button
-				className='btn btn-ghost rounded-4xl text-black-dimata bg-light-gray-dimata'
+				className='btn btn-ghost hidden rounded-4xl text-black-dimata bg-light-gray-dimata'
 				onClick={handleNext}
 			>
 				Next
