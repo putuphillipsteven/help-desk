@@ -9,6 +9,7 @@ import Trusted from './ui/home/trusted/trusted';
 import Resources from './ui/home/resources/resources';
 import Pricing from './ui/home/pricing/pricing';
 import Permission from './ui/home/permission/permission';
+import Solutions from './ui/home/solutions/solutions';
 
 export default function Home() {
 	return (
@@ -27,6 +28,7 @@ export default function Home() {
 			<Resources />
 			<Pricing />
 			<Permission />
+			<Solutions />
 		</main>
 	);
 }
