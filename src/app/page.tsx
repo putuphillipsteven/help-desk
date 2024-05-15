@@ -8,6 +8,7 @@ import Testimonials from './ui/home/testimonials/testimonials';
 import Trusted from './ui/home/trusted/trusted';
 import Resources from './ui/home/resources/resources';
 import Pricing from './ui/home/pricing/pricing';
+import Permission from './ui/home/permission/permission';
 
 export default function Home() {
 	return (
@@ -25,6 +26,7 @@ export default function Home() {
 			<Testimonials />
 			<Resources />
 			<Pricing />
+			<Permission />
 		</main>
 	);
 }
