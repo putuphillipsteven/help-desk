@@ -7,6 +7,7 @@ import Platform from './ui/home/platform/platform';
 import Testimonials from './ui/home/testimonials/testimonials';
 import Trusted from './ui/home/trusted/trusted';
 import Resources from './ui/home/resources/resources';
+import Pricing from './ui/home/pricing/pricing';
 
 export default function Home() {
 	return (
@@ -23,6 +24,7 @@ export default function Home() {
 			<Integration />
 			<Testimonials />
 			<Resources />
+			<Pricing />
 		</main>
 	);
 }
