@@ -8,6 +8,7 @@ export default function Testimonials() {
 	const renderedTestimonials = testimonials?.map((testimony, index) => {
 		return (
 			<Testimony
+				key={testimony.id}
 				avatar={testimony.avatar}
 				company={testimony.company}
 				logo={testimony.logo}
@@ -20,7 +21,7 @@ export default function Testimonials() {
 	});
 	return (
 		<div className='home-section py-16 flex flex-col gap-y-8'>
-			<div className='flex flex-col gap-y-4 -mr-[240px]'>
+			<div className='flex flex-col gap-y-16 -mr-[240px]'>
 				<div className='centering-flex justify-between mr-[240px]'>
 					<div className='w-full flex flex-col gap-y-2'>
 						<SectionButton colour='orange' text='Testimonials' />
