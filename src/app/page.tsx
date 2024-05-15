@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import About from './ui/home/about/about';
 import Integration from './ui/home/integration/integration';
 import Jumbotron from './ui/home/jumbotron/jumbotron';
 import NavBar from './ui/home/navbar/navbar';
 import Platform from './ui/home/platform/platform';
+import Testimonials from './ui/home/testimonials/testimonials';
 import Trusted from './ui/home/trusted/trusted';
 
 export default function Home() {
@@ -18,6 +20,7 @@ export default function Home() {
 			<About />
 			<Platform />
 			<Integration />
+			<Testimonials />
 		</main>
 	);
 }

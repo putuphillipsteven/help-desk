@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Trusted() {
 	return (
-		<div className='w-full px-[240px] pt-[180px] pb-8'>
+		<div className='home-section pt-[180px] pb-8'>
 			<div className='px-16 py-24 bg-light-gray-dimata1 w-full rounded-box  centering-flex-col gap-y-10'>
 				<p className='font-bold'>Trusted by 10K+ businesses</p>
 				<div className=' w-[90%]  flex flex-wrap items-center justify-center gap-x-16 gap-y-4'>

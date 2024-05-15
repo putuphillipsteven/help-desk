@@ -4,7 +4,7 @@ import GradientButton from '../components/gradient-button';
 
 export default function About() {
 	return (
-		<div className='centering-flex justify-between home-section'>
+		<div className='home-section py-16 centering-flex justify-between'>
 			<div className='flex flex-col gap-y-4 w-[50%]'>
 				<SectionButton colour='orange' text='About Our Dimata Help Desk' />
 				<h2 className='text-4xl font-light'>
