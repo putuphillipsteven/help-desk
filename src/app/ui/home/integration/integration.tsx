@@ -11,7 +11,7 @@ export default function Integration() {
 				On <span className='font-bold'>All Channels</span>
 			</h2>
 			<img
-				// alt='Background Image'
+				alt='Background Image'
 				src={'integration/main-image-background.svg'}
 				// width={800}
 				// height={0}

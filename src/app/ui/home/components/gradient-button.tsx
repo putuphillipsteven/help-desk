@@ -17,11 +17,17 @@ export default function GradientButton({ text, colour }: GradientButtonProps) {
 			<div
 				className={clsx('w-6 h-6 rounded-box flex items-center justify-center', {
 					'bg-green-dimata': colour === 'green',
-					'bg-purple-dimata': colour === 'purple' || colour === 'purple-int',
+					'bg-purple-dimata': colour === 'purple',
 					'bg-orange-dimata': colour === 'orange',
+					'bg-white': colour === 'purple-int',
 				})}
 			>
-				<IoCheckmark className='text-white' />
+				<IoCheckmark
+					className={clsx('', {
+						'text-white': colour !== 'purple-int',
+						'text-purple-dimata': colour === 'purple-int',
+					})}
+				/>
 			</div>
 			<p
 				className={clsx('uppercase text-sm font-bold', {
