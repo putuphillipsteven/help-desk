@@ -3,7 +3,7 @@ import SectionButton from '../components/section-button';
 
 export default function Platform() {
 	return (
-		<div className='px-[240px] py-8 w-full flex flex-col gap-y-8'>
+		<div className='home-section flex flex-col gap-y-8'>
 			<div className='w-full centering-flex justify-between'>
 				<div className='flex flex-col gap-y-4 w-[50%]'>
 					<SectionButton colour='orange' text='Platform' />

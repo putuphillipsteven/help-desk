@@ -37,3 +37,7 @@
 .jumbotron-dashed-border {
 	border-top: 2px dashed black;
 }
+
+.home-section {
+	@apply w-full px-[240px] py-8;
+}

@@ -13,8 +13,6 @@ export default function Integration() {
 			<img
 				alt='Background Image'
 				src={'integration/main-image-background.svg'}
-				// width={800}
-				// height={0}
 				className='absolute inset-y-0 top-[72px] w-[1080px]'
 			/>
 			<Image
