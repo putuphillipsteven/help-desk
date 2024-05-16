@@ -11,6 +11,7 @@ import Pricing from './ui/home/pricing/pricing';
 import Permission from './ui/home/permission/permission';
 import Solutions from './ui/home/solutions/solutions';
 import EmailSection from './ui/home/email-section/email-section';
+import Footer from './ui/home/footer/footer';
 
 export default function Home() {
 	return (
@@ -31,6 +32,7 @@ export default function Home() {
 			<Permission />
 			<Solutions />
 			<EmailSection />
+			<Footer />
 		</main>
 	);
 }

@@ -31,7 +31,7 @@ export default function Accordion() {
 		<div className='w-full max-w-md mx-auto mt-10 flex flex-col gap-y-4 self-start'>
 			{sections.map((section, index) => (
 				<div key={index} className='p-8 bg-light-gray-dimata2 rounded-box'>
-					<div className='bg-base-200 p-4 rounded-lg shadow-md'>
+					<div className='p-4 rounded-lg shadow-md'>
 						<div
 							className='flex flex-col gap-y-4 hover:cursor-pointer'
 							onClick={function () {
