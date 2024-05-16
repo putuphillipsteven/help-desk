@@ -10,6 +10,7 @@ import Resources from './ui/home/resources/resources';
 import Pricing from './ui/home/pricing/pricing';
 import Permission from './ui/home/permission/permission';
 import Solutions from './ui/home/solutions/solutions';
+import EmailSection from './ui/home/email-section/email-section';
 
 export default function Home() {
 	return (
@@ -29,6 +30,7 @@ export default function Home() {
 			<Pricing />
 			<Permission />
 			<Solutions />
+			<EmailSection />
 		</main>
 	);
 }
