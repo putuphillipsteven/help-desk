@@ -43,5 +43,5 @@
 }
 
 .section-main-text {
-	@apply text-4xl font-light;
+	@apply text-3xl font-light;
 }

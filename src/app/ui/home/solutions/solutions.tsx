@@ -10,7 +10,7 @@ export default function Solutions() {
 				<div className='flex flex-col gap-y-2'>
 					<SectionButton colour='orange' text='Solutions' />
 					<h2 className='section-main-text'>
-						About Customer <span className='font-bold'>Stories</span>
+						Give Your Customer Experience A <br /> <span className='font-bold'>Human Touch</span>
 					</h2>
 				</div>
 				<div className='centering-flex gap-x-4'>
@@ -21,7 +21,7 @@ export default function Solutions() {
 					/>
 				</div>
 			</div>
-			<div className='centering-flex justify-between gap-x-4'>
+			<div className='flex items-start gap-x-4'>
 				<Accordion />
 				<img src='solutions/main-image.svg' className='w-[480px]' />
 			</div>
