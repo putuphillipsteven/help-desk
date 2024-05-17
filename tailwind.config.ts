@@ -26,6 +26,7 @@ const config: Config = {
 				'light-gray-dimata1': '#FAFAFA',
 				'light-gray-dimata2': '#EAEAEA',
 				'light-gray-dimata3': '#878787',
+				'light-gray-dimata4': '#EEEEEE',
 				'orange-dimata': '#E2992B',
 				'orange-dimata1': '#FFF3E1',
 				'green-dimata': '#47A15B',

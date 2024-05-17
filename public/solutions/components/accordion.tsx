@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { IoIosArrowForward } from 'react-icons/io';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
 const sections = [
 	{
@@ -43,7 +42,7 @@ export default function Accordion() {
 								<span>
 									{activeIndex === index ? (
 										<div className='h-6 w-6 bg-purple-dimata text-white p-4 centering-flex justify-center rounded-badge'>
-											<IoIosArrowDown className='' />
+											<IoIosArrowDown className='text-white' />
 										</div>
 									) : (
 										<div className='h-6 w-6 bg-black-dimata text-white p-4 centering-flex justify-center rounded-badge'>

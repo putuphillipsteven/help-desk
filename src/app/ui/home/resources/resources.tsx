@@ -25,7 +25,7 @@ export default function Resources() {
 							Get Started
 						</button>
 					</div>
-					<div className='' bg-red-100>
+					<div>
 						<img src={'resources/profile-1.svg'} className='w-[480px]' />
 					</div>
 				</div>
@@ -44,7 +44,7 @@ export default function Resources() {
 							Get Started
 						</button>
 					</div>
-					<div className='' bg-red-100>
+					<div>
 						<img src={'resources/books-1.svg'} className='w-[480px]' />
 					</div>
 				</div>
@@ -63,7 +63,7 @@ export default function Resources() {
 							Get Started
 						</button>
 					</div>
-					<div className='' bg-red-100>
+					<div>
 						<img src={'resources/chat-box-1.svg'} className='w-[480px]' />
 					</div>
 				</div>
