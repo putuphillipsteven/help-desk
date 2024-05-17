@@ -24,7 +24,7 @@ export default function Permission() {
 				</div>
 				<Image
 					style={{
-						width: 'auto',
+						width: 500,
 						height: 'auto',
 					}}
 					src={'permission/main-image.svg'}

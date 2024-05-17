@@ -19,13 +19,13 @@ export default function Home() {
 		<main className='centering-flex-col min-h-screen w-full bg-white left-0'>
 			<Image
 				src={'banner/background-gradient.svg'}
-				className='absolute inset-y-0 right-0'
+				className='absolute inset-y-0 right-0 -top-[100px]'
 				width={940}
-				height={0}
+				height={720}
 				alt='background'
 				style={{
-					width: 'auto',
-					height: 'auto',
+					width: 940,
+					height: 720,
 				}}
 				priority={false}
 			/>

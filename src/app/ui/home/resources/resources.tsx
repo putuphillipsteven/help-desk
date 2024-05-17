@@ -14,14 +14,14 @@ export default function Resources() {
 				<div className='centering-flex justify-between w-full'>
 					<div className='flex flex-col gap-y-4 w-[40%]'>
 						<Image
-							style={{
-								width: 'auto',
-								height: 'auto',
-							}}
 							src={'resources/profile.svg'}
 							width={56}
 							height={56}
 							alt='Resources Images'
+							style={{
+								width: 56,
+								height: 56,
+							}}
 						/>
 						<h4>
 							Provide Multi-Channel Customer Support <br />
@@ -38,8 +38,8 @@ export default function Resources() {
 					<div>
 						<Image
 							style={{
-								width: 'auto',
-								height: 'auto',
+								width: 56,
+								height: 56,
 							}}
 							src={'resources/profile-1.svg'}
 							width={480}
@@ -52,8 +52,8 @@ export default function Resources() {
 					<div className='flex flex-col gap-y-4 w-[40%]'>
 						<Image
 							style={{
-								width: 'auto',
-								height: 'auto',
+								width: 56,
+								height: 56,
 							}}
 							src={'resources/books.svg'}
 							width={56}
@@ -88,14 +88,14 @@ export default function Resources() {
 				<div className='centering-flex justify-between w-full'>
 					<div className='flex flex-col gap-y-4 w-[40%]'>
 						<Image
-							style={{
-								width: 'auto',
-								height: 'auto',
-							}}
 							src={'resources/chat-box.svg'}
 							width={56}
 							height={56}
 							alt='Resources Images'
+							style={{
+								width: 56,
+								height: 56,
+							}}
 						/>
 						<h4>
 							Live Chat, About Support, <br />

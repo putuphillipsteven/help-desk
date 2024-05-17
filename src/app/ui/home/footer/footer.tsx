@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Fragment } from 'react';
 import { FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowForward, IoIosArrowUp } from 'react-icons/io';
 export default function Footer() {
 	return (
 		<Fragment>
@@ -72,8 +72,8 @@ export default function Footer() {
 					<div className='divider m-0'></div>
 					<div className='flex w-full items-center justify-center gap-x-4'>
 						<p className='text-sm'>Copyright © 2024 Dimata Sora Jayate</p>
-						<div className='h-6 w-6 bg-black-dimata text-white p-4 centering-flex justify-center rounded-badge float-right'>
-							<IoIosArrowForward className='text-white' />
+						<div className='bg-black-dimata text-white p-4 centering-flex justify-center rounded-badge float-right'>
+							<IoIosArrowUp />
 						</div>
 					</div>
 				</div>

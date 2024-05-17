@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import React, { useState } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
@@ -39,17 +40,15 @@ export default function Accordion() {
 						>
 							<div className='collapse-title font-medium flex justify-between items-center cursor-pointer text-black-dimata'>
 								<h3 className='font-bold'>{section.title}</h3>
-								<span>
-									{activeIndex === index ? (
-										<div className='h-6 w-6 bg-purple-dimata text-white p-4 centering-flex justify-center rounded-badge'>
-											<IoIosArrowDown className='text-white' />
-										</div>
-									) : (
-										<div className='h-6 w-6 bg-black-dimata text-white p-4 centering-flex justify-center rounded-badge'>
-											<IoIosArrowForward />
-										</div>
-									)}
-								</span>
+								{activeIndex === index ? (
+									<div className='p-4 rounded-badge bg-purple-dimata'>
+										<IoIosArrowDown className='text-white' />
+									</div>
+								) : (
+									<div className='p-4 rounded-badge bg-black-dimata'>
+										<IoIosArrowForward className='text-white' />
+									</div>
+								)}
 							</div>
 							{activeIndex === index && (
 								<div className='collapse-content mt-2'>

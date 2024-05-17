@@ -26,11 +26,11 @@ export default function Solutions() {
 				<Accordion />
 				<Image
 					style={{
-						width: 'auto',
+						width: 560,
 						height: 'auto',
 					}}
 					src='solutions/main-image.svg'
-					width={480}
+					width={560}
 					height={0}
 					alt='Solution Images'
 				/>
