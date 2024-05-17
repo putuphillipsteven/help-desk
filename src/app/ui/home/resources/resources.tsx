@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SectionButton from '../components/section-button';
 
 export default function Resources() {
@@ -12,7 +13,16 @@ export default function Resources() {
 			<div className='centering-flex-col gap-y-4 mt-8'>
 				<div className='centering-flex justify-between w-full'>
 					<div className='flex flex-col gap-y-4 w-[40%]'>
-						<img src={'resources/profile.svg'} className='w-14' />
+						<Image
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+							src={'resources/profile.svg'}
+							width={56}
+							height={56}
+							alt='Resources Images'
+						/>
 						<h4>
 							Provide Multi-Channel Customer Support <br />
 							24/7
@@ -26,12 +36,30 @@ export default function Resources() {
 						</button>
 					</div>
 					<div>
-						<img src={'resources/profile-1.svg'} className='w-[480px]' />
+						<Image
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+							src={'resources/profile-1.svg'}
+							width={480}
+							height={0}
+							alt='Resources Images'
+						/>
 					</div>
 				</div>
 				<div className='centering-flex flex-row-reverse justify-between w-full'>
 					<div className='flex flex-col gap-y-4 w-[40%]'>
-						<img src={'resources/books.svg'} className='w-14' />
+						<Image
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+							src={'resources/books.svg'}
+							width={56}
+							height={56}
+							alt='Resources Images'
+						/>
 						<h4>
 							Free Training And Demos From <br />
 							The Dimata's Team
@@ -45,12 +73,30 @@ export default function Resources() {
 						</button>
 					</div>
 					<div>
-						<img src={'resources/books-1.svg'} className='w-[480px]' />
+						<Image
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+							src={'resources/books-1.svg'}
+							width={480}
+							height={0}
+							alt='Resources Images'
+						/>
 					</div>
 				</div>
 				<div className='centering-flex justify-between w-full'>
 					<div className='flex flex-col gap-y-4 w-[40%]'>
-						<img src={'resources/chat-box.svg'} className='w-14' />
+						<Image
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+							src={'resources/chat-box.svg'}
+							width={56}
+							height={56}
+							alt='Resources Images'
+						/>
 						<h4>
 							Live Chat, About Support, <br />
 							Marketing, Product, And More
@@ -64,7 +110,16 @@ export default function Resources() {
 						</button>
 					</div>
 					<div>
-						<img src={'resources/chat-box-1.svg'} className='w-[480px]' />
+						<Image
+							src={'resources/chat-box-1.svg'}
+							width={480}
+							height={0}
+							alt='Resources Images'
+							style={{
+								width: 'auto',
+								height: 'auto',
+							}}
+						/>
 					</div>
 				</div>
 			</div>

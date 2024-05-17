@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Accordion from '../../../../../public/solutions/components/accordion';
 import { MainButton, SecondaryButton } from '../components/button';
 import SectionButton from '../components/section-button';
@@ -23,7 +24,16 @@ export default function Solutions() {
 			</div>
 			<div className='flex items-start gap-x-4'>
 				<Accordion />
-				<img src='solutions/main-image.svg' className='w-[480px]' />
+				<Image
+					style={{
+						width: 'auto',
+						height: 'auto',
+					}}
+					src='solutions/main-image.svg'
+					width={480}
+					height={0}
+					alt='Solution Images'
+				/>
 			</div>
 		</div>
 	);

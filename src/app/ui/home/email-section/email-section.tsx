@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SecondaryButton } from '../components/button';
 
 export default function EmailSection() {
@@ -12,12 +13,35 @@ export default function EmailSection() {
 					With Dimata <br />
 					Help Desk
 				</h2>
-				<img src='email-section/chat-box.svg' className='absolute -z-20 w-[480px] -top-[120px]' />
-				<img src='email-section/chat-box.svg' className='absolute -z-20 w-[480px] top-[120px]' />
+				<Image
+					style={{
+						width: 'auto',
+						height: 'auto',
+					}}
+					src='email-section/chat-box-2.svg'
+					className='absolute -z-20 left-[70px] -top-[10px]'
+					width={360}
+					height={0}
+					alt='chat-box'
+				/>
+				<Image
+					style={{
+						width: 'auto',
+						height: 'auto',
+					}}
+					src='email-section/chat-box.svg'
+					className='absolute -z-20  top-[50px]'
+					width={480}
+					height={120}
+					alt='chat-box'
+				/>
 				<div className='centering-flex gap-x-4'>
 					<input
 						className='input input-lg rounded-4xl bg-light-gray-dimata3 text-white placeholder:text-white border-none focus:ring-0 focus:border-none focus:outline-0'
 						placeholder='Enter your email'
+						name='email'
+						id='email'
+						autoComplete='off'
 					/>
 					<SecondaryButton text='Submit' />
 				</div>

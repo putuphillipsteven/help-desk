@@ -1,4 +1,5 @@
 import { Testimony as TestimonyType } from '@/app/lib/data/testimonials';
+import Image from 'next/image';
 
 export default function Testimony({
 	userName,
@@ -20,7 +21,7 @@ export default function Testimony({
 						<div className='centering-flex gap-x-2'>
 							<div className='avatar'>
 								<div className='w-12 rounded-badge'>
-									<img src={avatar} />
+									<Image src={logo} width={12} height={12} alt='avatar' />
 								</div>
 							</div>
 							<div className='flex flex-col'>
@@ -31,7 +32,7 @@ export default function Testimony({
 						<div className='centering-flex gap-x-2'>
 							<div className='avatar'>
 								<div className='w-6 rounded-badge'>
-									<img src={logo} />
+									<Image src={logo} width={6} height={6} alt='avatar' />
 								</div>
 							</div>
 							<p className='text-xs'>{company}</p>

@@ -12,13 +12,22 @@ import Permission from './ui/home/permission/permission';
 import Solutions from './ui/home/solutions/solutions';
 import EmailSection from './ui/home/email-section/email-section';
 import Footer from './ui/home/footer/footer';
+import Image from 'next/image';
 
 export default function Home() {
 	return (
 		<main className='centering-flex-col min-h-screen w-full bg-white left-0'>
-			<img
+			<Image
 				src={'banner/background-gradient.svg'}
-				className='absolute inset-y-0 right-0 w-[940px]'
+				className='absolute inset-y-0 right-0'
+				width={940}
+				height={0}
+				alt='background'
+				style={{
+					width: 'auto',
+					height: 'auto',
+				}}
+				priority={false}
 			/>
 			<NavBar />
 			<Jumbotron />

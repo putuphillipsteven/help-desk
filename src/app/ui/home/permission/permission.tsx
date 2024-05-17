@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import GradientButton from '../components/gradient-button';
 import SectionButton from '../components/section-button';
 
@@ -21,7 +22,16 @@ export default function Permission() {
 						text='Can Access People, Companies, and Account Lists.'
 					/>
 				</div>
-				<img src={'permission/main-image.svg'} className='w-[500px]' />
+				<Image
+					style={{
+						width: 'auto',
+						height: 'auto',
+					}}
+					src={'permission/main-image.svg'}
+					width={500}
+					height={0}
+					alt='Resources Images'
+				/>
 			</div>
 		</div>
 	);

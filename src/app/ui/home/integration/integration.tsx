@@ -10,12 +10,22 @@ export default function Integration() {
 				Connect With Your Customers <br />
 				On <span className='font-bold'>All Channels</span>
 			</h2>
-			<img
+			<Image
+				style={{
+					width: 'auto',
+					height: 'auto',
+				}}
 				alt='Background Image'
 				src={'integration/main-image-background.svg'}
-				className='absolute inset-y-0 top-[72px] w-[1080px]'
+				className='absolute inset-y-0 top-[72px]'
+				width={1080}
+				height={0}
 			/>
 			<Image
+				style={{
+					width: 'auto',
+					height: 'auto',
+				}}
 				alt='Integration Image'
 				src={'integration/main-image.svg'}
 				width={800}
