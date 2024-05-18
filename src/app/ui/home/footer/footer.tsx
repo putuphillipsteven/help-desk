@@ -72,9 +72,6 @@ export default function Footer() {
 					<div className='divider m-0'></div>
 					<div className='flex w-full items-center justify-center gap-x-4'>
 						<p className='text-sm'>Copyright © 2024 Dimata Sora Jayate</p>
-						<div className='bg-black-dimata text-white p-4 centering-flex justify-center rounded-badge float-right'>
-							<IoIosArrowUp />
-						</div>
 					</div>
 				</div>
 			</footer>

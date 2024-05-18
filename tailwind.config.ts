@@ -22,6 +22,7 @@ const config: Config = {
 				'black-dimata2': '#4E4E4E',
 				'purple-dimata': '#625FFB',
 				'purple-dimata1': '#7976FF',
+				'blue-dimata': '#2D68FE',
 				'light-gray-dimata': '#F6F6F6',
 				'light-gray-dimata1': '#FAFAFA',
 				'light-gray-dimata2': '#EAEAEA',
@@ -33,6 +34,10 @@ const config: Config = {
 			},
 		},
 		borderRadius: {
+			sm: '0.125rem',
+			md: '0.375rem',
+			lg: '0.5rem',
+			xl: '0.75rem',
 			'4xl': '48px',
 		},
 	},
