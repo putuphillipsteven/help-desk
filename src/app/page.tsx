@@ -1,18 +1,17 @@
-import { useRouter } from 'next/router';
-import About from './ui/home/about/about';
-import Integration from './ui/home/integration/integration';
-import Jumbotron from './ui/home/jumbotron/jumbotron';
-import NavBar from './ui/home/navbar/navbar';
-import Platform from './ui/home/platform/platform';
-import Testimonials from './ui/home/testimonials/testimonials';
-import Trusted from './ui/home/trusted/trusted';
-import Resources from './ui/home/resources/resources';
-import Pricing from './ui/home/pricing/pricing';
-import Permission from './ui/home/permission/permission';
-import Solutions from './ui/home/solutions/solutions';
-import EmailSection from './ui/home/email-section/email-section';
-import Footer from './ui/home/footer/footer';
 import Image from 'next/image';
+import NavBar from './features/home/navbar/navbar';
+import Jumbotron from './features/home/jumbotron/jumbotron';
+import Trusted from './features/home/trusted/trusted';
+import About from './features/home/about/about';
+import Platform from './features/home/platform/platform';
+import Integration from './features/home/integration/integration';
+import Testimonials from './features/home/testimonials/testimonials';
+import Resources from './features/home/resources/resources';
+import Pricing from './features/home/pricing/pricing';
+import Permission from './features/home/permission/permission';
+import Solutions from './features/home/solutions/solutions';
+import EmailSection from './features/home/email-section/email-section';
+import Footer from './features/home/footer/footer';
 
 export default function Home() {
 	return (
