@@ -4,7 +4,7 @@ import { TbLayoutGridAdd } from 'react-icons/tb';
 import Link from 'next/link';
 export default function SideNav() {
 	return (
-		<div className='w-[238px] p-[20px] h-full flex flex-col justify-between bg-white'>
+		<div className='w-full h-full p-[20px] bg-white flex flex-col justify-between shadow'>
 			<div className='flex flex-col gap-y-6'>
 				<Link className='centering-flex gap-x-4 w-full overflow-hidden' href={'/dashboard'}>
 					<div className='rounded-md bg-blue-dimata'>
