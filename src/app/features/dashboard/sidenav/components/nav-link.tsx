@@ -28,7 +28,13 @@ export default function NavLink({ label, icon, notification, destination }: NavL
 			>
 				<div className='centering-flex gap-x-4'>
 					{(icon && icon) || <FaCircle className='text-2xl' />}
-					<p className='text-lg font-medium'>{label || 'Label'}</p>
+					<p
+						className={clsx('text-lg font-medium', {
+							'text-blue-dimata': checkLink(destination || 'undefined', pathname),
+						})}
+					>
+						{label || 'Label'}
+					</p>
 				</div>
 				{notification && (
 					<div className='bg-red-600 w-6 h-6  centering-flex justify-center rounded-badge'>

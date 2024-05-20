@@ -1,4 +1,5 @@
-import { filters } from '../data/filter';
+import CreateButton from '@/app/components/button';
+import { filters } from '../data/filters';
 import NewTicketButton from './new-ticket-button';
 export default function SideNavTickets() {
 	const renderedFilters = filters?.map((filter, index) => {
@@ -8,7 +9,7 @@ export default function SideNavTickets() {
 				{filter.children?.map((child, index) => {
 					return (
 						<div key={index} className='centering-flex justify-between cursor-pointer'>
-							<p className='text-sm'>{child?.name}</p>
+							<p className='text-sm hover:font-bold'>{child?.name}</p>
 							<div className='bg-light-gray-dimata2 p-1 rounded-xl'>
 								<p className='text-sm'>{child?.notification}</p>
 							</div>
@@ -20,9 +21,9 @@ export default function SideNavTickets() {
 	});
 	return (
 		<div className='w-full h-full flex flex-col shadow-inner bg-white'>
-			<div className='centering-flex justify-between p-2 border-r-2 border-b-2 border-light-gray-dimata3'>
+			<div className='h-12 centering-flex justify-between p-2 border-r-2 border-b-2 border-light-gray-dimata3'>
 				<p className='font-medium'>Tickets</p>
-				<NewTicketButton />
+				<CreateButton label='New Tickets' variant='filled' />
 			</div>
 			<div className='flex flex-col gap-y-4 h-full p-2 border-r-2 border-light-gray-dimata3'>
 				<input

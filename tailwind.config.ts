@@ -23,6 +23,7 @@ const config: Config = {
 				'purple-dimata': '#625FFB',
 				'purple-dimata1': '#7976FF',
 				'blue-dimata': '#2D68FE',
+				'blue-dimata-2': '#1D4ED8',
 				'light-blue-dimata': '#EFF6FF',
 				'light-gray-dimata': '#F6F6F6',
 				'light-gray-dimata1': '#FAFAFA',
