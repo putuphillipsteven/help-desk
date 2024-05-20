@@ -1,6 +1,6 @@
-import CreateButton from '@/app/components/button';
 import { Fragment } from 'react';
 import { tickets } from '../data/tickets';
+import { CreateButton } from '@/app/components/button';
 
 export default function Main() {
 	const renderedTickets = tickets?.map((ticket, index) => {
@@ -48,7 +48,7 @@ export default function Main() {
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
 			<div className='p-2 border-b-2 border-light-gray-dimata3'>
-				<CreateButton label='Add Filter' variant='outline' />
+				<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 			</div>
 			<div className='p-2'>
 				<table className='w-full text-black-dimata border-separate'>

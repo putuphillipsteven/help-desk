@@ -15,7 +15,6 @@ interface NavLinkProps {
 
 export default function NavLink({ label, icon, notification, destination }: NavLinkProps) {
 	const pathname = usePathname();
-	console.log(`pathname`, pathname);
 	return (
 		<div
 			className={clsx('w-full centering-flex justify-between p-2 rounded-md hover:cursor-pointer', {

@@ -1,4 +1,4 @@
-import CreateButton from '@/app/components/button';
+import { CreateButton } from '@/app/components/button';
 import { filters } from '../data/filters';
 import NewTicketButton from './new-ticket-button';
 export default function SideNavTickets() {
@@ -23,7 +23,7 @@ export default function SideNavTickets() {
 		<div className='w-full h-full flex flex-col shadow-inner bg-white'>
 			<div className='h-12 centering-flex justify-between p-2 border-r-2 border-b-2 border-light-gray-dimata3'>
 				<p className='font-medium'>Tickets</p>
-				<CreateButton label='New Tickets' variant='filled' />
+				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />
 			</div>
 			<div className='flex flex-col gap-y-4 h-full p-2 border-r-2 border-light-gray-dimata3'>
 				<input

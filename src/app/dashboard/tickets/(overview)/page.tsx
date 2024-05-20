@@ -1,6 +1,4 @@
-import CreateButton from '@/app/components/button';
 import Main from '@/app/features/dashboard/tickets/components/main';
-import NewTicketButton from '@/app/features/dashboard/tickets/components/new-ticket-button';
 
 export default function Page() {
 	return (
