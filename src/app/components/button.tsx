@@ -4,13 +4,20 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { FiPlusCircle } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
+
 interface CreateButtonProps {
 	label: string;
 	variant: 'filled' | 'outline';
 	href: string;
 }
-import { FaArrowLeft } from 'react-icons/fa6';
 
+interface AddButtonProps {
+	label: string;
+	href?: string;
+}
+
+import { FaArrowLeft } from 'react-icons/fa6';
+import { FaPlus } from 'react-icons/fa6';
 export function CreateButton({ label, variant, href }: CreateButtonProps) {
 	return (
 		<Link href={href}>
@@ -29,6 +36,15 @@ export function CreateButton({ label, variant, href }: CreateButtonProps) {
 	);
 }
 
+export function AddButton({ label }: AddButtonProps) {
+	return (
+		<button className='btn border-none bg-transparent text-blue-dimata shadow-none hover:bg-transparent p-0'>
+			<FaPlus />
+			{label}
+		</button>
+	);
+}
+
 export function BackButton() {
 	const router = useRouter();
 	const handleBack = () => {
@@ -36,7 +52,7 @@ export function BackButton() {
 	};
 	return (
 		<button
-			className='btn btn-sm bg-transparent border-none shadow-none text-purple-dimata hover:bg-transparent'
+			className='btn btn-sm bg-transparent border-none shadow-none text-blue-dimata-2 hover:bg-transparent'
 			onClick={handleBack}
 		>
 			<FaArrowLeft className='text-lg' />
