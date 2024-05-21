@@ -1,5 +1,6 @@
 'use client';
 
+import Alert from '@/app/features/dashboard/sidenav/components/alert';
 import SideNavTickets from '@/app/features/dashboard/tickets/components/side-nav';
 import { usePathname } from 'next/navigation';
 
@@ -11,13 +12,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 		return isNotMainPage.test(pathname);
 	};
 	return (
-		<div className='max-w-full h-full flex'>
-			{!handlePathname(pathname) && (
-				<div className='w-[240px] h-auto overflow-hidden'>
-					<SideNavTickets />
-				</div>
-			)}
-			<div className='flex-1'>{children}</div>
+		<div className='flex flex-col w-full h-full overflow-hidden overflow-y-auto'>
+			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
+			<div className='w-full h-full flex'>
+				{!handlePathname(pathname) && (
+					<div className='w-[240px] h-full overflow-hidden'>
+						<SideNavTickets />
+					</div>
+				)}
+				<div className='flex-1 flex flex-col'>{children}</div>
+			</div>
 		</div>
 	);
 }
