@@ -15,6 +15,8 @@ export default function CustomQuill() {
 		],
 	};
 
+	console.log(`Textarea`, content);
+
 	const quillFormats = [
 		'header',
 		'bold',
