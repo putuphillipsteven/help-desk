@@ -3,7 +3,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
-import { FieldError, UseFormRegister, UseFormTrigger } from 'react-hook-form';
+import { FieldError, UseFormRegister, UseFormSetValue, UseFormTrigger } from 'react-hook-form';
 import {
 	TicketFormData,
 	TicketValidFieldNames,
@@ -14,7 +14,7 @@ const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 type CustomQuillProps = {
 	register: UseFormRegister<TicketFormData>;
 	name: TicketValidFieldNames;
-	setValue: UseFormRegister<TicketFormData>;
+	setValue: UseFormSetValue<TicketFormData>;
 	getValue: UseFormRegister<TicketFormData>;
 	error: FieldError | undefined;
 	trigger: UseFormTrigger<TicketFormData>;
