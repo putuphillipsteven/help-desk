@@ -11,6 +11,7 @@ import CustomQuill from '@/app/components/custom-quill';
 import { useForm } from 'react-hook-form';
 import { ReplyFormData, ReplyFormSchema } from '../../utils/replySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Ticket } from '../../data/tickets';
 
 interface DetailsMainProps {
 	id: string;
@@ -79,7 +80,17 @@ export default function DetailsMain({ id }: DetailsMainProps) {
 				</div>
 			</div>
 			<div className='w-[240px] h-full'>
-				<RightSideNavDetails />
+				<RightSideNavDetails
+					agent={ticket?.agent}
+					createdAt={ticket?.createdAt}
+					details={ticket?.details}
+					id={ticket?.id}
+					priority={ticket?.priority}
+					status={ticket?.status}
+					subject={ticket?.subject}
+					team={ticket?.team}
+					user={ticket?.user}
+				/>
 			</div>
 		</div>
 	);

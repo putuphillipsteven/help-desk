@@ -1,21 +1,58 @@
 import React, { useState } from 'react';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { SlOptions } from 'react-icons/sl';
+import { Ticket } from '../../data/tickets';
+
+interface TicketInfo {
+	'Ticket ID': string;
+	Created: string;
+	'Last Message': string;
+	Status: string;
+	Rating: string;
+	Priority: string;
+	Tags: string;
+}
 
 interface Section {
 	id: number;
 	title: string;
-	content: string[];
+	content: object[];
 }
 
-const sections: Section[] = [
-	{ id: 1, title: 'Ticket Info', content: ['Test', 'Test', 'Test', 'Test'] },
-	{ id: 2, title: 'Responsibility', content: [] },
-	{ id: 3, title: 'Requester', content: [] },
-];
-
-const RightSideNavDetails: React.FC = () => {
+export default function RightSideNavDetails({
+	agent,
+	createdAt,
+	id,
+	priority,
+	status,
+	subject,
+	team,
+	user,
+}: Ticket): JSX.Element {
 	const [openSection, setOpenSection] = useState<number | null>(null);
+
+	const sections: Section[] = [
+		{
+			id: 1,
+			title: 'Ticket Info',
+			content: [
+				{
+					'Ticket Id': { id },
+				},
+				{
+					Created: { createdAt },
+				},
+				{
+					'Last message': { createdAt },
+				},
+				{
+					Status: { status },
+				},
+			],
+		},
+		{ id: 2, title: 'Responsibility', content: [{}] },
+		{ id: 3, title: 'Requester', content: [{}] },
+	];
 
 	const toggleSection = (id: number) => {
 		setOpenSection(openSection === id ? null : id);
@@ -39,9 +76,7 @@ const RightSideNavDetails: React.FC = () => {
 					{openSection === section.id && (
 						<div className='flex flex-col gap-y-2'>
 							{section.content.map((item, index) => (
-								<p key={index} className='text-sm'>
-									{item}
-								</p>
+								<div key={index}></div>
 							))}
 						</div>
 					)}
@@ -49,6 +84,4 @@ const RightSideNavDetails: React.FC = () => {
 			))}
 		</div>
 	);
-};
-
-export default RightSideNavDetails;
+}

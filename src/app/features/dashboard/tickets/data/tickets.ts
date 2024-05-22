@@ -4,14 +4,15 @@ interface User {
 }
 
 export interface Ticket {
-	id: number;
-	subject: string;
-	user: User;
-	team: string;
-	agent: string | 'unassigned';
-	priority: string;
-	status: string;
-	details: string;
+	id: number | undefined;
+	subject: string | undefined;
+	createdAt: string | undefined;
+	user: User | undefined;
+	team: string | undefined;
+	agent: string | 'unassigned' | undefined;
+	priority: string | undefined;
+	status: string | undefined;
+	details: string | undefined;
 }
 
 type Tickets = Ticket[];
@@ -20,6 +21,7 @@ export const tickets: Tickets = [
 	{
 		id: 1,
 		subject: 'Tidak bisa login di prochain',
+		createdAt: 'Sat, May 18, 2024, 09:42 AM',
 		user: {
 			username: 'Vincky Sedana',
 			email: 'vinckysedana@gmail.com',
@@ -34,6 +36,7 @@ export const tickets: Tickets = [
 	{
 		id: 2,
 		subject: 'Akun prochain logout otomatis setiap 5 menit',
+		createdAt: 'Sat, May 18, 2024, 09:42 AM',
 		user: {
 			username: 'Dimata Admin',
 			email: 'admin@dimata.com',
@@ -48,6 +51,7 @@ export const tickets: Tickets = [
 	{
 		id: 3,
 		subject: 'Tidak bisa backup data Hairisima',
+		createdAt: 'Sat, May 18, 2024, 09:42 AM',
 		user: {
 			username: 'Dimata Admin',
 			email: 'admin@dimata.com',
@@ -63,6 +67,7 @@ export const tickets: Tickets = [
 	{
 		id: 4,
 		subject: 'Tidak bisa login di prochain',
+		createdAt: 'Sat, May 18, 2024, 09:42 AM',
 		user: {
 			username: 'Tien Shen',
 			email: 'tienshen@gmail.com',
