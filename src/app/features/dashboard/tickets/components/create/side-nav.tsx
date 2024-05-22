@@ -1,5 +1,5 @@
 import { CreateButton } from '@/app/components/button';
-import { filters } from '../data/filters';
+import { filters } from '../../data/filters';
 export default function SideNavTickets() {
 	const renderedFilters = filters?.map((filter, index) => {
 		return (

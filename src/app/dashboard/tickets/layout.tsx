@@ -1,7 +1,7 @@
 'use client';
 
 import Alert from '@/app/features/dashboard/sidenav/components/alert';
-import SideNavTickets from '@/app/features/dashboard/tickets/components/side-nav';
+import SideNavTickets from '@/app/features/dashboard/tickets/components/create/side-nav';
 import { usePathname } from 'next/navigation';
 
 export default function Layout({ children }: { children: React.ReactNode }) {

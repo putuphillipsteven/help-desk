@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { TicketFormFieldProps } from '../utils/ticketSchema';
+import { TicketFormFieldProps } from '../../utils/ticketSchema';
 import capitalize from 'capitalize';
 export default function TicketFormFields({
 	type,
