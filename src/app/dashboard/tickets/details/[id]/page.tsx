@@ -2,9 +2,11 @@ import CreateTicket from '@/app/features/dashboard/tickets/components/create-tic
 import { Fragment } from 'react';
 
 export default function Page({ params: string }: { params: { id: string } }) {
+	const { id } = string;
+	console.log(`id`, id);
 	return (
 		<Fragment>
-			<CreateTicket />
+			<p>Ticket Details</p>
 		</Fragment>
 	);
 }

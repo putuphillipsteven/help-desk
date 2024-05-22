@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { tickets } from '../data/tickets';
 import { CreateButton } from '@/app/components/button';
+import Link from 'next/link';
 
 export default function Main() {
 	const renderedTickets = tickets?.map((ticket, index) => {
@@ -13,7 +14,7 @@ export default function Main() {
 					/>
 				</td>
 				<td>
-					<div className='centering-flex gap-x-2 w-full '>
+					<div className='centering-flex gap-x-2 w-full cursor'>
 						<div className='avatar'>
 							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
@@ -25,8 +26,10 @@ export default function Main() {
 						</div>
 					</div>
 				</td>
-				<td>
-					<p className='text-sm'>{ticket.subject}</p>
+				<td className='cursor-pointer'>
+					<Link href={`tickets/details/${ticket.id}`}>
+						<p className='text-sm'>{ticket.subject}</p>
+					</Link>
 				</td>
 				<td>
 					<p className='text-sm'>{ticket.agent}</p>
