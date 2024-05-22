@@ -1,7 +1,6 @@
 'use client';
 
-import { AddButton, BackButton } from '@/app/components/button';
-import CustomQuill from '@/app/components/custom-quill';
+import { BackButton } from '@/app/components/button';
 import CreateTicketForm from './create-tickets-form';
 export default function CreateTicket() {
 	return (

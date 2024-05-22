@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { TicketFormFieldProps } from '../utils/ticketSchema';
 import capitalize from 'capitalize';
-import clsx from 'clsx';
 export default function TicketFormFields({
 	type,
 	placeholder,
@@ -25,11 +24,11 @@ export default function TicketFormFields({
 					}
 				/>
 				{error ? (
-					<span className='error-message place-self-start p-2'>
+					<span className='error-message place-self-start pt-2'>
 						<p className='text-red-500 text-xs'>{error.message}</p>
 					</span>
 				) : (
-					<span className='place-self-start p-2 opacity-0'>
+					<span className='place-self-start pt-2 opacity-0'>
 						<p className='text-red-500 text-xs'>'TEST'</p>
 					</span>
 				)}

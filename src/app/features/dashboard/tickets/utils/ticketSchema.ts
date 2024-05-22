@@ -31,23 +31,32 @@ export type TicketValidFieldNames =
 	| 'status'
 	| 'textArea';
 
+const isEmptyHtml = (input: string) => {
+	return input.trim() === '<p><br></p>';
+};
+
 export const CreateTicketSchema: ZodType<TicketFormData> = z.object({
 	subject: z
 		.string({ message: 'Subject is required', required_error: 'Subject is required' })
-		.min(10, { message: 'Subject is required' }),
+		.min(10, { message: 'Subject is required, min 10 characters' }),
 	name: z
 		.string({ required_error: 'Requester name is required' })
 		.min(3, { message: 'Name is required, minimal 3 characters' }),
 	email: z
 		.string({ required_error: 'Requester email is required' })
 		.email({ message: 'Must be an email' }),
-	team: z
-		.string({ required_error: 'Team must be selected', message: 'Team must be selected' })
-		.min(3, { message: 'Team is required, minimal 3 characters' }),
-	agent: z.string({ required_error: 'Agent must be selected' }),
-	priority: z.string({ required_error: 'Priority must be selected' }),
-	status: z.string({ required_error: 'Status must be selected' }),
-	textArea: z.string({ required_error: 'Text area must be filled' }),
+	team: z.enum(['Dimata', 'Apple', 'All Team(default team)'], {
+		message: 'Please select the team',
+	}),
+	agent: z.enum(['Vinky Sedana', 'Phillip Steven'], { message: 'Please select the agent' }),
+	priority: z.enum(['Low', 'Medium', 'High'], { message: 'Please select the priority' }),
+	status: z.enum(['Plan', 'Pending', 'In Progress'], { message: 'Please select the status' }),
+	textArea: z
+		.string({ required_error: 'Text area must be filled' })
+		.min(17, { message: 'Minimum 10 characters please' })
+		.refine((val) => !isEmptyHtml(val), {
+			message: 'Text area must be filled',
+		}),
 });
 
 export type TicketErrors = {
