@@ -1,6 +1,5 @@
 import { CreateButton } from '@/app/components/button';
 import { filters } from '../data/filters';
-import NewTicketButton from './new-ticket-button';
 export default function SideNavTickets() {
 	const renderedFilters = filters?.map((filter, index) => {
 		return (
@@ -20,7 +19,7 @@ export default function SideNavTickets() {
 		);
 	});
 	return (
-		<div className='w-full h-full flex flex-col shadow-inner bg-white'>
+		<div className='w-full h-full bg-white flex flex-col shadow-inner'>
 			<div className='h-12 centering-flex justify-between p-2 border-r-2 border-b-2 border-light-gray-dimata3'>
 				<p className='font-medium'>Tickets</p>
 				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />

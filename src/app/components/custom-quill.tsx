@@ -14,8 +14,8 @@ const QuillEditor = dynamic(() => import('react-quill'), { ssr: false });
 type CustomQuillProps = {
 	register: UseFormRegister<TicketFormData>;
 	name: TicketValidFieldNames;
-	setValue: any;
-	getValue: any;
+	setValue: UseFormRegister<TicketFormData>;
+	getValue: UseFormRegister<TicketFormData>;
 	error: FieldError | undefined;
 	trigger: UseFormTrigger<TicketFormData>;
 };
