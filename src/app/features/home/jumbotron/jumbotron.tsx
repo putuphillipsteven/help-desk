@@ -1,6 +1,6 @@
 export default function Jumbotron() {
 	return (
-		<div className='w-full centering-flex justify-between px-24 gap-x-10 z-20'>
+		<div className='w-full centering-flex justify-between px-24 gap-x-10 z-20 bg-transparent'>
 			<div className='flex flex-col gap-y-4 pl-20'>
 				<h2 className='text-5xl font-light'>
 					Deliver <span className='font-bold'>Faster</span>{' '}

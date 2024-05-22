@@ -15,10 +15,10 @@ import Footer from './features/home/footer/footer';
 
 export default function Home() {
 	return (
-		<main className='centering-flex-col min-h-screen w-full'>
+		<main className='centering-flex-col min-h-screen w-full bg-white'>
 			<Image
 				src={'banner/background-gradient.svg'}
-				className='absolute inset-y-0 right-0 -top-[100px]'
+				className='absolute inset-y-0 right-0 -top-[100px] z-20'
 				width={940}
 				height={720}
 				alt='background'
