@@ -10,13 +10,13 @@ export default function Main() {
 				<td className=''>
 					<input
 						type='checkbox'
-						className='checkbox checkbox-sm border-2  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
+						className='checkbox checkbox-sm border  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
 					/>
 				</td>
 				<td>
 					<div className='centering-flex gap-x-2 w-full cursor'>
 						<div className='avatar'>
-							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
+							<div className='w-10 rounded-full  border border-light-gray-dimata-3'>
 								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
 							</div>
 						</div>
@@ -47,10 +47,10 @@ export default function Main() {
 	});
 	return (
 		<Fragment>
-			<div className='h-12 centering-flex justify-between p-2 border-b-2 border-light-gray-dimata3'>
+			<div className='h-12 centering-flex justify-between p-2 border-b border-light-gray-dimata-5'>
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
-			<div className='p-2 border-b-2 border-light-gray-dimata3'>
+			<div className='p-2 border-b border-light-gray-dimata-5'>
 				<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 			</div>
 			<div className='p-2'>
@@ -60,7 +60,7 @@ export default function Main() {
 							<th className='font-medium'>
 								<input
 									type='checkbox'
-									className='checkbox checkbox-sm border-2  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
+									className='checkbox checkbox-sm border  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
 								/>
 							</th>
 							<th className='font-medium'>Requester</th>

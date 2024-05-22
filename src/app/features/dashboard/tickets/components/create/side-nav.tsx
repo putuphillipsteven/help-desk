@@ -20,11 +20,11 @@ export default function SideNavTickets() {
 	});
 	return (
 		<div className='w-full h-full bg-white flex flex-col shadow-inner'>
-			<div className='h-12 centering-flex justify-between p-2 border-r-2 border-b-2 border-light-gray-dimata3'>
+			<div className='h-12 centering-flex justify-between p-2 border-r border-b border-light-gray-dimata-5'>
 				<p className='font-medium'>Tickets</p>
 				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />
 			</div>
-			<div className='flex flex-col gap-y-4 h-full p-2 border-r-2 border-light-gray-dimata3'>
+			<div className='flex flex-col gap-y-4 h-full p-2 border-r border-light-gray-dimata-5'>
 				<input
 					type='text'
 					className='input input-sm rounded-lg bg-light-gray-dimata2 text-black-dimata placeholder:text-light-gray-dimata3 border-none focus:ring-0 focus:border-none focus:outline-0'

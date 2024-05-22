@@ -31,7 +31,7 @@ export type TicketValidFieldNames =
 	| 'status'
 	| 'textArea';
 
-const isEmptyHtml = (input: string) => {
+export const isEmptyHtml = (input: string) => {
 	return input.trim() === '<p><br></p>';
 };
 
@@ -58,17 +58,3 @@ export const CreateTicketSchema: ZodType<TicketFormData> = z.object({
 			message: 'Text area must be filled',
 		}),
 });
-
-export type TicketErrors = {
-	errors?: {
-		subject?: string[];
-		name?: string[];
-		email?: string[];
-		team?: string[];
-		agent?: string[];
-		priority?: string[];
-		status?: string[];
-		textArea?: string[];
-	};
-	message?: string | null;
-};

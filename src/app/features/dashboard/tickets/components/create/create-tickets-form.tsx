@@ -10,15 +10,15 @@ export default function CreateTicketForm() {
 		register,
 		handleSubmit,
 		formState: { errors },
-		setError,
+		// setError,
 		trigger,
 		setValue,
 		getValues,
 	} = useForm<TicketFormData>({ resolver: zodResolver(CreateTicketSchema) });
+
 	const onSubmit = async (data: TicketFormData) => {
 		console.log('SUCCESS', data);
 	};
-
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-4'>
 			<TicketFormFields
