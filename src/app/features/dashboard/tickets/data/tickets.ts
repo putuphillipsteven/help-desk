@@ -21,7 +21,7 @@ export const tickets: Tickets = [
 	{
 		id: 1,
 		subject: 'Tidak bisa login di prochain',
-		createdAt: 'Sat, May 18, 2024, 09:42 AM',
+		createdAt: '18 May 2024',
 		user: {
 			username: 'Vincky Sedana',
 			email: 'vinckysedana@gmail.com',
@@ -36,7 +36,7 @@ export const tickets: Tickets = [
 	{
 		id: 2,
 		subject: 'Akun prochain logout otomatis setiap 5 menit',
-		createdAt: 'Sat, May 18, 2024, 09:42 AM',
+		createdAt: '18 May 2024',
 		user: {
 			username: 'Dimata Admin',
 			email: 'admin@dimata.com',
@@ -51,7 +51,7 @@ export const tickets: Tickets = [
 	{
 		id: 3,
 		subject: 'Tidak bisa backup data Hairisima',
-		createdAt: 'Sat, May 18, 2024, 09:42 AM',
+		createdAt: '18 May 2024',
 		user: {
 			username: 'Dimata Admin',
 			email: 'admin@dimata.com',
@@ -67,7 +67,7 @@ export const tickets: Tickets = [
 	{
 		id: 4,
 		subject: 'Tidak bisa login di prochain',
-		createdAt: 'Sat, May 18, 2024, 09:42 AM',
+		createdAt: '18 May 2024',
 		user: {
 			username: 'Tien Shen',
 			email: 'tienshen@gmail.com',

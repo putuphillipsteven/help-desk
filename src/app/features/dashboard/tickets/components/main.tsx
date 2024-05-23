@@ -3,7 +3,6 @@
 import { Fragment } from 'react';
 import { tickets } from '../data/tickets';
 import { CreateButton } from '@/app/components/button';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function Main() {
