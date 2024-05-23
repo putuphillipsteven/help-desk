@@ -1,12 +1,22 @@
+'use client';
+
 import { Fragment } from 'react';
 import { tickets } from '../data/tickets';
 import { CreateButton } from '@/app/components/button';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Main() {
+	const router = useRouter();
 	const renderedTickets = tickets?.map((ticket, index) => {
 		return (
-			<tr key={index}>
+			<tr
+				key={index}
+				className='cursor-pointer'
+				onClick={() => {
+					router.push(`tickets/details/${ticket.id}`);
+				}}
+			>
 				<td className=''>
 					<input
 						type='checkbox'
@@ -21,15 +31,13 @@ export default function Main() {
 							</div>
 						</div>
 						<div className='flex flex-col'>
-							<p className='text-xs'>{ticket.user.username}</p>
-							<p className='text-xs'>{ticket.user.email}</p>
+							<p className='text-xs'>{ticket.user?.username}</p>
+							<p className='text-xs'>{ticket.user?.email}</p>
 						</div>
 					</div>
 				</td>
-				<td className='cursor-pointer'>
-					<Link href={`tickets/details/${ticket.id}`}>
-						<p className='text-sm'>{ticket.subject}</p>
-					</Link>
+				<td>
+					<p className='text-sm'>{ticket.subject}</p>
 				</td>
 				<td>
 					<p className='text-sm'>{ticket.agent}</p>
@@ -70,7 +78,7 @@ export default function Main() {
 							<th className='font-medium'>Last Message</th>
 						</tr>
 					</thead>
-					<tbody className=''>{renderedTickets}</tbody>
+					<tbody>{renderedTickets}</tbody>
 				</table>
 			</div>
 		</Fragment>
