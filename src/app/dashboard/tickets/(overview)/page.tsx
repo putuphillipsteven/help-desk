@@ -1,9 +1,9 @@
-import Main from '@/app/features/dashboard/tickets/components/main';
+import MainTickets from '@/app/features/dashboard/tickets/components/main-tickets';
 
 export default function Page() {
 	return (
 		<div className='w-full h-full flex flex-col bg-white'>
-			<Main />
+			<MainTickets />
 		</div>
 	);
 }

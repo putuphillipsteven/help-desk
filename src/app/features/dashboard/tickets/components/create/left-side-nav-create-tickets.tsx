@@ -1,6 +1,6 @@
 import { CreateButton } from '@/app/components/button';
 import { filters } from '../../data/filters';
-export default function SideNavTickets() {
+export default function LeftSideNavCreateTickets() {
 	const renderedFilters = filters?.map((filter, index) => {
 		return (
 			<div key={index} className='w-full flex flex-col gap-y-2'>

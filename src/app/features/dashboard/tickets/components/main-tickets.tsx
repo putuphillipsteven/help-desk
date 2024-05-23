@@ -5,7 +5,7 @@ import { tickets } from '../data/tickets';
 import { CreateButton } from '@/app/components/button';
 import { useRouter } from 'next/navigation';
 
-export default function Main() {
+export default function MainTickets() {
 	const router = useRouter();
 	const renderedTickets = tickets?.map((ticket, index) => {
 		return (

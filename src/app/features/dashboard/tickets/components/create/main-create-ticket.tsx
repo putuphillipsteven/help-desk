@@ -2,7 +2,7 @@
 
 import { BackButton } from '@/app/components/button';
 import CreateTicketForm from './create-tickets-form';
-export default function CreateTicket() {
+export default function MainCreateTicket() {
 	return (
 		<div className='w-full h-fit bg-white shadow-inner centering-flex-col gap-y-4 overflow-y-auto no-scrollbar'>
 			<div className='w-full border-b pt-2 p-2 flex flex-row border-light-gray-dimata-5'>

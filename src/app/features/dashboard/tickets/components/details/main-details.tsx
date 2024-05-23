@@ -16,7 +16,7 @@ interface DetailsMainProps {
 	id: string;
 }
 
-export default function DetailsMain({ id }: DetailsMainProps) {
+export default function MainDetails({ id }: DetailsMainProps) {
 	const {
 		register,
 		handleSubmit,

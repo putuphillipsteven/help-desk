@@ -1,10 +1,10 @@
-import DetailsMain from '@/app/features/dashboard/tickets/components/details/details-main';
+import MainDetails from '@/app/features/dashboard/tickets/components/details/main-details';
 import { Fragment } from 'react';
 
 export default function Page({ params }: { params: { id: string } }) {
 	return (
 		<Fragment>
-			<DetailsMain id={params.id} />
+			<MainDetails id={params.id} />
 		</Fragment>
 	);
 }
