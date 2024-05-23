@@ -1,11 +1,10 @@
 'use client';
 
 import Alert from '@/app/features/dashboard/sidenav/components/alert';
-import { checkLink, checkLinkAgents } from '@/app/lib/utils/routing/routing';
+import { checkLinkAgents } from '@/app/lib/utils/routing/routing';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/router';
 import { IoIosSearch } from 'react-icons/io';
 import { TbEdit } from 'react-icons/tb';
 export default function Layout({ children }: { children: React.ReactNode }) {
