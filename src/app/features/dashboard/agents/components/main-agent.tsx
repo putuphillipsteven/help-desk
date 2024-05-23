@@ -7,7 +7,11 @@ import { agents } from '../data/agents';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function MainAgent() {
+interface MainAgentProps {
+	id?: string;
+}
+
+export default function MainAgent({ id }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 

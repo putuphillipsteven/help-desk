@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Fragment } from 'react';
 import Alert from '../sidenav/components/alert';
 import clsx from 'clsx';
@@ -13,6 +15,7 @@ interface MainAgentsProps {
 
 export default function MainAgents({ children }: MainAgentsProps) {
 	const pathname = usePathname();
+
 	return (
 		<Fragment>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
