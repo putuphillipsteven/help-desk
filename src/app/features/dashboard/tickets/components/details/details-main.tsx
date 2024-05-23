@@ -54,8 +54,9 @@ export default function DetailsMain({ id }: DetailsMainProps) {
 				</div>
 				<div className='centering-flex-col w-[725px] justify-between h-full py-8 gap-y-20'>
 					<div className='w-full flex flex-col gap-x-2 border border-light-gray-dimata-5 drop-shadow-sm rounded-md overflow-hidden'>
-						<div className='p-2 bg-light-blue-dimata'>
+						<div className='p-2 bg-light-blue-dimata centering-flex justify-between'>
 							<p className='text-lg font-bold'>{ticket?.agent}</p>
+							<p className='text-sm font-medium'>{ticket?.createdAt}</p>
 						</div>
 						<div className='p-2'>
 							<p className='text-sm'>{ticket?.details}</p>
