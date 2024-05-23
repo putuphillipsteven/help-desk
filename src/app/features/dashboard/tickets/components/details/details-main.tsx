@@ -11,7 +11,6 @@ import CustomQuill from '@/app/components/custom-quill';
 import { useForm } from 'react-hook-form';
 import { ReplyFormData, ReplyFormSchema } from '../../utils/replySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Ticket } from '../../data/tickets';
 
 interface DetailsMainProps {
 	id: string;

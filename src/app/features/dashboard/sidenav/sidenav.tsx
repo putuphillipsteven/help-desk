@@ -1,6 +1,7 @@
 import { RxTriangleDown } from 'react-icons/rx';
 import NavLink from './components/nav-link';
 import { TbLayoutGridAdd } from 'react-icons/tb';
+import { CgProfile } from 'react-icons/cg';
 import Link from 'next/link';
 export default function SideNav() {
 	return (
@@ -19,7 +20,12 @@ export default function SideNav() {
 						label='Tickets'
 						icon={<TbLayoutGridAdd className='text-2xl' />}
 					/>
-					<NavLink />
+					<NavLink
+						destination='agents/agent'
+						notification={2}
+						label='Agents'
+						icon={<CgProfile className='text-2xl' />}
+					/>
 					<NavLink />
 				</div>
 			</div>
