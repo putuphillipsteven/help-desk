@@ -10,10 +10,9 @@ import { TbEdit } from 'react-icons/tb';
 
 interface MainAgentProps {
 	children?: React.ReactNode;
-	id?: string;
 }
 
-export default function MainAgent({ id, children }: MainAgentProps) {
+export default function MainAgent({ children }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 
@@ -22,7 +21,6 @@ export default function MainAgent({ id, children }: MainAgentProps) {
 	const params = new URLSearchParams(searchParams);
 
 	useEffect(() => {
-		// Initialize the search param 'na' to 'asc' if it's not set and 'ro' is not set
 		if (!params.get('na') && !params.get('ro')) {
 			params.set('na', 'asc');
 			router.replace(`?${params.toString()}`);
@@ -32,7 +30,6 @@ export default function MainAgent({ id, children }: MainAgentProps) {
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
 
-		// Remove the other sort parameter if a different sort is clicked
 		if (sort === 'na') {
 			newParams.delete('ro');
 			const currentSort = newParams.get('na');

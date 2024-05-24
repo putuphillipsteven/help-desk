@@ -1,18 +1,28 @@
+'use client';
+
 import { Fragment } from 'react';
 import { Agent } from '../data/agents';
 import clsx from 'clsx';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { getAgentId } from '../utils/agents';
 
 interface AgentListProps {
 	agents: Agent[];
 }
 
 export default function AgentList({ agents }: AgentListProps) {
+	const pathname = usePathname();
 	const renderedAgents = agents?.map((agent) => {
 		return (
-			<tr className='h-12'>
-				<td className='centering-flex h-full pl-20'>
+			<tr
+				className={clsx('h-12', {
+					'bg-light-blue-dimata border-l-4 border-blue-dimata':
+						getAgentId(pathname) === String(agent.id),
+				})}
+			>
+				<td className='centering-flex h-full pl-20 py-2'>
 					<div className='centering-flex gap-x-6 w-full '>
 						{/* <div className='avatar'>
 							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
