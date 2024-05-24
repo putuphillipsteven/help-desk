@@ -7,6 +7,7 @@ import { getInitials } from '@/app/lib/utils/naming/naming';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getAgentId } from '../utils/agents';
+import { getAgentById } from '../hooks/agent';
 
 interface AgentListProps {
 	agents: Agent[];

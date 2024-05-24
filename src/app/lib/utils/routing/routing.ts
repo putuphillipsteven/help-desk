@@ -1,7 +1,18 @@
+export const getMain = (pathname: string): string => {
+	const regex = /^([^\/]+)/;
+	const match = pathname.match(regex);
+
+	if (match) {
+		return match[1]; // Return the captured main part
+	} else {
+		return '';
+	}
+};
+
 export const checkLink = (href: string, pathname: string) => {
 	if (href === `/dashboard` && pathname === href) {
 		return `pathname === href`;
-	} else if (href !== `/dashboard` && pathname.includes(href)) {
+	} else if (href !== `/dashboard` && pathname.includes(getMain(href))) {
 		return `pathname.includes(href)`;
 	}
 };
@@ -9,7 +20,7 @@ export const checkLink = (href: string, pathname: string) => {
 export const checkLinkAgents = (href: string, pathname: string): boolean => {
 	// Regular expressions to match exact paths
 	const agentRegex = new RegExp(`^/dashboard/agents/agent(/\\d+)?$`);
-	const teamRegex = new RegExp(`^/dashboard/agents/team$`);
+	const teamRegex = new RegExp(`^/dashboard/agents/team(/\\d+)?$`);
 
 	// Check if the pathname matches the specific patterns
 	const isAgentPath = agentRegex.test(pathname);

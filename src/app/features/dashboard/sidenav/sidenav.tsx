@@ -27,14 +27,14 @@ export default function SideNav() {
 						label='Agents'
 						icon={<CgProfile className='text-2xl' />}
 					/>
-					<NavLink />
+					{/* <NavLink /> */}
 				</div>
 			</div>
 			<div className='flex flex-col gap-y-4'>
 				<div className='flex flex-col gap-y-2'>
+					{/* <NavLink />
 					<NavLink />
-					<NavLink />
-					<NavLink />
+					<NavLink /> */}
 				</div>
 				<div className='centering-flex gap-x-4 w-full '>
 					{/* <div className='avatar'>

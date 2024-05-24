@@ -6,8 +6,6 @@ export const getAgentId = (url: string) => {
 		return match[1];
 	}
 
-	console.log(match);
-
 	return 0;
 };
 
