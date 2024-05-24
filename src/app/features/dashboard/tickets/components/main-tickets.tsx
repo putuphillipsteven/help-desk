@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { tickets } from '../data/tickets';
 import { CreateButton } from '@/app/components/button';
 import { useRouter } from 'next/navigation';
+import { getInitials } from '@/app/lib/utils/naming/naming';
 
 export default function MainTickets() {
 	const router = useRouter();
@@ -23,9 +24,9 @@ export default function MainTickets() {
 							router.push(`tickets/details/${ticket.id}`);
 						}}
 					>
-						<div className='avatar'>
-							<div className='w-10 rounded-full  border border-light-gray-dimata-3'>
-								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+						<div className='avatar placeholder w-10'>
+							<div className='bg-neutral text-neutral-content rounded-full w-12'>
+								<span>{getInitials(ticket?.user?.username || 'User Name')}</span>
 							</div>
 						</div>
 						<div className='flex flex-col'>
