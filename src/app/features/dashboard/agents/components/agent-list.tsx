@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { Agent } from '../data/agents';
 import clsx from 'clsx';
 import { getInitials } from '@/app/lib/utils/naming/naming';
+import Link from 'next/link';
 
 interface AgentListProps {
 	agents: Agent[];
@@ -24,8 +25,10 @@ export default function AgentList({ agents }: AgentListProps) {
 							</div>
 						</div>
 						<div className='flex flex-col'>
-							<p className='text-xs'>{agent.name}</p>
-							<p className='text-xs'>{agent.email}</p>
+							<Link href={`/dashboard/agents/agent/${agent.id}?na=asc`}>
+								<p className='text-xs'>{agent.name}</p>
+								<p className='text-xs'>{agent.email}</p>
+							</Link>
 						</div>
 					</div>
 				</td>

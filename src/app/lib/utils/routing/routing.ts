@@ -8,7 +8,7 @@ export const checkLink = (href: string, pathname: string) => {
 
 export const checkLinkAgents = (href: string, pathname: string): boolean => {
 	// Regular expressions to match exact paths
-	const agentRegex = new RegExp(`^/dashboard/agents/agent$`);
+	const agentRegex = new RegExp(`^/dashboard/agents/agent(/\\d+)?$`);
 	const teamRegex = new RegExp(`^/dashboard/agents/team$`);
 
 	// Check if the pathname matches the specific patterns

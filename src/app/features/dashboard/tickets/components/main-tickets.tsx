@@ -7,15 +7,9 @@ import { useRouter } from 'next/navigation';
 
 export default function MainTickets() {
 	const router = useRouter();
-	const renderedTickets = tickets?.map((ticket, index) => {
+	const renderedTickets = tickets?.map((ticket) => {
 		return (
-			<tr
-				key={index}
-				className='cursor-pointer'
-				onClick={() => {
-					router.push(`tickets/details/${ticket.id}`);
-				}}
-			>
+			<tr key={ticket.id}>
 				<td className=''>
 					<input
 						type='checkbox'
@@ -23,7 +17,12 @@ export default function MainTickets() {
 					/>
 				</td>
 				<td>
-					<div className='centering-flex gap-x-2 w-full cursor'>
+					<div
+						className='centering-flex gap-x-2 w-full cursor-pointer'
+						onClick={() => {
+							router.push(`tickets/details/${ticket.id}`);
+						}}
+					>
 						<div className='avatar'>
 							<div className='w-10 rounded-full  border border-light-gray-dimata-3'>
 								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
@@ -35,7 +34,12 @@ export default function MainTickets() {
 						</div>
 					</div>
 				</td>
-				<td>
+				<td
+					className='cursor-pointer'
+					onClick={() => {
+						router.push(`tickets/details/${ticket.id}`);
+					}}
+				>
 					<p className='text-sm'>{ticket.subject}</p>
 				</td>
 				<td>

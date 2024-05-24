@@ -3,6 +3,7 @@ import NavLink from './components/nav-link';
 import { TbLayoutGridAdd } from 'react-icons/tb';
 import { CgProfile } from 'react-icons/cg';
 import Link from 'next/link';
+import { getInitials } from '@/app/lib/utils/naming/naming';
 export default function SideNav() {
 	return (
 		<div className='w-[240px] h-full p-[20px] bg-white  flex flex-col justify-between drop-shadow-xl'>
@@ -36,9 +37,14 @@ export default function SideNav() {
 					<NavLink />
 				</div>
 				<div className='centering-flex gap-x-4 w-full '>
-					<div className='avatar'>
+					{/* <div className='avatar'>
 						<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 							<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+						</div>
+					</div> */}
+					<div className='avatar placeholder'>
+						<div className='bg-neutral text-neutral-content rounded-full w-12'>
+							<span>{getInitials('User Name' || '')}</span>
 						</div>
 					</div>
 					<div className='flex flex-col'>

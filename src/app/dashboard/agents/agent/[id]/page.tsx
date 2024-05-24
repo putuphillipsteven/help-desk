@@ -1,5 +1,8 @@
-import MainAgent from '@/app/features/dashboard/agents/components/main-agent';
-
 export default function Page({ params }: { params: { id: string } }) {
-	return <MainAgent id={params.id} />;
+	return (
+		<div className='p-2'>
+			<p className='text-lg'>Agent Details</p>
+			<p className='text-lg'>{params.id}</p>
+		</div>
+	);
 }

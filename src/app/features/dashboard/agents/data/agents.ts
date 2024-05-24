@@ -4,6 +4,7 @@ type Team = {
 };
 
 export interface Agent {
+	id: number;
 	name: string;
 	email: string;
 	role: 'Admin' | 'Agent';
@@ -15,18 +16,21 @@ export type Agents = Agent[];
 
 export const agents: Agents = [
 	{
+		id: 1,
 		name: 'Agus Sarimurni',
 		email: 'sarimurni@gmail.com',
 		role: 'Agent',
 		teams: [{ name: 'Dimata', leader: 'I Ketut Kartika Tanjana' }],
 	},
 	{
+		id: 2,
 		name: 'Bagus Dewa Brahman',
 		email: 'bagusdewa@gmail.com',
 		role: 'Agent',
 		teams: [{ name: 'Dimata', leader: 'I Ketut Kartika Tanjana' }],
 	},
 	{
+		id: 3,
 		name: 'Dewa Gede Mahendra Data',
 		email: 'mahendra@gmail.com',
 		role: 'Admin',
@@ -38,10 +42,16 @@ export const agents: Agents = [
 			},
 		],
 	},
-	{ name: 'Dian Bahagia', email: 'bahagia@gmail.com', role: 'Admin' },
-	{ name: 'bahagia@gmail.com', email: 'kutilang@gmail.com', role: 'Agent' },
-	{ name: 'I Ketut Kartika Tanjana', email: 'kartika@gmail.com', role: 'Agent' },
-	{ name: 'Surya Jayante', email: 'jayante@gmail.com', role: 'Admin' },
-	{ name: 'Pasek Okasana', email: 'pasekokasana@gmail.com', role: 'Agent' },
-	{ name: 'Wahyu Sutejo', email: 'wahyusutejo@gmail.com', role: 'Admin', invitation: 'Waiting' },
+	{ id: 4, name: 'Dian Bahagia', email: 'bahagia@gmail.com', role: 'Admin' },
+	{ id: 5, name: 'bahagia@gmail.com', email: 'kutilang@gmail.com', role: 'Agent' },
+	{ id: 6, name: 'I Ketut Kartika Tanjana', email: 'kartika@gmail.com', role: 'Agent' },
+	{ id: 7, name: 'Surya Jayante', email: 'jayante@gmail.com', role: 'Admin' },
+	{ id: 8, name: 'Pasek Okasana', email: 'pasekokasana@gmail.com', role: 'Agent' },
+	{
+		id: 9,
+		name: 'Wahyu Sutejo',
+		email: 'wahyusutejo@gmail.com',
+		role: 'Admin',
+		invitation: 'Waiting',
+	},
 ];

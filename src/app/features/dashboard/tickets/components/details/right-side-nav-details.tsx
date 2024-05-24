@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { SlOptions } from 'react-icons/sl';
 import { Ticket } from '../../data/tickets';
+import { getInitials } from '@/app/lib/utils/naming/naming';
 
 type Content = {
 	[key: string]: string | undefined; // Allows keys with string values or undefined
 };
-
-interface TicketInfo {
-	'Ticket ID'?: string;
-	Created?: string;
-	'Last Message'?: string;
-	Status?: string;
-	Rating?: string;
-	Priority?: string;
-	Tags?: string;
-}
 
 interface Section {
 	id: number;
@@ -29,7 +20,6 @@ export default function RightSideNavDetails({
 	id,
 	priority,
 	status,
-	subject,
 	team,
 	user,
 }: Ticket): JSX.Element {
@@ -69,7 +59,6 @@ export default function RightSideNavDetails({
 		setOpenSection(openSection === id ? null : id);
 	};
 
-	console.log(sections.map((el, index) => el.content));
 	return (
 		<div className='centering-flex-col gap-y-0 h-full  border-r border-light-gray-dimata-5'>
 			<div className='w-full h-12 centering-flex justify-between p-2 border-b border-light-gray-dimata-5'>
@@ -102,7 +91,11 @@ export default function RightSideNavDetails({
 											<p className='text-xs text-blue-dimata-2'>Change</p>
 										</div>
 										<div className='centering-flex gap-x-2'>
-											<div className='w-12 h-12 rounded-md bg-light-gray-dimata3 drop-shadow-sm'></div>
+											<div className='avatar placeholder'>
+												<div className='bg-neutral text-neutral-content rounded-md w-12'>
+													<span>{getInitials(section?.content.team || 'Team')}</span>
+												</div>
+											</div>
 											<div className='flex flex-col gap-y-1'>
 												<p className='text-xs'>Default Team</p>
 												<p className='text-xs text-light-gray-dimata3'>{section.content.team}</p>
@@ -119,9 +112,14 @@ export default function RightSideNavDetails({
 												</div>
 											</div>
 											<div className='centering-flex gap-x-4 w-full '>
-												<div className='avatar'>
+												{/* <div className='avatar'>
 													<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 														<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+													</div>
+												</div> */}
+												<div className='avatar placeholder'>
+													<div className='bg-neutral text-neutral-content rounded-full w-12'>
+														<span>{getInitials(section?.content.user || 'User Name')}</span>
 													</div>
 												</div>
 												<div className='flex flex-col'>
@@ -135,9 +133,14 @@ export default function RightSideNavDetails({
 							)}
 							{section.title === 'Requester' && (
 								<div className='centering-flex gap-x-4 w-full py-2'>
-									<div className='avatar'>
+									{/* <div className='avatar'>
 										<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 											<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
+										</div>
+									</div> */}
+									<div className='avatar placeholder'>
+										<div className='bg-neutral text-neutral-content rounded-full w-12'>
+											<span>{getInitials(section?.content.user || 'User Name')}</span>
 										</div>
 									</div>
 									<div className='flex flex-col'>
