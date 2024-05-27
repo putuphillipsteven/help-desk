@@ -18,6 +18,7 @@ export default function AgentList({ agents }: AgentListProps) {
 	const renderedAgents = agents?.map((agent) => {
 		return (
 			<tr
+				key={agent.id}
 				className={clsx('h-12', {
 					'bg-light-blue-dimata border-l-4 border-blue-dimata':
 						getAgentId(pathname) === String(agent.id),

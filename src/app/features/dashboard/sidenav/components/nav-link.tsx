@@ -18,7 +18,7 @@ export default function NavLink({ label, icon, notification, destination }: NavL
 	return (
 		<div
 			className={clsx('w-full centering-flex justify-between p-2 rounded-md hover:cursor-pointer', {
-				'bg-light-blue-dimata': checkLink(destination || 'undefined', pathname),
+				'bg-primary-content': checkLink(destination || 'undefined', pathname),
 			})}
 		>
 			<Link
@@ -29,15 +29,15 @@ export default function NavLink({ label, icon, notification, destination }: NavL
 					{(icon && icon) || <FaCircle className='text-2xl' />}
 					<p
 						className={clsx('text-lg font-medium', {
-							'text-blue-dimata': checkLink(destination || 'undefined', pathname),
+							'text-info-text': checkLink(destination || 'undefined', pathname),
 						})}
 					>
 						{label || 'Label'}
 					</p>
 				</div>
 				{notification && (
-					<div className='bg-red-600 w-6 h-6  centering-flex justify-center rounded-badge'>
-						<p className='text-xs text-white'>{notification || 0}</p>
+					<div className='bg-error w-6 h-6 centering-flex justify-center rounded-badge'>
+						<p className='text-xs text-base-100'>{notification || 0}</p>
 					</div>
 				)}
 			</Link>

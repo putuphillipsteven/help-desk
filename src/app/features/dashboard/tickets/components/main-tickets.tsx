@@ -11,21 +11,21 @@ export default function MainTickets() {
 	const renderedTickets = tickets?.map((ticket) => {
 		return (
 			<tr key={ticket.id}>
-				<td className=''>
+				<td className='p-2'>
 					<input
 						type='checkbox'
-						className='checkbox checkbox-sm border  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
+						className='checkbox checkbox-xs border border-neutral  checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white] rounded-sm'
 					/>
 				</td>
-				<td>
+				<td className='p-2'>
 					<div
-						className='centering-flex gap-x-2 w-full cursor-pointer'
+						className='centering-flex gap-x-2 w-full cursor-pointer '
 						onClick={() => {
 							router.push(`tickets/details/${ticket.id}`);
 						}}
 					>
-						<div className='avatar placeholder w-10'>
-							<div className='bg-neutral text-neutral-content rounded-full w-12'>
+						<div className='avatar placeholder w-8'>
+							<div className='bg-neutral text-neutral-content rounded-full w-8'>
 								<span>{getInitials(ticket?.user?.username || 'User Name')}</span>
 							</div>
 						</div>
@@ -36,22 +36,22 @@ export default function MainTickets() {
 					</div>
 				</td>
 				<td
-					className='cursor-pointer'
+					className='cursor-pointer p-2'
 					onClick={() => {
 						router.push(`tickets/details/${ticket.id}`);
 					}}
 				>
 					<p className='text-sm'>{ticket.subject}</p>
 				</td>
-				<td>
+				<td className='p-2'>
 					<p className='text-sm'>{ticket.agent}</p>
 				</td>
-				<td>
-					<div className='badge bg-blue-dimata-2 border-transparent gap-2 text-white'>
+				<td className='p-2'>
+					<div className='badge bg-primary border-transparent gap-2 text-base-100'>
 						{ticket.status}
 					</div>
 				</td>
-				<td>
+				<td className='p-2'>
 					<p className='text-sm'>Last 5 minutes</p>
 				</td>
 			</tr>
@@ -59,27 +59,27 @@ export default function MainTickets() {
 	});
 	return (
 		<Fragment>
-			<div className='h-12 centering-flex justify-between p-2 border-b border-light-gray-dimata-5'>
+			<div className='h-12 centering-flex justify-between p-2 border-b border-neutral bg-base-100'>
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
-			<div className='p-2 border-b border-light-gray-dimata-5'>
+			<div className='p-2 border-b border-neutral'>
 				<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 			</div>
 			<div className='p-2'>
 				<table className='w-full text-black-dimata border-separate'>
 					<thead className=''>
 						<tr className='text-sm text-left uppercase h-8'>
-							<th className='font-medium'>
+							<th className='font-medium p-2'>
 								<input
 									type='checkbox'
-									className='checkbox checkbox-sm border  checked:border-blue-dimata [--chkbg:theme(colors.blue-dimata)] [--chkfg:white] rounded-sm'
+									className='checkbox checkbox-xs border border-neutral  checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white] rounded-sm'
 								/>
 							</th>
-							<th className='font-medium'>Requester</th>
-							<th className='font-medium'>Subject</th>
-							<th className='font-medium'>Agent</th>
-							<th className='font-medium'>Status</th>
-							<th className='font-medium'>Last Message</th>
+							<th className='font-medium text-primary-text p-2'>Requester</th>
+							<th className='font-medium text-primary-text p-2'>Subject</th>
+							<th className='font-medium text-primary-text p-2'>Agent</th>
+							<th className='font-medium text-primary-text p-2'>Status</th>
+							<th className='font-medium text-primary-text p-2'>Last Message</th>
 						</tr>
 					</thead>
 					<tbody>{renderedTickets}</tbody>

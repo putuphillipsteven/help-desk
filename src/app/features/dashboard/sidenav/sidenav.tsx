@@ -6,11 +6,11 @@ import Link from 'next/link';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 export default function SideNav() {
 	return (
-		<div className='w-[240px] h-full p-[20px] bg-white  flex flex-col justify-between drop-shadow-xl'>
+		<div className='w-[240px] bg-base-100 h-full p-[20px] flex flex-col justify-between drop-shadow-lg'>
 			<div className='flex flex-col gap-y-6'>
 				<Link className='centering-flex gap-x-4 w-full overflow-hidden' href={'/dashboard'}>
-					<div className='rounded-md bg-blue-dimata'>
-						<RxTriangleDown className='text-white text-4xl' />
+					<div className='rounded-md bg-primary'>
+						<RxTriangleDown className='text-base-100 text-4xl' />
 					</div>
 					<h3>Helpdesk</h3>
 				</Link>
@@ -19,13 +19,13 @@ export default function SideNav() {
 						destination='tickets'
 						notification={1}
 						label='Tickets'
-						icon={<TbLayoutGridAdd className='text-2xl' />}
+						icon={<TbLayoutGridAdd className='text-base-300 text-2xl' />}
 					/>
 					<NavLink
 						destination='agents/agent'
 						notification={2}
 						label='Agents'
-						icon={<CgProfile className='text-2xl' />}
+						icon={<CgProfile className='text-base-300 text-2xl' />}
 					/>
 					{/* <NavLink /> */}
 				</div>

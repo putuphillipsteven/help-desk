@@ -23,9 +23,9 @@ export function CreateButton({ label, variant, href }: CreateButtonProps) {
 		<Link href={href}>
 			<button
 				className={clsx('btn btn-sm centering-flex justify-between', {
-					'bg-blue-dimata border-transparent text-white hover:bg-white hover:text-blue-dimata hover:border-blue-dimata':
+					'bg-primary border-transparent text-base-100 hover:bg-base-100 hover:text-primary hover:border-primary':
 						variant === 'filled',
-					'bg-white border-blue-dimata text-blue-dimata hover:bg-blue-dimata hover:text-white hover:border-transparent':
+					'bg-base-100 border-primary text-primary hover:bg-primary hover:text-base-100 hover:border-transparent':
 						variant === 'outline',
 				})}
 			>
