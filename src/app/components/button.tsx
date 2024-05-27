@@ -38,7 +38,7 @@ export function CreateButton({ label, variant, href }: CreateButtonProps) {
 
 export function AddButton({ label }: AddButtonProps) {
 	return (
-		<button className='btn border-none bg-transparent text-blue-dimata shadow-none hover:bg-transparent p-0'>
+		<button className='btn border-none bg-transparent text-primary shadow-none hover:bg-transparent p-0'>
 			<FaPlus />
 			{label}
 		</button>
@@ -52,7 +52,7 @@ export function BackButton() {
 	};
 	return (
 		<button
-			className='btn btn-sm bg-transparent border-none shadow-none text-blue-dimata-2 hover:bg-transparent'
+			className='btn btn-sm bg-transparent border-none shadow-none text-primary hover:bg-transparent'
 			onClick={handleBack}
 		>
 			<FaArrowLeft className='text-lg' />

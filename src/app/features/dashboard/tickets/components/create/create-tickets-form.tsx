@@ -30,7 +30,7 @@ export default function CreateTicketForm() {
 			/>
 			<label className='form-control w-full'>
 				<div className='label'>
-					<span className='label-text cursor-pointer text-black-dimata'>Requester</span>
+					<span className='label-text cursor-pointer text-primary-text'>Requester</span>
 				</div>
 				<div className='w-full centering-flex gap-x-2'>
 					<TicketFormFields
@@ -51,10 +51,10 @@ export default function CreateTicketForm() {
 			</label>
 			<label className='form-control w-full'>
 				<div className='label'>
-					<span className='label-text cursor-pointer text-black-dimata'>Team</span>
+					<span className='label-text cursor-pointer text-primary-text'>Team</span>
 				</div>
 				<select
-					className='select select-bordered  text-black-dimata bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
+					className='select select-bordered  text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
 					{...register('team')}
 				>
 					<option>Select Team</option>
@@ -74,10 +74,10 @@ export default function CreateTicketForm() {
 			</label>
 			<label className='form-control w-full'>
 				<div className='label'>
-					<span className='label-text cursor-pointer text-black-dimata'>Agent</span>
+					<span className='label-text cursor-pointer text-primary-text'>Agent</span>
 				</div>
 				<select
-					className='select select-bordered  text-black-dimata bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
+					className='select select-bordered  text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
 					{...register('agent')}
 				>
 					<option>Select Agent</option>
@@ -96,10 +96,10 @@ export default function CreateTicketForm() {
 			</label>
 			<label className='form-control w-full'>
 				<div className='label'>
-					<span className='label-text cursor-pointer text-black-dimata'>Priority</span>
+					<span className='label-text cursor-pointer text-primary-text'>Priority</span>
 				</div>
 				<select
-					className='select select-bordered  text-black-dimata bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
+					className='select select-bordered  text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
 					{...register('priority')}
 				>
 					<option>Select Priority</option>
@@ -119,10 +119,10 @@ export default function CreateTicketForm() {
 			</label>
 			<label className='form-control w-full'>
 				<div className='label'>
-					<span className='label-text cursor-pointer text-black-dimata'>Status</span>
+					<span className='label-text cursor-pointer text-primary-text'>Status</span>
 				</div>
 				<select
-					className='select select-bordered  text-black-dimata bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
+					className='select select-bordered  text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
 					{...register('status')}
 				>
 					<option>Select Status</option>
@@ -153,7 +153,7 @@ export default function CreateTicketForm() {
 			/>
 			<button
 				type='submit'
-				className='btn btn-md place-self-end  bg-blue-dimata-2 border-transparent text-white hover:text-black-dimata hover:border-2 hover:border-blue-dimata-2 hover:bg-transparent'
+				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-primary hover:border hover:border-primary hover:bg-transparent'
 			>
 				Submit
 			</button>
