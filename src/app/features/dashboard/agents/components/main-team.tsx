@@ -65,9 +65,9 @@ export default function MainTeam({ children }: MainTeamProps) {
 									>
 										<p className='font-medium'>Name</p>
 										{name === 'desc' ? (
-											<LiaSortAlphaUpSolid className='text-2xl text-black-dimata' />
+											<LiaSortAlphaUpSolid className='text-2xl text-primary-text' />
 										) : (
-											<LiaSortAlphaDownSolid className='text-2xl text-black-dimata' />
+											<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
 										)}
 									</div>
 								</th>
@@ -78,9 +78,9 @@ export default function MainTeam({ children }: MainTeamProps) {
 									>
 										<p className='font-medium'>Agent</p>
 										{role === 'desc' ? (
-											<LiaSortAlphaUpSolid className='text-2xl text-black-dimata' />
+											<LiaSortAlphaUpSolid className='text-2xl text-primary-text' />
 										) : (
-											<LiaSortAlphaDownSolid className='text-2xl text-black-dimata' />
+											<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
 										)}
 									</div>
 								</th>

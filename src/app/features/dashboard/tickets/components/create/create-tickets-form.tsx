@@ -153,7 +153,7 @@ export default function CreateTicketForm() {
 			/>
 			<button
 				type='submit'
-				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-primary hover:border hover:border-primary hover:bg-transparent'
+				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
 			>
 				Submit
 			</button>

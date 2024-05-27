@@ -17,7 +17,7 @@ export default function AgentDetails({ id }: AgentDetailsProps) {
 		<div className='w-full h-full flex flex-col gap-y-2 p-2'>
 			<div className='centering-flex gap-x-2 w-full '>
 				{/* <div className='avatar'>
-						<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
+						<div className='w-10 rounded-full  border-2 border-neutral'>
 							<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
 						</div>
 					</div> */}
@@ -28,7 +28,7 @@ export default function AgentDetails({ id }: AgentDetailsProps) {
 				</div>
 				<div className='flex flex-col'>
 					<p className='text-xs'>{getFormattedString(agent?.name || 'Username')}</p>
-					<p className='text-xs'>{getFormattedEmail(agent?.email || '@')}</p>
+					<p className='text-xs text-neutral-text'>{getFormattedEmail(agent?.email || '@')}</p>
 				</div>
 			</div>
 			<div className='flex flex-col gap-y-2'>
@@ -50,9 +50,7 @@ export default function AgentDetails({ id }: AgentDetailsProps) {
 								</div>
 								<div className='flex flex-col gap-y-1'>
 									<p className='text-xs'>{team.name}</p>
-									<p className='text-xs text-light-gray-dimata3'>
-										{getFormattedString(team.leader)}
-									</p>
+									<p className='text-xs text-neutral-text'>{getFormattedString(team.leader)}</p>
 								</div>
 							</div>
 						);

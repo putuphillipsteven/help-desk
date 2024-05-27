@@ -30,7 +30,7 @@ export default function TeamDetails({ id }: TeamDetailProps) {
 				</div>
 				<div className='flex flex-col'>
 					<p className='text-xs'>{getFormattedString(team?.name || 'Username')}</p>
-					<p className='text-xs'>{team?.members.length} Agents</p>
+					<p className='text-xs text-neutral-text'>{team?.members.length} Agents</p>
 				</div>
 			</div>
 			<div className='flex flex-col gap-y-2'>
@@ -52,7 +52,7 @@ export default function TeamDetails({ id }: TeamDetailProps) {
 								</div>
 								<div className='flex flex-col gap-y-1'>
 									<p className='text-xs'>{el.role}</p>
-									<p className='text-xs text-light-gray-dimata3'>{getFormattedString(el.name)}</p>
+									<p className='text-xs text-neutral-text'>{getFormattedString(el.name)}</p>
 								</div>
 							</div>
 						);

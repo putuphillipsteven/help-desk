@@ -20,8 +20,7 @@ export default function AgentList({ agents }: AgentListProps) {
 			<tr
 				key={agent.id}
 				className={clsx('h-12', {
-					'bg-light-blue-dimata border-l-4 border-blue-dimata':
-						getAgentId(pathname) === String(agent.id),
+					'bg-primary-content border-l-4 border-primary': getAgentId(pathname) === String(agent.id),
 				})}
 			>
 				<td className='centering-flex h-full pl-20 py-2'>
@@ -39,7 +38,7 @@ export default function AgentList({ agents }: AgentListProps) {
 						<div className='flex flex-col'>
 							<Link href={`/dashboard/agents/agent/${agent.id}?na=asc`}>
 								<p className='text-xs'>{agent.name}</p>
-								<p className='text-xs'>{agent.email}</p>
+								<p className='text-xs text-neutral-text'>{agent.email}</p>
 							</Link>
 						</div>
 					</div>
@@ -47,8 +46,8 @@ export default function AgentList({ agents }: AgentListProps) {
 				<td>
 					<div
 						className={clsx('badge border-none', {
-							'bg-light-gray-dimata-5 text-black-dimata': agent.role === 'Agent',
-							'bg-blue-dimata-2 text-white': agent.role === 'Admin',
+							'bg-neutral text-primary-text': agent.role === 'Agent',
+							'bg-primary text-base-100': agent.role === 'Admin',
 						})}
 					>
 						{agent.role}
@@ -58,7 +57,7 @@ export default function AgentList({ agents }: AgentListProps) {
 					{agent.invitation === 'Waiting' && (
 						<div className='flex flex-col gap-y-1'>
 							<p className='text-xs'>Invitation sent</p>
-							<p className='text-xs text-blue-dimata-2'>Sent a reminder</p>
+							<p className='text-xs text-info-text'>Sent a reminder</p>
 						</div>
 					)}
 				</td>

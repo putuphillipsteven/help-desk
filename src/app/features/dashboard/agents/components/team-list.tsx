@@ -20,8 +20,7 @@ export default function TeamList({ team }: TeamListProps) {
 		return (
 			<tr
 				className={clsx('h-12', {
-					'bg-light-blue-dimata border-l-4 border-blue-dimata':
-						getTeamId(pathname) === String(team.id),
+					'bg-primary-content border-l-4 border-primary': getTeamId(pathname) === String(team.id),
 				})}
 			>
 				<td className='centering-flex h-full pl-20 py-2'>
@@ -39,52 +38,25 @@ export default function TeamList({ team }: TeamListProps) {
 						<div className='flex flex-col'>
 							<Link href={`/dashboard/agents/team/${team.id}?na=asc`}>
 								<p className='text-xs'>{team.name}</p>
-								<p className='text-xs'>{team?.members.length} agents</p>
+								<p className='text-xs text-neutral-text'>{team?.members.length} agents</p>
 							</Link>
 						</div>
 					</div>
 				</td>
 				<td>
-					<div className='avatar-group -space-x-4 rtl:space-x-reverse'>
+					<div className='avatar-group -space-x-4'>
 						{team?.members?.map((el) => {
 							return (
 								<div className='avatar placeholder'>
-									<div className='bg-neutral text-neutral-content rounded-full w-8 border-none'>
+									<div className='bg-neutral text-neutral-content rounded-full w-8 border-primary-content outline-none'>
 										<span>{getInitials(el?.name || 'User Name')}</span>
 									</div>
 								</div>
 							);
 						})}
-						{/* <div className='avatar'>
-							<div className='w-8'>
-								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-							</div>
-						</div>
-						<div className='avatar'>
-							<div className='w-8'>
-								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-							</div>
-						</div>
-						<div className='avatar'>
-							<div className='w-8'>
-								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-							</div>
-						</div>
-						<div className='avatar placeholder'>
-							<div className='w-8 bg-neutral text-neutral-content'>
-								<span>+99</span>
-							</div>
-						</div> */}
 					</div>
 				</td>
-				<td>
-					{/* {agent.invitation === 'Waiting' && (
-						<div className='flex flex-col gap-y-1'>
-							<p className='text-xs'>Invitation sent</p>
-							<p className='text-xs text-blue-dimata-2'>Sent a reminder</p>
-						</div>
-					)} */}
-				</td>
+				<td></td>
 			</tr>
 		);
 	});

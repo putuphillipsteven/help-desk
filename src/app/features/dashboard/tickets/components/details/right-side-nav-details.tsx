@@ -60,27 +60,27 @@ export default function RightSideNavDetails({
 	};
 
 	return (
-		<div className='centering-flex-col gap-y-0 h-full  border-r border-light-gray-dimata-5'>
-			<div className='w-full h-12 centering-flex justify-between p-2 border-b border-light-gray-dimata-5'>
+		<div className='centering-flex-col gap-y-0 h-full  border-r border-neutral'>
+			<div className='w-full h-12 centering-flex justify-between p-2 border-b border-neutral'>
 				<p className='font-medium'>Details</p>
-				<SlOptions className='text-2xl text-black-dimata' />
+				<SlOptions className='text-2xl text-primary-text' />
 			</div>
 			{sections.map((section) => (
 				<div
 					key={section.id}
-					className='w-full h-fit flex flex-col justify-between p-2 border-b border-light-gray-dimata-5 cursor-pointer'
+					className='w-full h-fit flex flex-col justify-between p-2 border-b border-neutral cursor-pointer'
 				>
 					<div className='centering-flex justify-between' onClick={() => toggleSection(section.id)}>
 						<p className='text-sm font-medium'>{section.title}</p>
-						<RiArrowDownSLine className='text-black-dimata text-2xl' />
+						<RiArrowDownSLine className='text-primary-text text-2xl' />
 					</div>
 					{openSection === section.id && (
 						<div className='flex flex-col gap-y-1'>
 							{section.title === 'Ticket Info' &&
 								Object.entries(section.content).map(([key, value]) => (
 									<div key={key} className='centering-flex gap-x-1'>
-										<p className='font-medium text-xs text-gray-600'>{key}:</p>
-										<p className='text-xs font-medium'>{value}</p>
+										<p className='font-medium text-xs text-primary-text'>{key}:</p>
+										<p className='text-xs font-medium text-neutral-text'>{value}</p>
 									</div>
 								))}
 							{section.title === 'Responsibility' && (
@@ -88,17 +88,17 @@ export default function RightSideNavDetails({
 									<div className='flex flex-col gap-y-2'>
 										<div className='centering-flex justify-between py-2'>
 											<p className='text-xs font-bold'>Team</p>
-											<p className='text-xs text-blue-dimata-2'>Change</p>
+											<p className='text-xs text-info-text'>Change</p>
 										</div>
 										<div className='centering-flex gap-x-2'>
 											<div className='avatar placeholder'>
-												<div className='bg-neutral text-neutral-content rounded-md w-12'>
+												<div className='bg-neutral text-primary-text rounded-md w-12'>
 													<span>{getInitials(section?.content.team || 'Team')}</span>
 												</div>
 											</div>
 											<div className='flex flex-col gap-y-1'>
 												<p className='text-xs'>Default Team</p>
-												<p className='text-xs text-light-gray-dimata3'>{section.content.team}</p>
+												<p className='text-xs text-neutral-text'>{section.content.team}</p>
 											</div>
 										</div>
 									</div>
@@ -107,8 +107,8 @@ export default function RightSideNavDetails({
 											<div className='centering-flex w-full justify-between'>
 												<p className='text-xs font-bold'>Agent</p>
 												<div className='centering-flex gap-x-2'>
-													<p className='text-xs text-blue-dimata-2'>Assign Me</p>
-													<p className='text-xs text-blue-dimata-2'>Change</p>
+													<p className='text-xs text-info-text'>Assign Me</p>
+													<p className='text-xs text-info-text'>Change</p>
 												</div>
 											</div>
 											<div className='centering-flex gap-x-4 w-full '>
@@ -124,7 +124,7 @@ export default function RightSideNavDetails({
 												</div>
 												<div className='flex flex-col'>
 													<p className='text-xs'>Username</p>
-													<p className='text-xs'>email@email.com</p>
+													<p className='text-xs text-neutral-text'>email@email.com</p>
 												</div>
 											</div>
 										</div>
@@ -145,7 +145,7 @@ export default function RightSideNavDetails({
 									</div>
 									<div className='flex flex-col'>
 										<p className='text-xs'>Username</p>
-										<p className='text-xs'>email@email.com</p>
+										<p className='text-xs text-neutral-text'>email@email.com</p>
 									</div>
 								</div>
 							)}
