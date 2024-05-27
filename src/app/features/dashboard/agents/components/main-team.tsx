@@ -54,8 +54,8 @@ export default function MainTeam({ children }: MainTeamProps) {
 	return (
 		<div className='w-full h-full flex'>
 			<div className='w-full h-full bg-white flex flex-col'>
-				<div className='w-full h-full border-r border-light-gray-dimata-5'>
-					<table className='w-full h-full'>
+				<div className='w-full min-h-screen border-r border-light-gray-dimata-5'>
+					<table className='w-full h-fit'>
 						<thead className='h-12 border-b border-light-gray-dimata-5'>
 							<tr className=''>
 								<th className='w-[50%] pl-36'>

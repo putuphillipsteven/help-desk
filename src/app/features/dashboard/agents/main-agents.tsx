@@ -38,10 +38,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 								</div>
 								<div
 									className={clsx('h-full centering-flex px-4', {
-										'border-b-2 border-blue-dimata-2 ': checkLinkAgents(
-											'team' || 'undefined',
-											pathname,
-										),
+										'border-b-2 border-primary': checkLinkAgents('team' || 'undefined', pathname),
 									})}
 								>
 									<Link

@@ -1,6 +1,17 @@
+'use client';
+
 import { CreateButton } from '@/app/components/button';
 import { filters } from '../../data/filters';
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import { useState } from 'react';
+import clsx from 'clsx';
 export default function LeftSideNavCreateTickets() {
+	const [filterDisplay, setFiterDisplay] = useState(true);
+
+	const toggleFilterDisplay = () => {
+		setFiterDisplay(!filterDisplay);
+	};
+
 	const renderedFilters = filters?.map((filter, index) => {
 		return (
 			<div key={index} className='w-full flex flex-col gap-y-2'>
@@ -19,18 +30,36 @@ export default function LeftSideNavCreateTickets() {
 		);
 	});
 	return (
-		<div className='w-full h-full bg-white flex flex-col shadow-inner'>
-			<div className='h-12 centering-flex justify-between p-2 border-r border-b border-neutral'>
+		<div className='w-full h-full bg-white flex flex-col'>
+			<div className='h-12 centering-flex justify-between p-2 border-b border-neutral bg-base-100'>
 				<p className='font-medium'>Tickets</p>
 				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />
 			</div>
-			<div className='flex flex-col gap-y-4 h-full p-2 border-r border-neutral'>
+
+			<div className={clsx('w-full h-full flex flex-col gap-y-4 p-2')}>
 				<input
 					type='text'
 					className='input input-sm rounded-lg bg-base-200 text-primary-text placeholder:text-base-300 border-none focus:ring-0 focus:border-none focus:outline-0'
 					placeholder='Search Ticket...'
 				/>
-				<div className='flex flex-col gap-y-4'>{renderedFilters}</div>
+				<div
+					className='w-full flex items-center gap-x-2 cursor-pointer '
+					onClick={toggleFilterDisplay}
+				>
+					<p className='text-sm'>Filter</p>
+					{filterDisplay ? (
+						<MdOutlineKeyboardArrowUp className='text-primary-text' />
+					) : (
+						<MdOutlineKeyboardArrowDown className='text-primary-text' />
+					)}
+				</div>
+				<div
+					className={clsx('flex flex-col h-fit gap-y-4 overflow-x-scroll no-scrollbar', {
+						hidden: !filterDisplay,
+					})}
+				>
+					{renderedFilters}
+				</div>
 			</div>
 		</div>
 	);

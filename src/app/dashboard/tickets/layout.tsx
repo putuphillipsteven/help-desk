@@ -13,15 +13,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	};
 
 	return (
-		<div className='flex flex-col w-full h-full overflow-hidden overflow-y-auto no-scrollbar'>
+		<div className='flex flex-col w-screen h-full overflow-hidden no-scrollbar'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
-			<div className='w-full h-full flex'>
+			<div className='w-full h-full flex flex-col lg:flex-row'>
 				{!handlePathname(pathname) && (
-					<div className='w-[240px] h-full overflow-hidden'>
+					<div className='w-full lg:w-[240px] h-full overflow-hidden'>
 						<SideNavTickets />
 					</div>
 				)}
-				<div className='flex-1 flex flex-col'>{children}</div>
+				<div className='flex-1 flex flex-col min-h-screen no-scrollbar'>{children}</div>
 			</div>
 		</div>
 	);

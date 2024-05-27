@@ -59,14 +59,14 @@ export default function MainTickets() {
 	});
 	return (
 		<Fragment>
-			<div className='h-12 centering-flex justify-between p-2 border-b border-neutral bg-base-100'>
+			<div className='h-12 centering-flex justify-between p-2 border-b border-l border-neutral bg-base-100'>
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
-			<div className='p-2 border-b border-neutral'>
+			<div className='centering-flex p-2 h-12 border-l border-b border-neutral'>
 				<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 			</div>
-			<div className='p-2'>
-				<table className='w-full text-black-dimata border-separate'>
+			<div className='p-2 border-l h-full  border-neutral'>
+				<table className='w-full text-black-dimata border-separate overflow-auto'>
 					<thead className=''>
 						<tr className='text-sm text-left uppercase h-8'>
 							<th className='font-medium p-2'>
