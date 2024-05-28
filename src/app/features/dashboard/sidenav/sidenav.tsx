@@ -18,16 +18,16 @@ export default function SideNav() {
 
 	return (
 		<Fragment>
-			<div
-				onClick={toggleSideNav}
-				className={clsx(
-					'w-8 h-8 centering-flex justify-center cursor-pointer bg-base-100 rounded-full drop-shadow-sm absolute -left-2 top-[50%] translate-y-2/4',
-				)}
-			>
-				{sideNavDisplay ? (
-					<MdOutlineKeyboardArrowLeft className='text-2xl text-primary-text' />
-				) : (
-					<MdOutlineKeyboardArrowRight className='text-2xl text-primary-text' />
+			<div>
+				{!sideNavDisplay && (
+					<div
+						onClick={toggleSideNav}
+						className={clsx(
+							'w-8 h-8 centering-flex justify-center cursor-pointer bg-base-100 rounded-full drop-shadow-sm absolute -left-2 top-[50%] translate-y-2/4 z-20',
+						)}
+					>
+						<MdOutlineKeyboardArrowRight className='text-2xl text-primary-text' />
+					</div>
 				)}
 			</div>
 			<div

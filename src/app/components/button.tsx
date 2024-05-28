@@ -52,7 +52,7 @@ export function BackButton() {
 	};
 	return (
 		<button
-			className='btn btn-sm bg-transparent border-none shadow-none text-primary hover:bg-transparent'
+			className='btn btn-sm bg-transparent border-none shadow-none text-primary hover:bg-transparent m-0 p-0'
 			onClick={handleBack}
 		>
 			<FaArrowLeft className='text-lg' />

@@ -24,15 +24,14 @@ export default function Alert({ msg }: AlertProps) {
 			)}
 		>
 			<p className='font-medium text-center'>{msg}</p>
-			<div className='flex flex-col gap-y-2 items-center justify-center md:items-start'>
-				<button className='btn btn-sm bg-base-100 border-transparent text-primary-text hover:bg-transparent'>
+			<div className='flex flex-col gap-y-1 items-center justify-center md:items-start'>
+				<button className='btn btn-xs centering-flex bg-base-100 border-transparent text-primary-text hover:bg-transparent'>
 					Read Setup Instruction
 				</button>
 				<button
-					className='btn btn-xs centering-flex bg-base-200 text-primary-text border-transparent'
+					className='btn btn-link btn-xs centering-flex border-transparent'
 					onClick={toggleAlert}
 				>
-					<RxCross2 />
 					Remind Me Later
 				</button>
 			</div>

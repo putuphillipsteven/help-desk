@@ -73,7 +73,7 @@ export default function CustomQuill({
 				style={{
 					borderRadius: '8px',
 					marginBottom: '10px',
-					width: '708px',
+					width: '100%',
 					height: '240px',
 					outline: 'none',
 					border: '1px solid #D1D5DB',
