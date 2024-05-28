@@ -43,7 +43,7 @@ export default function MainTickets() {
 						router.push(`tickets/details/${ticket.id}`);
 					}}
 				>
-					<p className='text-sm line-clamp-2'>{ticket.subject}</p>
+					<p className='text-sm w-full line-clamp-2'>{ticket.subject}</p>
 				</td>
 				<td className='p-2'>
 					<p className='text-sm line-clamp-2'>{ticket.agent}</p>
@@ -77,8 +77,8 @@ export default function MainTickets() {
 									className='checkbox checkbox-xs border border-neutral  checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white] rounded-sm'
 								/>
 							</th>
-							<th className='font-medium text-primary-text p-2'>Requester</th>
-							<th className='font-medium text-primary-text p-2 w-[20em]'>Subject</th>
+							<th className='font-medium text-primary-text p-2 w-[10em]'>Requester</th>
+							<th className='font-medium text-primary-text p-2'>Subject</th>
 							<th className='font-medium text-primary-text p-2'>Agent</th>
 							<th className='font-medium text-primary-text p-2'>Status</th>
 							<th className='font-medium text-primary-text p-2'>Last Message</th>
