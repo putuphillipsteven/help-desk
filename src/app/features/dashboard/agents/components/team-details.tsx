@@ -16,8 +16,8 @@ export default function TeamDetails({ id }: TeamDetailProps) {
 	const team = getTeamById(teams, +id);
 	const [showAgents, setShowAgents] = useState(true); // State variable to toggle visibility
 	return (
-		<div className='w-full h-full flex flex-col gap-y-2 p-2'>
-			<div className='centering-flex gap-x-2 w-full '>
+		<div className='w-full h-full flex flex-col gap-y-2 p-2 md:flex'>
+			<div className='hidden lg:flex items-center gap-x-2 w-full '>
 				{/* <div className='avatar'>
 						<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 							<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />

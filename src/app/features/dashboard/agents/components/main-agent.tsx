@@ -51,7 +51,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 
 	return (
 		<div className='w-full h-full flex'>
-			<div className='w-full h-full flex-1 flex flex-col'>
+			<div className='w-full h-full bg-base-100 flex-1 flex flex-col'>
 				<div className='w-full h-full overflow-hidden border-r border-neutral'>
 					<table className='w-full h-full'>
 						<thead className='h-[3em] border-b border-neutral'>
@@ -69,7 +69,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 										)}
 									</div>
 								</th>
-								<th className='md:flex-1 pr-4 '>
+								<th className='md:w-[50%] px-4 md:pl-36'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('ro')}
@@ -82,7 +82,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 										)}
 									</div>
 								</th>
-								<th className='hidden md:w-[40%] md:pr-36'>
+								<th className='md:w-[50%] px-4 md:pl-36'>
 									<div className='centering-flex gap-x-2'>
 										<p className='text-blue-dimata-2'></p>
 									</div>
@@ -102,7 +102,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 					</table>
 				</div>
 			</div>
-			<div className='w-[240px] h-full overflow-hidden hidden lg:flex'>{children}</div>
+			<div className='w-[240px] h-full overflow-hidden hidden xl:flex'>{children}</div>
 		</div>
 	);
 }

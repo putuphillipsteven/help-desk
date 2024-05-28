@@ -53,7 +53,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 								<IoIosSearch className='text-2xl text-primary' />
 							</div>
 						</div>
-						<div className='w-[240px] overflow-hidden hidden lg:flex'>
+						<div className='w-[240px] overflow-hidden hidden xl:flex'>
 							<div className='w-full h-12 centering-flex justify-between p-2 border-neutral gap-x-2'>
 								<p>Details</p>
 								<TbEdit className='text-2xl text-primary' />
