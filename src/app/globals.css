@@ -22,7 +22,7 @@
 		@apply text-base font-medium text-primary-text;
 	}
 	p {
-		@apply text-xl text-primary-text;
+		@apply text-xl text-primary-text [font-size:_clamp(.5em,5vw,1em)];
 	}
 	* {
 		@apply m-0 p-0 box-border;

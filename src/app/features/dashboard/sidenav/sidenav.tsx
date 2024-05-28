@@ -15,6 +15,7 @@ export default function SideNav() {
 	const toggleSideNav = () => {
 		setSideNavDisplay(!sideNavDisplay);
 	};
+
 	return (
 		<Fragment>
 			<div
@@ -31,7 +32,7 @@ export default function SideNav() {
 			</div>
 			<div
 				className={clsx(
-					'w-full md:w-[240px] bg-base-100 max-h-screen p-[20px] flex flex-col justify-between drop-shadow-lg relative',
+					'w-full md:w-[240px] bg-base-100 h-screen p-[20px] flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300',
 					{
 						hidden: !sideNavDisplay,
 					},

@@ -58,7 +58,7 @@ export default function MainTickets() {
 		);
 	});
 	return (
-		<Fragment>
+		<div className='grid'>
 			<div className='h-12 centering-flex justify-between p-2 border-b border-l border-neutral bg-base-100'>
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
@@ -85,6 +85,6 @@ export default function MainTickets() {
 					<tbody>{renderedTickets}</tbody>
 				</table>
 			</div>
-		</Fragment>
+		</div>
 	);
 }
