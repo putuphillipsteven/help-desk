@@ -8,6 +8,8 @@ import { getInitials } from '@/app/lib/utils/naming/naming';
 
 export default function MainTickets() {
 	const router = useRouter();
+
+	// Rendered tickets, mapping from ticket list
 	const renderedTickets = tickets?.map((ticket) => {
 		return (
 			<tr key={ticket.id}>
@@ -41,10 +43,10 @@ export default function MainTickets() {
 						router.push(`tickets/details/${ticket.id}`);
 					}}
 				>
-					<p className='text-sm'>{ticket.subject}</p>
+					<p className='text-sm line-clamp-2'>{ticket.subject}</p>
 				</td>
 				<td className='p-2'>
-					<p className='text-sm'>{ticket.agent}</p>
+					<p className='text-sm line-clamp-2'>{ticket.agent}</p>
 				</td>
 				<td className='p-2'>
 					<div className='badge bg-primary border-transparent gap-2 text-base-100'>
@@ -52,31 +54,31 @@ export default function MainTickets() {
 					</div>
 				</td>
 				<td className='p-2'>
-					<p className='text-sm'>Last 5 minutes</p>
+					<p className='text-sm line-clamp-2'>Last 5 minutes</p>
 				</td>
 			</tr>
 		);
 	});
 	return (
-		<div className='grid'>
-			<div className='h-12 centering-flex justify-between p-2 border-b border-l border-neutral bg-base-100'>
+		<div className='grid grid-rows-[3em_3em_1fr] grid-cols-1 w-full h-full'>
+			<div className='h-full centering-flex justify-between p-2 border-b border-l border-neutral bg-base-100'>
 				<p className='font-medium'>All Recent Tickets</p>
 			</div>
-			<div className='centering-flex p-2 h-12 border-l border-b border-neutral'>
+			<div className='centering-flex p-2 h-full border-l border-b border-neutral'>
 				<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 			</div>
-			<div className='p-2 border-l h-full  border-neutral'>
+			<div className='p-2 border-l w-full h-full border-neutral overflow-auto'>
 				<table className='w-full text-black-dimata border-separate overflow-auto'>
 					<thead className=''>
 						<tr className='text-sm text-left uppercase h-8'>
-							<th className='font-medium p-2'>
+							<th className='font-medium p-2 w-8'>
 								<input
 									type='checkbox'
 									className='checkbox checkbox-xs border border-neutral  checked:border-primary [--chkbg:theme(colors.primary)] [--chkfg:white] rounded-sm'
 								/>
 							</th>
 							<th className='font-medium text-primary-text p-2'>Requester</th>
-							<th className='font-medium text-primary-text p-2'>Subject</th>
+							<th className='font-medium text-primary-text p-2 w-[20em]'>Subject</th>
 							<th className='font-medium text-primary-text p-2'>Agent</th>
 							<th className='font-medium text-primary-text p-2'>Status</th>
 							<th className='font-medium text-primary-text p-2'>Last Message</th>

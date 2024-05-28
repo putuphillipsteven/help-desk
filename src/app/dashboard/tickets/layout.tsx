@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	};
 
 	return (
-		<div className='flex flex-col w-screen h-full overflow-hidden no-scrollbar'>
+		<div className='flex flex-col w-full h-full overflow-hidden no-scrollbar'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col lg:flex-row'>
 				{!handlePathname(pathname) && (

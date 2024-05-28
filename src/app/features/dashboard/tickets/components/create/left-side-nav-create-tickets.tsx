@@ -30,12 +30,11 @@ export default function LeftSideNavCreateTickets() {
 		);
 	});
 	return (
-		<div className='w-full h-full bg-white flex flex-col'>
-			<div className='h-12 centering-flex justify-between p-2 border-b border-neutral bg-base-100'>
+		<div className='w-full h-full bg-white grid grid-rows-[3em_1fr]'>
+			<div className='h-full centering-flex justify-between p-2 border-b border-neutral bg-base-100'>
 				<p className='font-medium'>Tickets</p>
 				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />
 			</div>
-
 			<div className={clsx('w-full h-full flex flex-col gap-y-4 p-2')}>
 				<input
 					type='text'
