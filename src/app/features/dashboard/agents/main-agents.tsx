@@ -17,7 +17,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 	const pathname = usePathname();
 
 	return (
-		<Fragment>
+		<div className=''>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col overflow-y-auto no-scrollbar'>
 				<div className='w-full h-fit flex flex-col'>
@@ -53,16 +53,16 @@ export default function MainAgents({ children }: MainAgentsProps) {
 								<IoIosSearch className='text-2xl text-primary' />
 							</div>
 						</div>
-						<div className='w-[240px] overflow-hidden'>
+						<div className='w-[240px] overflow-hidden hidden lg:flex'>
 							<div className='w-full h-12 centering-flex justify-between p-2 border-neutral gap-x-2'>
 								<p>Details</p>
 								<TbEdit className='text-2xl text-primary' />
 							</div>
 						</div>
 					</div>
-					<div>{children}</div>
+					<div className=''>{children}</div>
 				</div>
 			</div>
-		</Fragment>
+		</div>
 	);
 }
