@@ -22,7 +22,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 			<div className='w-full h-full flex flex-col overflow-y-auto no-scrollbar'>
 				<div className='w-full h-fit flex flex-col'>
 					<div className='w-full h-12 centering-flex justify-between border-b  border-neutral'>
-						<div className='w-full bg-white h-full px-2 centering-flex justify-between border-r border-neutral'>
+						<div className='w-full bg-white flex-1 h-full px-2 centering-flex justify-between border-r border-neutral'>
 							<div className='w-full h-12 centering-flex gap-x-2'>
 								<div
 									className={clsx('h-full centering-flex px-4', {
@@ -54,7 +54,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 							</div>
 						</div>
 						<div className='w-[240px] overflow-hidden'>
-							<div className='w-full h-12 centering-flex justify-between p-2 border-b border-neutral gap-x-2'>
+							<div className='w-full h-12 centering-flex justify-between p-2 border-neutral gap-x-2'>
 								<p>Details</p>
 								<TbEdit className='text-2xl text-primary' />
 							</div>

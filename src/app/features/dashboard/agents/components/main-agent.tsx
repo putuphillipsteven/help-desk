@@ -51,10 +51,10 @@ export default function MainAgent({ children }: MainAgentProps) {
 
 	return (
 		<div className='w-full h-full flex'>
-			<div className='w-full h-full bg-white flex flex-col'>
-				<div className='w-full h-full border-r border-light-gray-dimata-5'>
+			<div className='w-full h-full flex-1 bg-white flex flex-col'>
+				<div className='w-full h-full border-r border-neutral'>
 					<table className='w-full h-full'>
-						<thead className='h-12 border-b border-light-gray-dimata-5'>
+						<thead className='h-12 border-b border-neutral'>
 							<tr className=''>
 								<th className='w-[50%] pl-36'>
 									<div

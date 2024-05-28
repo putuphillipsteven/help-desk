@@ -41,7 +41,7 @@ export const CreateTicketSchema: ZodType<TicketFormData> = z.object({
 		.min(10, { message: 'Subject is required, min 10 characters' }),
 	name: z
 		.string({ required_error: 'Requester name is required' })
-		.min(3, { message: 'Name is required, minimal 3 characters' }),
+		.min(3, { message: 'Minimal 3 characters' }),
 	email: z
 		.string({ required_error: 'Requester email is required' })
 		.email({ message: 'Must be an email' }),

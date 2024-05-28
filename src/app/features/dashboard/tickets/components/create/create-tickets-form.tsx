@@ -20,7 +20,10 @@ export default function CreateTicketForm() {
 		console.log('SUCCESS', data);
 	};
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-4'>
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className='w-full centering-flex-col gap-y-4  lg:w-[725px]'
+		>
 			<TicketFormFields
 				type='text'
 				placeholder='Enter subject...'
