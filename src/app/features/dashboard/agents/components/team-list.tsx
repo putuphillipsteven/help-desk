@@ -48,7 +48,7 @@ export default function TeamList({ team, children }: TeamListProps) {
 						<div className='avatar-group -space-x-4 w-full'>
 							{team?.members?.map((el) => {
 								return (
-									<div className='avatar placeholder'>
+									<div className='avatar placeholder' key={el.name}>
 										<div className='bg-neutral text-neutral-content rounded-full w-8 border-primary-content outline-none'>
 											<span>{getInitials(el?.name || 'User Name')}</span>
 										</div>

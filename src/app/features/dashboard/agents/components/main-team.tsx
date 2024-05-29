@@ -24,7 +24,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 			params.set('na', 'asc');
 			router.replace(`?${params.toString()}`);
 		}
-	}, []);
+	}, [params, router]);
 
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
@@ -97,7 +97,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 								<td></td>
 								<td className=''></td>
 							</tr>
-							<TeamList children={children} team={teams} />
+							<TeamList team={teams}>{children}</TeamList>
 						</tbody>
 					</table>
 				</div>

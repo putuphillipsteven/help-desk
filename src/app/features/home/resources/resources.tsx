@@ -62,7 +62,7 @@ export default function Resources() {
 						/>
 						<h4>
 							Free Training And Demos From <br />
-							The Dimata's Team
+							The Dimata Team
 						</h4>
 						<p className='text-xs w-[80%]'>
 							Stay in touch with customers anytime, wherever you are, on web and mobile. Assist them

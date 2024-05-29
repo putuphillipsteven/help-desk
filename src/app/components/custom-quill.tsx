@@ -38,7 +38,7 @@ export default function CustomQuill({
 
 	useEffect(() => {
 		register(name);
-	}, [register]);
+	}, [register, name]);
 
 	const onEditorStateChange = (editorState: any) => {
 		setValue(name, editorState);
@@ -85,7 +85,7 @@ export default function CustomQuill({
 				</span>
 			) : (
 				<span className='place-self-start pt-2 opacity-0'>
-					<p className='text-red-500 text-xs'>'TEST'</p>
+					<p className='text-red-500 text-xs'>NULL</p>
 				</span>
 			)}
 		</Fragment>

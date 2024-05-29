@@ -42,7 +42,7 @@ export default function AgentDetails({ id }: AgentDetailsProps) {
 				{showTeams &&
 					agent?.teams?.map((team) => {
 						return (
-							<div className='centering-flex gap-x-2'>
+							<div className='centering-flex gap-x-2' key={team.leader}>
 								<div className='avatar placeholder'>
 									<div className='bg-neutral text-neutral-content rounded-md w-12'>
 										<span>{getInitials(team.name || 'Team')}</span>

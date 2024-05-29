@@ -24,7 +24,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 			params.set('na', 'asc');
 			router.replace(`?${params.toString()}`);
 		}
-	}, []);
+	}, [params, router]);
 
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
@@ -97,7 +97,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 								<td></td>
 								<td className=''></td>
 							</tr>
-							<AgentList agents={agents} children={children} />
+							<AgentList agents={agents}>{children}</AgentList>
 						</tbody>
 					</table>
 				</div>

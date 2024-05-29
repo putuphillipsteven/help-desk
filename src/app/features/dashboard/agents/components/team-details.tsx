@@ -44,7 +44,7 @@ export default function TeamDetails({ id }: TeamDetailProps) {
 				{showAgents &&
 					team?.members?.map((el) => {
 						return (
-							<div className='centering-flex gap-x-2'>
+							<div className='centering-flex gap-x-2' key={el.name}>
 								<div className='avatar placeholder'>
 									<div className='bg-neutral text-neutral-content rounded-full w-12'>
 										<span>{getInitials(el.name || 'Team')}</span>
