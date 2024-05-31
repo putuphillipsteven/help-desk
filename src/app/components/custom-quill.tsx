@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import 'react-quill/dist/quill.snow.css';
 import { FieldError, UseFormRegister, UseFormSetValue, UseFormTrigger } from 'react-hook-form';
