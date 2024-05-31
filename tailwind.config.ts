@@ -15,6 +15,8 @@ const config: Config = {
 				'purple-gradient': 'linear-gradient(to right, #D3D2FF, #FFFFFF)',
 				'purple-int-gradient': 'linear-gradient(to right, #7573FF, #625FFB)',
 				'green-gradient': 'linear-gradient(to right, #D6F4DC, #FFFFFF)',
+				'login-gradient':
+					'linear-gradient(to bottom, rgba(2,0,36,0) 0%, rgba(70,95,241,0.5) 37%, rgba(70,95,241,0.7) 100%)',
 			},
 		},
 		borderRadius: {
@@ -26,7 +28,7 @@ const config: Config = {
 			'4xl': '48px',
 		},
 		colors: {
-			'primary-text': '#000000',
+			'primary-text': '#324054',
 			'secondary-text': '#6B7280',
 			'info-text': '#2D68FE',
 			'neutral-text': '#71839B',
