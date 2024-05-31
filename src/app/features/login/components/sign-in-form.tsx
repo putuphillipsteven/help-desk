@@ -1,51 +1,38 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import TextInput from './sign-up-text-input';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SignUpData, SignUpSchema } from '../utils/signUpSchema';
+import { SignInData, SignInSchema } from '../utils/signInSchema';
+import SignInTextInput from './sign-in-text-input';
 
-export default function SignUpForm() {
+export default function SignInForm() {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<SignUpData>({ resolver: zodResolver(SignUpSchema) });
+	} = useForm<SignInData>({ resolver: zodResolver(SignInSchema) });
 
-	const onSubmit = async (data: SignUpData) => {
+	const onSubmit = async (data: SignInData) => {
 		console.log('SUCCESS', data);
 	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-1'>
-			<TextInput
+			<SignInTextInput
 				type='text'
 				placeholder='Enter First Name...'
-				name='firstname'
-				register={register}
-				error={errors.firstname}
-			/>
-			<TextInput
-				type='text'
-				placeholder='Enter Last Name...'
-				name='lastname'
-				register={register}
-				error={errors.lastname}
-			/>
-			<TextInput
-				type='text'
-				placeholder='Enter Email Name...'
 				name='email'
 				register={register}
 				error={errors.email}
 			/>
-			<TextInput
+			<SignInTextInput
 				type='text'
-				placeholder='Enter Password...'
+				placeholder='Enter Last Name...'
 				name='password'
 				register={register}
 				error={errors.password}
 			/>
+
 			<button
 				type='submit'
 				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'

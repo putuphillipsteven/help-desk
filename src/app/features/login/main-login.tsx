@@ -15,7 +15,7 @@ export default function MainLogin({ children }: MainLoginProps) {
 	console.log(`pathname`, pathname);
 	return (
 		<div className='min-h-screen max-w-screen-2xl flex flex-col items-stretch justify-between bg-base-100 p-[2em] gap-x-[20em] gap-y-[0.5em]'>
-			<div className='flex w-full h-[10em] bg-primary rounded-lg overflow-hidden relative bg-login-gradient'>
+			<div className='hidden lg:flex w-full h-[10em] bg-primary rounded-lg overflow-hidden relative bg-login-gradient'>
 				<div className='absolute w-full h-full bg-login-gradient z-10'></div>
 				<Image
 					src={'/login/wave-image.jpeg'}
