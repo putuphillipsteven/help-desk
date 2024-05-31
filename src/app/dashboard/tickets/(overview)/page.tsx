@@ -1,4 +1,4 @@
-import MainTickets from '@/app/features/dashboard/tickets/components/main-tickets';
+import MainTickets from '@/app/features/dashboard/tickets/main-tickets';
 
 export default function Page() {
 	return (

@@ -1,7 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
-import { tickets } from '../data/tickets';
+import { tickets } from './data/tickets';
 import { CreateButton } from '@/app/components/button';
 import { useRouter } from 'next/navigation';
 import { getInitials } from '@/app/lib/utils/naming/naming';
