@@ -53,19 +53,19 @@ export default function MainLogin({ children }: MainLoginProps) {
 				</Link>
 				<div className='w-full h-fit p-1 bg-neutral rounded-md centering-flex justify-between gap-x-2'>
 					<Link
-						href={'/login/signup'}
+						href={'signup'}
 						className={clsx('centering-flex-col flex-1 p-1 rounded-md', {
-							'bg-primary text-base-100': pathname === '/login/signup',
-							'bg-transparent text-base-300': pathname !== '/login/signup',
+							'bg-primary text-base-100': pathname === '/signup',
+							'bg-transparent text-base-300': pathname !== '/signup',
 						})}
 					>
 						Sign Up
 					</Link>
 					<Link
-						href={'/login/signin'}
+						href={'signin'}
 						className={clsx('centering-flex-col flex-1 p-1 rounded-md', {
-							'bg-primary text-base-100': pathname === '/login/signin',
-							'bg-transparent text-base-300': pathname !== '/login/signin',
+							'bg-primary text-base-100': pathname === '/signin',
+							'bg-transparent text-base-300': pathname !== '/signin',
 						})}
 					>
 						Sign In
