@@ -12,10 +12,9 @@ interface MainLoginProps {
 export default function MainLogin({ children }: MainLoginProps) {
 	const pathname = usePathname();
 
-	console.log(`pathname`, pathname);
 	return (
-		<div className='min-h-screen max-w-screen-2xl flex flex-col items-stretch justify-between bg-base-100 p-[2em] gap-x-[20em] gap-y-[0.5em]'>
-			<div className='hidden lg:flex w-full h-[10em] bg-primary rounded-lg overflow-hidden relative bg-login-gradient'>
+		<div className='min-h-screen max-w-screen-2xl flex flex-col lg:flex-row  bg-base-100 p-[2em] gap-x-[10em] gap-y-[0.5em]'>
+			<div className='hidden lg:flex lg:flex-1 rounded-lg overflow-hidden relative bg-login-gradient'>
 				<div className='absolute w-full h-full bg-login-gradient z-10'></div>
 				<Image
 					src={'/login/wave-image.jpeg'}
@@ -44,17 +43,17 @@ export default function MainLogin({ children }: MainLoginProps) {
 					</div>
 				</div>
 			</div>
-			<div className='centering-flex-col flex-1 justify-start items-center gap-y-4'>
+			<div className='centering-flex-col lg:w-full flex-1 lg:px-[8em] justify-start lg:justify-center items-center gap-y-4'>
 				<Link className='centering-flex gap-x-4 w-fit overflow-hidden' href={'/dashboard'}>
 					<div className='rounded-md bg-primary'>
 						<RxTriangleDown className='text-base-100 text-3xl' />
 					</div>
 					<h3 className='font-bold text-primary-text'>Helpdesk</h3>
 				</Link>
-				<div className='w-full h-fit p-1 bg-neutral rounded-md centering-flex justify-between gap-x-2'>
+				<div className='w-full h-fit p-1 bg-primary-content rounded-md centering-flex justify-between gap-x-2'>
 					<Link
 						href={'signup'}
-						className={clsx('centering-flex-col flex-1 p-1 rounded-md', {
+						className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
 							'bg-primary text-base-100': pathname === '/signup',
 							'bg-transparent text-base-300': pathname !== '/signup',
 						})}
@@ -63,7 +62,7 @@ export default function MainLogin({ children }: MainLoginProps) {
 					</Link>
 					<Link
 						href={'signin'}
-						className={clsx('centering-flex-col flex-1 p-1 rounded-md', {
+						className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
 							'bg-primary text-base-100': pathname === '/signin',
 							'bg-transparent text-base-300': pathname !== '/signin',
 						})}

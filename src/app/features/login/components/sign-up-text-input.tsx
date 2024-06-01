@@ -1,6 +1,8 @@
 import capitalize from 'capitalize';
 import { FieldError, UseFormRegister } from 'react-hook-form';
 import { SignUpData } from '../utils/signUpSchema';
+import Link from 'next/link';
+import clsx from 'clsx';
 
 type SignUpValidInputNames = 'firstname' | 'lastname' | 'email' | 'password';
 
@@ -11,6 +13,8 @@ export type SignUpInputProps = {
 	register: UseFormRegister<SignUpData>;
 	error: FieldError | undefined;
 	valueAsNumber?: boolean;
+	label?: string;
+	isSignUp?: boolean;
 };
 
 export default function TextInput({
@@ -20,12 +24,32 @@ export default function TextInput({
 	register,
 	error,
 	valueAsNumber,
+	label,
+	isSignUp,
 }: SignUpInputProps) {
 	return (
-		<label className='form-control w-full'>
-			<div className='label'>
-				<span className='label-text cursor-pointer text-primary-text'>{capitalize(name)}</span>
-			</div>
+		<label className='form-control w-full flex flex-col gap-y-1'>
+			{name !== 'password' ? (
+				<div className='label p-0'>
+					<span className='label-text cursor-pointer text-primary-text'>
+						{label ? label : capitalize(name)}
+					</span>
+				</div>
+			) : (
+				<div className={clsx('centering-flex w-full justify-between')}>
+					<div className='label p-0'>
+						<span className='label-text cursor-pointer text-primary-text'>{capitalize(name)}</span>
+					</div>
+					<Link
+						className={clsx('label p-0 text-primary text-xs', {
+							hidden: isSignUp,
+						})}
+						href={'#'}
+					>
+						Forgot Password?
+					</Link>
+				</div>
+			)}
 			<input
 				type={type}
 				placeholder={placeholder}
@@ -35,12 +59,12 @@ export default function TextInput({
 				}
 			/>
 			{error ? (
-				<span className='error-message place-self-start pt-2'>
-					<p className='text-red-500 text-xs'>{error.message}</p>
+				<span className='error-message place-self-start'>
+					<p className='text-error text-xs'>{error.message}</p>
 				</span>
 			) : (
-				<span className='place-self-start pt-2 opacity-0'>
-					<p className='text-red-500 text-xs'>NULL</p>
+				<span className='place-self-start opacity-0'>
+					<p className='text-error text-xs'>NULL</p>
 				</span>
 			)}
 		</label>

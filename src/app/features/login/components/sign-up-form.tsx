@@ -22,6 +22,7 @@ export default function SignUpForm() {
 				type='text'
 				placeholder='Enter First Name...'
 				name='firstname'
+				label='First Name'
 				register={register}
 				error={errors.firstname}
 			/>
@@ -29,12 +30,13 @@ export default function SignUpForm() {
 				type='text'
 				placeholder='Enter Last Name...'
 				name='lastname'
+				label='Last Name'
 				register={register}
 				error={errors.lastname}
 			/>
 			<TextInput
 				type='text'
-				placeholder='Enter Email Name...'
+				placeholder='Enter Email...'
 				name='email'
 				register={register}
 				error={errors.email}
@@ -45,12 +47,13 @@ export default function SignUpForm() {
 				name='password'
 				register={register}
 				error={errors.password}
+				isSignUp={true}
 			/>
 			<button
 				type='submit'
-				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
+				className='btn btn-md w-full  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
 			>
-				Submit
+				Sign Up
 			</button>
 		</form>
 	);

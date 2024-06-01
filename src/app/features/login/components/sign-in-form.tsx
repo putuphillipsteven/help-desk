@@ -17,17 +17,17 @@ export default function SignInForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-1'>
+		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-2'>
 			<SignInTextInput
 				type='text'
-				placeholder='Enter First Name...'
+				placeholder='Enter Email...'
 				name='email'
 				register={register}
 				error={errors.email}
 			/>
 			<SignInTextInput
 				type='text'
-				placeholder='Enter Last Name...'
+				placeholder='Enter Password...'
 				name='password'
 				register={register}
 				error={errors.password}
@@ -35,9 +35,9 @@ export default function SignInForm() {
 
 			<button
 				type='submit'
-				className='btn btn-md place-self-end  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
+				className='btn btn-md w-full  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
 			>
-				Submit
+				Login
 			</button>
 		</form>
 	);
