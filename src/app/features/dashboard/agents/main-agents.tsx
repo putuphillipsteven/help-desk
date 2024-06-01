@@ -17,10 +17,10 @@ export default function MainAgents({ children }: MainAgentsProps) {
 	const pathname = usePathname();
 
 	return (
-		<div className=''>
+		<div className='w-full h-full'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col overflow-y-auto no-scrollbar'>
-				<div className='w-full h-fit flex flex-col'>
+				<div className='w-full h-full flex flex-col'>
 					<div className='w-full h-12 centering-flex justify-between border-b  border-neutral'>
 						<div className='w-full bg-white flex-1 h-full px-2 centering-flex justify-between border-r border-neutral'>
 							<div className='w-full h-12 centering-flex gap-x-2'>
@@ -60,7 +60,7 @@ export default function MainAgents({ children }: MainAgentsProps) {
 							</div>
 						</div>
 					</div>
-					<div className=''>{children}</div>
+					<div className='h-full'>{children}</div>
 				</div>
 			</div>
 		</div>

@@ -53,7 +53,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 		<div className='w-full h-full flex'>
 			<div className='w-full h-full bg-base-100 flex-1 flex flex-col'>
 				<div className='w-full h-full overflow-hidden border-r border-neutral'>
-					<table className='w-full h-full'>
+					<table className='w-full h-fit'>
 						<thead className='h-[3em] border-b border-neutral'>
 							<tr className=''>
 								<th className='md:w-[50%] px-4 md:pl-36'>
