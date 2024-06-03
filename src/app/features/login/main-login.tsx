@@ -44,33 +44,35 @@ export default function MainLogin({ children }: MainLoginProps) {
 				</div>
 			</div>
 			<div className='centering-flex-col lg:w-full flex-1 lg:px-[8em] justify-start lg:justify-center items-center gap-y-4'>
-				<Link className='centering-flex gap-x-4 w-fit overflow-hidden' href={'/dashboard'}>
-					<div className='rounded-md bg-primary'>
-						<RxTriangleDown className='text-base-100 text-3xl' />
+				<div className='w-full p-1 centering-flex-col justify-start gap-y-2 h-[35em]'>
+					<Link className='centering-flex gap-x-4 w-fit overflow-hidden' href={'/dashboard'}>
+						<div className='rounded-md bg-primary'>
+							<RxTriangleDown className='text-base-100 text-3xl' />
+						</div>
+						<h3 className='font-bold text-primary-text'>Helpdesk</h3>
+					</Link>
+					<div className='w-full centering-flex bg-primary-content rounded-md'>
+						<Link
+							href={'signup'}
+							className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
+								'bg-primary text-base-100': pathname === '/signup',
+								'bg-transparent text-base-300': pathname !== '/signup',
+							})}
+						>
+							Sign Up
+						</Link>
+						<Link
+							href={'signin'}
+							className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
+								'bg-primary text-base-100': pathname === '/signin',
+								'bg-transparent text-base-300': pathname !== '/signin',
+							})}
+						>
+							Sign In
+						</Link>
 					</div>
-					<h3 className='font-bold text-primary-text'>Helpdesk</h3>
-				</Link>
-				<div className='w-full h-fit p-1 bg-primary-content rounded-md centering-flex justify-between gap-x-2'>
-					<Link
-						href={'signup'}
-						className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
-							'bg-primary text-base-100': pathname === '/signup',
-							'bg-transparent text-base-300': pathname !== '/signup',
-						})}
-					>
-						Sign Up
-					</Link>
-					<Link
-						href={'signin'}
-						className={clsx('centering-flex-col flex-1 p-2 rounded-md', {
-							'bg-primary text-base-100': pathname === '/signin',
-							'bg-transparent text-base-300': pathname !== '/signin',
-						})}
-					>
-						Sign In
-					</Link>
+					<div className='w-full'>{children}</div>
 				</div>
-				<div className='w-full'>{children}</div>
 			</div>
 		</div>
 	);
