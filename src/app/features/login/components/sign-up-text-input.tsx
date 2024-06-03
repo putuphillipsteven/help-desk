@@ -4,7 +4,9 @@ import { SignUpData } from '../utils/signUpSchema';
 import Link from 'next/link';
 import clsx from 'clsx';
 
-type SignUpValidInputNames = 'firstname' | 'lastname' | 'email' | 'password';
+type SignUpValidInputNames =
+	// 'firstname' | 'lastname' |
+	'email' | 'password';
 
 export type SignUpInputProps = {
 	type: string;

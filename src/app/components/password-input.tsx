@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { FieldError, UseFormRegister } from 'react-hook-form';
 import { BiHide, BiShow } from 'react-icons/bi';
 
-export type PassworInputProps = {
-	type: string;
+export type PasswordInputProps = {
 	placeholder: string;
 	name: string;
 	register: UseFormRegister<any>;
@@ -14,17 +13,16 @@ export type PassworInputProps = {
 };
 
 export const PasswordInput = ({
-	type,
 	placeholder,
 	name,
 	register,
 	error,
 	valueAsNumber,
-}: PassworInputProps) => {
+}: PasswordInputProps) => {
 	const [passwordVisible, setPasswordVisible] = useState(true);
 
 	const togglePasswordVisibility = () => {
-		const input = document.getElementById('password') as HTMLInputElement;
+		const input = document.getElementById(name) as HTMLInputElement;
 		if (input.type === 'password') {
 			setPasswordVisible(false);
 			console.log(input.type);
@@ -45,13 +43,13 @@ export const PasswordInput = ({
 					autoComplete='off'
 					type={passwordVisible ? 'password' : 'text'}
 					className='input input-bordered text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
-					id={'password'}
+					id={name}
 					placeholder={placeholder}
 					{...register(name, { valueAsNumber })}
 				/>
 				<div
 					className='absolute right-0 mr-4 cursor-pointer text-primary-text'
-					aria-controls={'password'}
+					aria-controls={name}
 					aria-expanded={passwordVisible}
 					onClick={() => togglePasswordVisibility()}
 				>
