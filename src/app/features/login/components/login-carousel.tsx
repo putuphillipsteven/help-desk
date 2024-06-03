@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 interface CarouselItem {
@@ -34,14 +34,28 @@ const data: CarouselItem[] = [
 ];
 
 const LoginCarousel: React.FC = () => {
+	const [activeSlide, setActiveSlide] = useState(0);
+
+	const nextSlide = () => {
+		const nextIndex = (activeSlide + 1) % data.length;
+		setActiveSlide(nextIndex);
+	};
+
+	const prevSlide = () => {
+		const nextIndex = (activeSlide - 1 + data.length) % data.length;
+		setActiveSlide(nextIndex);
+	};
+
 	return (
 		<div className='hidden justify-between md:flex md:flex-col md:flex-1 lg:w-[37em] h-full rounded-lg overflow-hidden relative'>
 			<div className='carousel w-full h-full relative'>
-				{data.map((item) => (
+				{data.map((item, index) => (
 					<div
 						id={`slide${item.id}`}
 						key={item.id}
-						className='carousel-item relative w-full h-full'
+						className={`carousel-item relative w-full h-full ${
+							index === activeSlide ? '' : 'hidden'
+						}`}
 					>
 						<Image
 							src={item.image}
@@ -68,17 +82,19 @@ const LoginCarousel: React.FC = () => {
 								<p className='text-base-100 text-xs text-center'>{item.subDescription}</p>
 							</div>
 						</div>
-						<div className='flex justify-center w-full py-2 gap-2 z-20 absolute bottom-0 mb-4'>
-							{data.map((item) => (
-								<a
-									key={item.id}
-									href={`#slide${item.id}`}
-									className='w-4 h-4 rounded-full p-0 bg-neutral cursor-pointer z-20'
-								></a>
-							))}
-						</div>
 					</div>
 				))}
+				<div className='flex justify-center w-full py-2 gap-2 z-20 absolute bottom-0 mb-4'>
+					{data.map((dotItem, index) => (
+						<button
+							key={dotItem.id}
+							onClick={() => setActiveSlide(index)}
+							className={`w-4 h-4 rounded-full p-0 bg-neutral cursor-pointer z-20 ${
+								index === activeSlide ? 'bg-base-300' : ''
+							}`}
+						></button>
+					))}
+				</div>
 			</div>
 		</div>
 	);
