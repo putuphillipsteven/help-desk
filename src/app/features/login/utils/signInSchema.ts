@@ -6,6 +6,9 @@ export type SignInData = {
 };
 
 export const SignInSchema: ZodType<SignInData> = z.object({
-	email: z.string().min(3, { message: 'Minimal 3 characters' }),
-	password: z.string().min(3, { message: 'Minimal 3 characters' }),
+	email: z
+		.string()
+		.min(3, { message: 'Min 3 characters' })
+		.email({ message: 'Invalid email address' }),
+	password: z.string().min(1, { message: 'Please fill the password' }),
 });
