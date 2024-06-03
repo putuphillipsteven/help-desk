@@ -90,9 +90,6 @@ const LoginCarousel: React.FC = () => {
 						<button
 							key={dotItem.id}
 							onClick={() => setActiveSlide(index)}
-							// className={`w-3 h-3 rounded-full p-0 bg-neutral cursor-pointer z-20 ${
-							// 	index === activeSlide ? 'bg-base-300' : ''
-							// }`}
 							className={clsx('h-3 rounded-full cursor-pointer z-20', {
 								'w-6 bg-base-100': index === activeSlide,
 								'w-3 bg-neutral': index !== activeSlide,
