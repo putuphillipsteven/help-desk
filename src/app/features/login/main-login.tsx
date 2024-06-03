@@ -13,8 +13,8 @@ export default function MainLogin({ children }: MainLoginProps) {
 	const pathname = usePathname();
 
 	return (
-		<div className='h-screen max-w-screen-2xl flex flex-col lg:flex-row  bg-base-100 p-[2em] gap-x-[10em] gap-y-[0.5em]'>
-			<div className='hidden lg:flex lg:flex-1 h-full rounded-lg overflow-hidden relative'>
+		<div className='h-screen w-screen flex flex-col md:flex-row md:justify-between  bg-base-100 gap-x-[2em] p-[2em] gap-y-[0.5em]'>
+			<div className='hidden md:flex md:flex-1 lg:w-[37em] h-full rounded-lg overflow-hidden relative'>
 				<div className='absolute w-full h-full bg-login-gradient z-10'></div>
 				<Image
 					src={'/login/wave-image.jpeg'}
@@ -43,8 +43,8 @@ export default function MainLogin({ children }: MainLoginProps) {
 					</div>
 				</div>
 			</div>
-			<div className='right-container flex flex-col flex-1 h-full lg:px-[8em] lg:justify-center'>
-				<div className='w-full lg:h-[37em] centering-flex-col justify-start gap-y-6'>
+			<div className='right-container centering-flex-col flex-1 h-full justify-center'>
+				<div className='w-full h-[37em] centering-flex-col justify-center gap-y-6 lg:w-[70%] md:px-8'>
 					<div className='centering-flex-col gap-y-6 w-full h-fit'>
 						<Link className='centering-flex gap-x-4 w-fit overflow-hidden' href={'/dashboard'}>
 							<div className='rounded-md bg-primary'>
