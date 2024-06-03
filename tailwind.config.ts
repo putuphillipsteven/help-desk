@@ -18,6 +18,12 @@ const config: Config = {
 				'login-gradient':
 					'linear-gradient(to bottom, rgba(2,0,36,0) 0%, rgba(70,95,241,0.5) 37%, rgba(70,95,241,0.7) 100%)',
 			},
+			colors: {
+				'primary-text': '#324054',
+				'secondary-text': '#6B7280',
+				'info-text': '#2D68FE',
+				'neutral-text': '#71839B',
+			},
 		},
 		borderRadius: {
 			sm: '0.125rem',
@@ -26,12 +32,6 @@ const config: Config = {
 			xl: '0.75rem',
 			full: '9999px',
 			'4xl': '48px',
-		},
-		colors: {
-			'primary-text': '#324054',
-			'secondary-text': '#6B7280',
-			'info-text': '#2D68FE',
-			'neutral-text': '#71839B',
 		},
 	},
 	daisyui: {

@@ -17,7 +17,7 @@ export default function SignUpForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-1'>
+		<form onSubmit={handleSubmit(onSubmit)} className='w-full h-full flex flex-col justify-between'>
 			<TextInput
 				type='text'
 				placeholder='Enter First Name...'
@@ -51,7 +51,7 @@ export default function SignUpForm() {
 			/>
 			<button
 				type='submit'
-				className='btn btn-md w-full  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
+				className='btn btn-md btn-block self-end mt-auto bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
 			>
 				Sign Up
 			</button>

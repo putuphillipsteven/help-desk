@@ -17,7 +17,7 @@ export default function SignInForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className='w-full centering-flex-col gap-y-2'>
+		<form onSubmit={handleSubmit(onSubmit)} className='w-full h-full flex flex-col justify-between'>
 			<SignInTextInput
 				type='text'
 				placeholder='Enter Email...'
@@ -35,7 +35,7 @@ export default function SignInForm() {
 
 			<button
 				type='submit'
-				className='btn btn-md w-full  bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
+				className='btn btn-md btn-block self-end mt-auto bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
 			>
 				Login
 			</button>
