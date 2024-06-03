@@ -1,6 +1,7 @@
+'use client';
+
 import capitalize from 'capitalize';
 import { FieldError, UseFormRegister } from 'react-hook-form';
-import { SignUpData } from '../utils/signUpSchema';
 import { SignInData } from '../utils/signInSchema';
 import Link from 'next/link';
 

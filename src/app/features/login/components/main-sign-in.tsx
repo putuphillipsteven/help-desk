@@ -1,3 +1,4 @@
+import React from 'react';
 import SignInForm from './sign-in-form';
 
 export default function MainSignIn() {

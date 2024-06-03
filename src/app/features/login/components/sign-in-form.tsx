@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SignInData, SignInSchema } from '../utils/signInSchema';
 import SignInTextInput from './sign-in-text-input';
+import { PasswordInput } from '@/app/components/password-input';
 
 export default function SignInForm() {
 	const {
@@ -25,14 +26,13 @@ export default function SignInForm() {
 				register={register}
 				error={errors.email}
 			/>
-			<SignInTextInput
+			<PasswordInput
 				type='text'
 				placeholder='Enter Password...'
 				name='password'
 				register={register}
 				error={errors.password}
 			/>
-
 			<button
 				type='submit'
 				className='btn btn-md btn-block self-end mt-auto bg-primary border-transparent text-base-100 hover:text-info-text hover:border hover:border-primary hover:bg-transparent'
