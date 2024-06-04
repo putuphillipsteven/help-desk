@@ -2,7 +2,9 @@
 
 import Alert from '@/app/features/dashboard/sidenav/components/alert';
 import SideNavTickets from '@/app/features/dashboard/tickets/components/create/left-side-nav-create-tickets';
+import { TicketListsSkeleton } from '@/app/features/dashboard/tickets/components/ticket-list-skeleton';
 import { usePathname } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	const pathname = usePathname();
@@ -21,7 +23,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 						<SideNavTickets />
 					</div>
 				)}
-				<div className='flex-1 flex flex-col h-full no-scrollbar'>{children}</div>
+				<div className='flex-1 flex flex-col h-full no-scrollbar'>
+					<Suspense fallback={<TicketListsSkeleton />}>
+						{children}
+						{/* {renderedTickets} */}
+					</Suspense>
+				</div>
 			</div>
 		</div>
 	);

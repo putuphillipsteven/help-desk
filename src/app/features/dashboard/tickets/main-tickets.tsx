@@ -1,13 +1,16 @@
 'use client';
 
-import { tickets } from './data/tickets';
+import { Ticket } from './data/tickets';
 import { CreateButton } from '@/app/components/button';
-import { useRouter } from 'next/navigation';
 import { getInitials } from '@/app/lib/utils/naming/naming';
+import { useRouter } from 'next/navigation';
 
-export default function MainTickets() {
+interface MainTicketProps {
+	tickets: Ticket[];
+}
+
+export default function MainTickets({ tickets }: MainTicketProps) {
 	const router = useRouter();
-
 	// Rendered tickets, mapping from ticket list
 	const renderedTickets = tickets?.map((ticket) => {
 		return (
