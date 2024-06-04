@@ -10,10 +10,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	const pathname = usePathname();
 	const handlePathname = (pathname: string) => {
 		const isNotMainPage = /^\/dashboard\/tickets\/(create|details(\/\d+)?)$/;
-
 		return isNotMainPage.test(pathname);
 	};
-
 	return (
 		<div className='flex flex-col w-full min-h-screen overflow-hidden no-scrollbar'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
@@ -24,10 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 					</div>
 				)}
 				<div className='flex-1 flex flex-col h-full no-scrollbar'>
-					<Suspense fallback={<TicketListsSkeleton />}>
-						{children}
-						{/* {renderedTickets} */}
-					</Suspense>
+					<Suspense fallback={<TicketListsSkeleton />}>{children}</Suspense>
 				</div>
 			</div>
 		</div>
