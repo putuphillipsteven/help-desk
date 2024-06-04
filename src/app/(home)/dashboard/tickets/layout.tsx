@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col lg:flex-row'>
 				{!handlePathname(pathname) && (
-					<div className='w-full lg:w-[240px] h-full overflow-hidden'>
+					<div className='w-full lg:w-[240px] h-fit overflow-hidden'>
 						<SideNavTickets />
 					</div>
 				)}
