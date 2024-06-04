@@ -20,7 +20,7 @@ export default function TeamList({ team, children }: TeamListProps) {
 			<>
 				<tr
 					key={team.id}
-					className={clsx('h-[3em]', {
+					className={clsx('h-fit', {
 						'bg-primary-content border-l-4 border-primary': getTeamId(pathname) === String(team.id),
 					})}
 				>
@@ -70,7 +70,7 @@ export default function TeamList({ team, children }: TeamListProps) {
 						'bg-primary-content border-l-4 border-primary': getTeamId(pathname) === String(team.id),
 					})}
 				>
-					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 xl:hidden'>
+					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 lg:hidden'>
 						{children}
 					</td>
 				</tr>

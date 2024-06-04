@@ -7,7 +7,6 @@ import { getInitials } from '@/app/lib/utils/naming/naming';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getAgentId } from '../utils/agents';
-import { getAgentById } from '../hooks/agent';
 
 interface AgentListProps {
 	agents: Agent[];
@@ -21,7 +20,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 			<>
 				<tr
 					key={agent.id}
-					className={clsx('h-[3em]', {
+					className={clsx('h-fit', {
 						'bg-primary-content border-l-4 border-primary':
 							getAgentId(pathname) === String(agent.id),
 					})}
@@ -65,6 +64,9 @@ export default function AgentList({ agents, children }: AgentListProps) {
 						)}
 					</td>
 				</tr>
+				{console.log(getAgentId(pathname) !== String(agent.id))}
+				{console.log(getAgentId(pathname))}
+				{console.log(String(agent.id))}
 				<tr
 					className={clsx('', {
 						hidden: getAgentId(pathname) !== String(agent.id),
@@ -72,13 +74,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 							getAgentId(pathname) === String(agent.id),
 					})}
 				>
-					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 xl:hidden'>
-						{agent.invitation === 'Waiting' && (
-							<div className='flex flex-col gap-y-1 lg:hidden'>
-								<p className='text-xs'>Invitation sent</p>
-								<p className='text-xs text-info-text'>Sent a reminder</p>
-							</div>
-						)}
+					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 lg:hidden'>
 						{children}
 					</td>
 				</tr>

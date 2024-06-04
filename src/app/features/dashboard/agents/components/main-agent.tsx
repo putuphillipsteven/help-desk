@@ -50,8 +50,8 @@ export default function MainAgent({ children }: MainAgentProps) {
 	};
 
 	return (
-		<div className='w-full h-full flex'>
-			<div className='w-full h-full bg-base-100 flex-1 flex flex-col'>
+		<div className='w-full h-full flex bg-base-100'>
+			<div className='flex-1 h-full  flex flex-col overflow-y-hidden'>
 				<div className='w-full h-full overflow-hidden border-r border-neutral'>
 					<table className='w-full h-full'>
 						<thead className='h-[3em] border-b border-neutral'>
@@ -90,19 +90,19 @@ export default function MainAgent({ children }: MainAgentProps) {
 							</tr>
 						</thead>
 						<tbody>
-							<tr className='h-[3em]'>
-								<td className='centering-flex h-full px-4 py-2 md:pl-20'>
-									<AddNewAgentButton />
+							<tr className='h-[3em] w-full'>
+								<td colSpan={3} className='w-full h-full px-4 py-2 md:pl-20'>
+									<div className='w-full'>
+										<AddNewAgentButton />
+									</div>
 								</td>
-								<td></td>
-								<td className=''></td>
 							</tr>
 							<AgentList agents={agents}>{children}</AgentList>
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<div className='w-[240px] h-full overflow-hidden hidden xl:flex'>{children}</div>
+			<div className='w-[240px] h-full overflow-hidden hidden lg:flex'>{children}</div>
 		</div>
 	);
 }
