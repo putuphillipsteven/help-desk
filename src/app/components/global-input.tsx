@@ -35,6 +35,7 @@ export default function GlobalInput({
 				className={
 					'input input-bordered text-primary-text bg-transparent input-md w-full border-[1.5px] border-light-gray-dimata2 focus:ring-0 focus:outline-0'
 				}
+				autoComplete='off'
 			/>
 			{error ? (
 				<span className='error-message place-self-start'>

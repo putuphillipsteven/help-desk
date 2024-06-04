@@ -22,7 +22,7 @@ export default function SideNav() {
 		<Fragment>
 			<div
 				className={clsx(
-					'w-full bg-base-100 h-screen  flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300 overflow-hidden',
+					'bg-base-100 h-screen flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300 overflow-hidden',
 					{
 						'w-[4em] px-[8px] py-[20px] centering-flex-col': !sideNavDisplay,
 						'md:w-[240px] p-[20px]': sideNavDisplay,
