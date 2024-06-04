@@ -9,6 +9,8 @@ import { getInitials } from '@/app/lib/utils/naming/naming';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { Fragment, useState } from 'react';
 import clsx from 'clsx';
+import { GiHamburgerMenu } from 'react-icons/gi';
+
 export default function SideNav() {
 	const [sideNavDisplay, setSideNavDisplay] = useState(true);
 
@@ -18,41 +20,40 @@ export default function SideNav() {
 
 	return (
 		<Fragment>
-			<div>
-				{!sideNavDisplay && (
-					<div
-						onClick={toggleSideNav}
-						className={clsx(
-							'w-8 h-8 centering-flex justify-center cursor-pointer bg-base-100 rounded-full drop-shadow-sm absolute -left-2 top-[50%] translate-y-2/4 z-20',
-						)}
-					>
-						<MdOutlineKeyboardArrowRight className='text-2xl text-primary-text' />
-					</div>
-				)}
-			</div>
 			<div
 				className={clsx(
-					'w-full md:w-[240px] bg-base-100 h-screen p-[20px] flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300',
+					'w-full bg-base-100 h-screen p-[20px] flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300 overflow-hidden',
 					{
-						hidden: !sideNavDisplay,
+						'w-[5em] centering-flex-col': !sideNavDisplay,
+						'md:w-[240px]': sideNavDisplay,
 					},
 				)}
 			>
 				<div className='flex flex-col gap-y-6'>
-					<Link className='centering-flex gap-x-4 w-full overflow-hidden' href={'/dashboard'}>
+					<Link className={'centering-flex gap-x-4 w-fit overflow-hidden'} href={'/dashboard'}>
 						<div className='rounded-md bg-primary'>
 							<RxTriangleDown className='text-base-100 text-4xl' />
 						</div>
-						<h3>Helpdesk</h3>
+						<h3 className={clsx('', { hidden: !sideNavDisplay })}>Helpdesk</h3>
 					</Link>
 					<div className='flex flex-col gap-y-2'>
+						<div
+							className={clsx(
+								'w-fit centering-flex justify-start p-2 rounded-md hover:cursor-pointer',
+							)}
+							onClick={toggleSideNav}
+						>
+							<GiHamburgerMenu className='text-2xl text-primary-text' />
+						</div>
 						<NavLink
+							sideNavDisplay={sideNavDisplay}
 							destination='tickets'
 							notification={1}
 							label='Tickets'
 							icon={<TbLayoutGridAdd className='text-base-300 text-2xl' />}
 						/>
 						<NavLink
+							sideNavDisplay={sideNavDisplay}
 							destination='agents/agent'
 							notification={2}
 							label='Agents'
@@ -67,15 +68,6 @@ export default function SideNav() {
 					<NavLink />
 					<NavLink /> */}
 					</div>
-					<div
-						onClick={toggleSideNav}
-						className='w-full bg-base-100 centering-flex cursor-pointer p-2 rounded-lg gap-x-4 drop-shadow-md'
-					>
-						<div className='w-8 h-8 centering-flex justify-center bg-base-100 rounded-full'>
-							<MdOutlineKeyboardArrowLeft className='text-2xl text-primary-text' />
-						</div>
-						<p className='text-sm'>Collapse</p>
-					</div>
 					<div className='centering-flex gap-x-4 w-full '>
 						{/* <div className='avatar'>
 						<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
@@ -87,7 +79,7 @@ export default function SideNav() {
 								<span>{getInitials('User Name' || '')}</span>
 							</div>
 						</div>
-						<div className='flex flex-col'>
+						<div className={clsx('flex flex-col', { hidden: !sideNavDisplay })}>
 							<p className='text-xs'>Username</p>
 							<p className='text-xs'>email@email.com</p>
 						</div>

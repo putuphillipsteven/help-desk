@@ -11,9 +11,16 @@ interface NavLinkProps {
 	icon?: ReactElement;
 	notification?: number;
 	destination?: string;
+	sideNavDisplay: boolean;
 }
 
-export default function NavLink({ label, icon, notification, destination }: NavLinkProps) {
+export default function NavLink({
+	label,
+	icon,
+	notification,
+	destination,
+	sideNavDisplay,
+}: NavLinkProps) {
 	const pathname = usePathname();
 	return (
 		<div
@@ -30,12 +37,13 @@ export default function NavLink({ label, icon, notification, destination }: NavL
 					<p
 						className={clsx('text-lg font-medium', {
 							'text-info-text': checkLink(destination || 'undefined', pathname),
+							hidden: !sideNavDisplay,
 						})}
 					>
 						{label || 'Label'}
 					</p>
 				</div>
-				{notification && (
+				{notification && sideNavDisplay && (
 					<div className='bg-error w-6 h-6 centering-flex justify-center rounded-badge'>
 						<p className='text-xs text-base-100'>{notification || 0}</p>
 					</div>
