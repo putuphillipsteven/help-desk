@@ -4,6 +4,7 @@ import TicketFormFields from './form-field';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AddButton } from '@/app/components/button';
 import CustomQuill from '@/app/components/custom-quill';
+import GlobalInput from '@/app/components/global-input';
 
 export default function CreateTicketForm() {
 	const {
@@ -24,7 +25,8 @@ export default function CreateTicketForm() {
 			onSubmit={handleSubmit(onSubmit)}
 			className='w-full centering-flex-col gap-y-4  lg:w-[725px]'
 		>
-			<TicketFormFields
+			<GlobalInput
+				label='Subject'
 				type='text'
 				placeholder='Enter subject...'
 				name='subject'
@@ -32,18 +34,20 @@ export default function CreateTicketForm() {
 				error={errors.subject}
 			/>
 			<label className='form-control w-full'>
-				<div className='label'>
+				<div className='label p-0'>
 					<span className='label-text cursor-pointer text-primary-text'>Requester</span>
 				</div>
-				<div className='w-full centering-flex gap-x-2'>
-					<TicketFormFields
+				<div className='w-full flex items-start gap-x-2'>
+					<GlobalInput
+						label='Name'
 						type='text'
 						placeholder='Enter name...'
 						name='name'
 						register={register}
 						error={errors.name}
 					/>
-					<TicketFormFields
+					<GlobalInput
+						label='Email'
 						type='text'
 						placeholder='Enter email...'
 						name='email'
@@ -52,8 +56,8 @@ export default function CreateTicketForm() {
 					/>
 				</div>
 			</label>
-			<label className='form-control w-full'>
-				<div className='label'>
+			<label className='form-control w-full gap-y-1'>
+				<div className='label p-0'>
 					<span className='label-text cursor-pointer text-primary-text'>Team</span>
 				</div>
 				<select
@@ -66,17 +70,17 @@ export default function CreateTicketForm() {
 					<option>Apple</option>
 				</select>
 				{errors.team ? (
-					<span className='error-message place-self-start pt-2'>
+					<span className='error-message place-self-start'>
 						<p className='text-red-500 text-xs'>{errors?.team?.message}</p>
 					</span>
 				) : (
-					<span className='place-self-start pt-2 opacity-0'>
+					<span className='place-self-start hidden'>
 						<p className='text-red-500 text-xs'>TEST</p>
 					</span>
 				)}
 			</label>
-			<label className='form-control w-full'>
-				<div className='label'>
+			<label className='form-control w-full gap-y-1'>
+				<div className='label p-0'>
 					<span className='label-text cursor-pointer text-primary-text'>Agent</span>
 				</div>
 				<select
@@ -92,13 +96,13 @@ export default function CreateTicketForm() {
 						<p className='text-red-500 text-xs'>{errors?.agent?.message}</p>
 					</span>
 				) : (
-					<span className='place-self-start pt-2 opacity-0'>
+					<span className='place-self-start pt-2 hidden'>
 						<p className='text-red-500 text-xs'>TEST</p>
 					</span>
 				)}
 			</label>
-			<label className='form-control w-full'>
-				<div className='label'>
+			<label className='form-control w-full gap-y-1'>
+				<div className='label p-0'>
 					<span className='label-text cursor-pointer text-primary-text'>Priority</span>
 				</div>
 				<select
@@ -111,17 +115,17 @@ export default function CreateTicketForm() {
 					<option>High</option>
 				</select>
 				{errors.priority ? (
-					<span className='error-message place-self-start pt-2'>
+					<span className='error-message place-self-start '>
 						<p className='text-red-500 text-xs'>{errors?.priority?.message}</p>
 					</span>
 				) : (
-					<span className='place-self-start pt-2 opacity-0'>
+					<span className='place-self-start hidden'>
 						<p className='text-red-500 text-xs'>TEST</p>
 					</span>
 				)}
 			</label>
-			<label className='form-control w-full'>
-				<div className='label'>
+			<label className='form-control w-full gap-y-1'>
+				<div className='label p-0'>
 					<span className='label-text cursor-pointer text-primary-text'>Status</span>
 				</div>
 				<select
@@ -134,11 +138,11 @@ export default function CreateTicketForm() {
 					<option>Pending</option>
 				</select>
 				{errors.status ? (
-					<span className='error-message place-self-start pt-2'>
+					<span className='error-message place-self-start'>
 						<p className='text-red-500 text-xs'>{errors?.status?.message}</p>
 					</span>
 				) : (
-					<span className='place-self-start pt-2 opacity-0'>
+					<span className='place-self-start hidden'>
 						<p className='text-red-500 text-xs'>TEST</p>
 					</span>
 				)}

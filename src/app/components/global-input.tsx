@@ -41,7 +41,7 @@ export default function GlobalInput({
 					<p className='text-error text-xs'>{error.message}</p>
 				</span>
 			) : (
-				<span className='place-self-start opacity-0'>
+				<span className='place-self-start hidden'>
 					<p className='text-error text-xs'>NULL</p>
 				</span>
 			)}
