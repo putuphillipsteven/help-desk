@@ -52,11 +52,11 @@ export default function MainAgent({ children }: MainAgentProps) {
 	return (
 		<div className='w-full h-full flex bg-base-100'>
 			<div className='flex-1 h-full  flex flex-col overflow-y-hidden'>
-				<div className='w-full h-full overflow-hidden border-r border-neutral'>
-					<table className='w-full h-full'>
+				<div className='w-full h-full overflow-auto md:overflow-hidden border-r border-neutral'>
+					<table className='w-full h-fit'>
 						<thead className='h-[3em] border-b border-neutral'>
 							<tr className=''>
-								<th className='md:w-[50%] px-4 md:pl-36'>
+								<th className='lg:w-[50%] px-4 lg:pl-36'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('na')}
@@ -69,7 +69,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 										)}
 									</div>
 								</th>
-								<th className='md:w-[50%] px-4 md:pl-36'>
+								<th className='lg:w-[50%] px-4 lg:pl-36'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('ro')}
@@ -82,7 +82,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 										)}
 									</div>
 								</th>
-								<th className='md:w-[50%] px-4 md:pl-36'>
+								<th className='lg:w-[50%] px-4 lg:pl-36'>
 									<div className='centering-flex gap-x-2'>
 										<p className='text-blue-dimata-2'></p>
 									</div>
@@ -91,7 +91,7 @@ export default function MainAgent({ children }: MainAgentProps) {
 						</thead>
 						<tbody>
 							<tr className='h-[3em] w-full'>
-								<td colSpan={3} className='w-full h-full px-4 py-2 md:pl-20'>
+								<td colSpan={3} className='w-full px-4 py-2 lg:pl-20'>
 									<div className='w-full'>
 										<AddNewAgentButton />
 									</div>

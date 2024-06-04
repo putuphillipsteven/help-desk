@@ -25,8 +25,8 @@ export default function AgentList({ agents, children }: AgentListProps) {
 							getAgentId(pathname) === String(agent.id),
 					})}
 				>
-					<td className='centering-flex h-full px-4 py-2 md:pl-20 lg:py-2'>
-						<div className='centering-flex gap-x-6 w-full '>
+					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
+						<div className='centering-flex gap-x-6'>
 							{/* <div className='avatar'>
 							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
 								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
@@ -64,9 +64,6 @@ export default function AgentList({ agents, children }: AgentListProps) {
 						)}
 					</td>
 				</tr>
-				{console.log(getAgentId(pathname) !== String(agent.id))}
-				{console.log(getAgentId(pathname))}
-				{console.log(String(agent.id))}
 				<tr
 					className={clsx('', {
 						hidden: getAgentId(pathname) !== String(agent.id),
@@ -74,7 +71,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 							getAgentId(pathname) === String(agent.id),
 					})}
 				>
-					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 lg:hidden'>
+					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'>
 						{children}
 					</td>
 				</tr>

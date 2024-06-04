@@ -24,7 +24,7 @@ export default function TeamList({ team, children }: TeamListProps) {
 						'bg-primary-content border-l-4 border-primary': getTeamId(pathname) === String(team.id),
 					})}
 				>
-					<td className='centering-flex h-full px-4 py-2 md:pl-20 lg:py-2'>
+					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
 						<div className='centering-flex gap-x-6 w-full '>
 							{/* <div className='avatar'>
 							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
@@ -70,7 +70,7 @@ export default function TeamList({ team, children }: TeamListProps) {
 						'bg-primary-content border-l-4 border-primary': getTeamId(pathname) === String(team.id),
 					})}
 				>
-					<td colSpan={3} className='px-4 py-2 md:pl-20 lg:py-2 lg:hidden'>
+					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'>
 						{children}
 					</td>
 				</tr>
