@@ -3,8 +3,8 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SignInData, SignInSchema } from '../utils/signInSchema';
-import SignInTextInput from './sign-in-text-input';
 import { PasswordInput } from '@/app/components/password-input';
+import GlobalInput from '@/app/components/global-input';
 
 export default function SignInForm() {
 	const {
@@ -19,7 +19,8 @@ export default function SignInForm() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='w-full h-full flex flex-col justify-between'>
-			<SignInTextInput
+			<GlobalInput
+				label='Email'
 				type='text'
 				placeholder='Enter Email...'
 				name='email'
@@ -27,7 +28,7 @@ export default function SignInForm() {
 				error={errors.email}
 			/>
 			<PasswordInput
-				type='text'
+				label='Password'
 				placeholder='Enter Password...'
 				name='password'
 				register={register}

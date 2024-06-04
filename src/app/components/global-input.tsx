@@ -2,44 +2,32 @@
 
 import capitalize from 'capitalize';
 import { FieldError, UseFormRegister } from 'react-hook-form';
-import { SignInData } from '../utils/signInSchema';
 import Link from 'next/link';
 
-type SignInValidInputNames = 'email' | 'password';
-
-export type SignInInputProps = {
+export type GlobalInputProps = {
 	type: string;
+	label: string;
 	placeholder: string;
-	name: SignInValidInputNames;
-	register: UseFormRegister<SignInData>;
+	name: string;
+	register: UseFormRegister<any>;
 	error: FieldError | undefined;
 	valueAsNumber?: boolean;
 };
 
-export default function SignInTextInput({
+export default function GlobalInput({
 	type,
+	label,
 	placeholder,
 	name,
 	register,
 	error,
 	valueAsNumber,
-}: SignInInputProps) {
+}: GlobalInputProps) {
 	return (
 		<label className='form-control w-full flex flex-col gap-y-1'>
-			{name !== 'password' ? (
-				<div className='label p-0'>
-					<span className='label-text cursor-pointer text-primary-text'>{capitalize(name)}</span>
-				</div>
-			) : (
-				<div className='centering-flex w-full justify-between'>
-					<div className='label p-0'>
-						<span className='label-text cursor-pointer text-primary-text'>{capitalize(name)}</span>
-					</div>
-					<Link className='label p-0 text-primary text-xs' href={'#'}>
-						Forgot Password?
-					</Link>
-				</div>
-			)}
+			<div className='label p-0'>
+				<span className='label-text cursor-pointer text-primary-text'>{capitalize(label)}</span>
+			</div>
 			<input
 				type={type}
 				placeholder={placeholder}

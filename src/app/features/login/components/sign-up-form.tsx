@@ -1,10 +1,10 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-import TextInput from './sign-up-text-input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SignUpData, SignUpSchema } from '../utils/signUpSchema';
 import { PasswordInput } from '@/app/components/password-input';
+import GlobalInput from '@/app/components/global-input';
 
 export default function SignUpForm() {
 	const {
@@ -19,23 +19,8 @@ export default function SignUpForm() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='w-full h-full flex flex-col justify-between'>
-			{/* <TextInput
-				type='text'
-				placeholder='Enter First Name...'
-				name='firstname'
-				label='First Name'
-				register={register}
-				error={errors.firstname}
-			/>
-			<TextInput
-				type='text'
-				placeholder='Enter Last Name...'
-				name='lastname'
-				label='Last Name'
-				register={register}
-				error={errors.lastname}
-			/> */}
-			<TextInput
+			<GlobalInput
+				label='Email'
 				type='text'
 				placeholder='Enter Email...'
 				name='email'
@@ -43,12 +28,14 @@ export default function SignUpForm() {
 				error={errors.email}
 			/>
 			<PasswordInput
+				label='Password'
 				placeholder='Enter Password...'
 				name='password'
 				register={register}
 				error={errors.password}
 			/>
 			<PasswordInput
+				label='Confirm password'
 				placeholder='Enter Password...'
 				name='confirmPassword'
 				register={register}

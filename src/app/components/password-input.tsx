@@ -5,6 +5,7 @@ import { FieldError, UseFormRegister } from 'react-hook-form';
 import { BiHide, BiShow } from 'react-icons/bi';
 
 export type PasswordInputProps = {
+	label: string;
 	placeholder: string;
 	name: string;
 	register: UseFormRegister<any>;
@@ -14,6 +15,7 @@ export type PasswordInputProps = {
 
 export const PasswordInput = ({
 	placeholder,
+	label,
 	name,
 	register,
 	error,
@@ -36,7 +38,7 @@ export const PasswordInput = ({
 	return (
 		<div className='form-control flex flex-col gap-y-1'>
 			<label htmlFor='password' className='text-primary-text label-text cursor-pointer'>
-				Password
+				{label}
 			</label>
 			<div className='flex items-center gap-2 relative'>
 				<input
