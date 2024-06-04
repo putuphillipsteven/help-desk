@@ -8,6 +8,6 @@ export const getTickets = (tickets: Ticket[]): Promise<Ticket[]> => {
 	return new Promise((resolve) => {
 		setTimeout(() => {
 			resolve(tickets);
-		}, 2000); // Simulate a 2-second delay
+		}, 4000);
 	});
 };
