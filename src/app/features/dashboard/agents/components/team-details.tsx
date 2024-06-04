@@ -1,7 +1,7 @@
 'use client';
 
 import { getInitials } from '@/app/lib/utils/naming/naming';
-import { getAgentById } from '../hooks/agent';
+import { getAgentById } from '../hooks/useAgent';
 import { agents } from '../data/agents';
 import { getFormattedEmail, getFormattedString } from '../utils/agents';
 import { MdKeyboardArrowDown } from 'react-icons/md';

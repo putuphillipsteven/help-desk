@@ -3,15 +3,16 @@
 import { LiaSortAlphaDownSolid, LiaSortAlphaUpSolid } from 'react-icons/lia';
 import AddNewAgentButton from './button';
 import AgentList from './agent-list';
-import { agents } from '../data/agents';
+import { Agents, agents } from '../data/agents';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 
 interface MainAgentProps {
+	agents: Agents;
 	children?: React.ReactNode;
 }
 
-export default function MainAgent({ children }: MainAgentProps) {
+export default async function MainAgent({ agents, children }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 
@@ -28,7 +29,6 @@ export default function MainAgent({ children }: MainAgentProps) {
 
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
-
 		if (sort === 'na') {
 			newParams.delete('ro');
 			const currentSort = newParams.get('na');

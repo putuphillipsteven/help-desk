@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment } from 'react';
-import { Agent } from '../data/agents';
+import { Agents } from '../data/agents';
 import clsx from 'clsx';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { getAgentId } from '../utils/agents';
 
 interface AgentListProps {
-	agents: Agent[];
+	agents: Agents;
 	children?: React.ReactNode;
 }
 
@@ -17,9 +17,8 @@ export default function AgentList({ agents, children }: AgentListProps) {
 	const pathname = usePathname();
 	const renderedAgents = agents?.map((agent) => {
 		return (
-			<>
+			<Fragment key={agent.id}>
 				<tr
-					key={agent.id}
 					className={clsx('h-fit', {
 						'bg-primary-content border-l-4 border-primary':
 							getAgentId(pathname) === String(agent.id),
@@ -75,7 +74,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 						{children}
 					</td>
 				</tr>
-			</>
+			</Fragment>
 		);
 	});
 	return <Fragment>{renderedAgents}</Fragment>;
