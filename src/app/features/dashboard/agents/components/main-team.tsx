@@ -56,7 +56,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 					<table className='w-full h-fit'>
 						<thead className='h-[3em] border-b border-neutral'>
 							<tr className=''>
-								<th className='lg:w-[50%] px-4 lg:pl-36'>
+								<th className='lg:w-fit px-4 lg:pl-36'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('na')}
@@ -69,7 +69,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 										)}
 									</div>
 								</th>
-								<th className='lg:w-[50%] px-4 lg:pl-36'>
+								<th className='lg:w-fit px-4'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('ag')}

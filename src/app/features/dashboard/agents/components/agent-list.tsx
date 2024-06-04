@@ -45,7 +45,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 							</div>
 						</div>
 					</td>
-					<td>
+					<td className=''>
 						<div
 							className={clsx('badge border-none', {
 								'bg-neutral text-primary-text': agent.role === 'Agent',

@@ -6,10 +6,10 @@ import { TbLayoutGridAdd } from 'react-icons/tb';
 import { CgProfile } from 'react-icons/cg';
 import Link from 'next/link';
 import { getInitials } from '@/app/lib/utils/naming/naming';
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import { Fragment, useState } from 'react';
 import clsx from 'clsx';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { MdOutlineShowChart } from 'react-icons/md';
 
 export default function SideNav() {
 	const [sideNavDisplay, setSideNavDisplay] = useState(true);
@@ -58,6 +58,13 @@ export default function SideNav() {
 							notification={2}
 							label='Agents'
 							icon={<CgProfile className='text-base-300 text-2xl' />}
+						/>
+						<NavLink
+							sideNavDisplay={sideNavDisplay}
+							destination='#'
+							notification={2}
+							label='Reports'
+							icon={<MdOutlineShowChart className='text-base-300 text-2xl' />}
 						/>
 						{/* <NavLink /> */}
 					</div>
