@@ -1,22 +1,24 @@
 'use client';
 
-import { BackButton } from '@/app/components/button';
 import RightSideNavDetails from './right-side-nav-details';
+import CustomQuill from '@/app/components/custom-quill';
+import { BackButton } from '@/app/components/button';
 import { LuArchive } from 'react-icons/lu';
 import { RiSpam2Line } from 'react-icons/ri';
 import { HiOutlineTrash } from 'react-icons/hi';
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 import { getTicketsById } from '../../hooks/useTickets';
-import CustomQuill from '@/app/components/custom-quill';
 import { useForm } from 'react-hook-form';
 import { ReplyFormData, ReplyFormSchema } from '../../utils/replySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { tickets } from '../../data/tickets';
+import { Suspense } from 'react';
 
 interface DetailsMainProps {
 	id: string;
 }
 
-export default function MainDetails({ id }: DetailsMainProps) {
+export default async function MainDetails({ id }: DetailsMainProps) {
 	const {
 		register,
 		handleSubmit,
@@ -27,20 +29,20 @@ export default function MainDetails({ id }: DetailsMainProps) {
 		getValues,
 	} = useForm<ReplyFormData>({ resolver: zodResolver(ReplyFormSchema) });
 
-	const ticket = getTicketsById(id);
+	const ticket = await getTicketsById(id, tickets);
 
 	const onSubmit = async (data: ReplyFormData) => {
 		console.log('SUCCESS', data);
 	};
 
 	return (
-		<div className='w-full h-fit flex flex-col lg:flex-row gap-x-0 bg-base-100 no-scrollbar'>
-			<div className='w-full grid grid-rows-[3em_3em_fit_auto] grid-cols-1 lg:flex-1 lg:grid-rows[3em_3em_auto] border-neutral'>
-				<div className='w-full h-full lg:h-[3em] centering-flex justify-between items-start py-2 px-4 border-b border-r border-neutral lg:justify-normal lg:gap-x-2'>
+		<div className='w-full h-fit flex flex-col lg:flex-row lg:h-full gap-x-0 bg-base-100 no-scrollbar'>
+			<div className='w-full h-full grid grid-rows-[3em_3em_fit_auto] grid-cols-1 lg:flex-1  lg:grid-rows-[3em_3em_1fr] border-neutral'>
+				<div className='w-full h-fit lg:h-full centering-flex justify-between items-start py-2 px-4 border-b border-r border-neutral lg:justify-normal lg:gap-x-2'>
 					<BackButton />
 					<p className='font-medium'>{ticket?.subject}</p>
 				</div>
-				<div className='w-full h-fit lg:hidden lg:bg-error'>
+				<div className='w-full h-fit lg:hidden'>
 					<RightSideNavDetails
 						agent={ticket?.agent}
 						createdAt={ticket?.createdAt}
@@ -53,7 +55,7 @@ export default function MainDetails({ id }: DetailsMainProps) {
 						user={ticket?.user}
 					/>
 				</div>
-				<div className='w-full h-[3em] centering-flex justify-between gap-x-2 py-2 px-4 border-b border-r border-neutral'>
+				<div className='w-full h-full centering-flex justify-between gap-x-2 py-2 px-4 border-b border-r border-neutral'>
 					<div className='centering-flex gap-x-8'>
 						<LuArchive className='text-primary-text text-2xl' />
 						<RiSpam2Line className='text-primary-text text-2xl' />
@@ -65,7 +67,7 @@ export default function MainDetails({ id }: DetailsMainProps) {
 					</div>
 				</div>
 				<div className='w-full h-full centering-flex-col p-4 gap-y-8 py-8 border-r border-neutral lg:px-40'>
-					<div className='w-full  flex flex-col gap-x-2 border border-neutral drop-shadow-sm rounded-md overflow-hidden'>
+					<div className='w-full flex flex-col gap-x-2 border border-neutral drop-shadow-sm rounded-md overflow-hidden'>
 						<div className='p-2 bg-primary-content centering-flex justify-between'>
 							<p className='text-lg font-bold'>{ticket?.agent}</p>
 							<p className='text-sm font-medium'>{ticket?.createdAt}</p>
@@ -74,7 +76,7 @@ export default function MainDetails({ id }: DetailsMainProps) {
 							<p className='text-sm'>{ticket?.details}</p>
 						</div>
 					</div>
-					<form onSubmit={handleSubmit(onSubmit)} className='w-full  centering-flex-col'>
+					<form onSubmit={handleSubmit(onSubmit)} className='w-full h-fit  centering-flex-col'>
 						<CustomQuill
 							error={errors?.textArea}
 							getValue={getValues}
