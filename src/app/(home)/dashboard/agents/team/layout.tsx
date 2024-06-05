@@ -1,10 +1,8 @@
 import MainTeam from '@/app/features/dashboard/agents/components/main-team';
-import { Suspense } from 'react';
+import { teams } from '@/app/features/dashboard/agents/data/team';
+import { getTeams } from '@/app/features/dashboard/agents/hooks/useTeam';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-	return (
-		<Suspense>
-			<MainTeam>{children}</MainTeam>
-		</Suspense>
-	);
+export default async function Layout({ children }: { children: React.ReactNode }) {
+	const teamLists = await getTeams(teams);
+	return <MainTeam teams={teamLists}>{children}</MainTeam>;
 }

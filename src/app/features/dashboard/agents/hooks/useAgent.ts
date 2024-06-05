@@ -6,11 +6,8 @@ export const getAgentById = (agents: Agents, id: number): Agent | undefined => {
 
 export const getAgents = (agents: Agents): Promise<Agents> => {
 	return new Promise((resolve) => {
-		console.log(`FETCHING...`);
 		setTimeout(() => {
 			resolve(agents);
-			// resolve([]);
-			console.log(`COMPLETED...`);
 		}, 5000);
 	});
 };

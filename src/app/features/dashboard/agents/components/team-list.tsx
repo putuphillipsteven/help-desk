@@ -5,17 +5,17 @@ import clsx from 'clsx';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Team } from '../data/team';
+import { Team, Teams } from '../data/team';
 import { getTeamId } from '../utils/team';
 
 interface TeamListProps {
-	team: Team[];
+	teams: Teams;
 	children?: React.ReactNode;
 }
 
-export default function TeamList({ team, children }: TeamListProps) {
+export default function TeamList({ teams, children }: TeamListProps) {
 	const pathname = usePathname();
-	const renderedTeams = team?.map((team) => {
+	const renderedTeams = teams?.map((team) => {
 		return (
 			<>
 				<tr

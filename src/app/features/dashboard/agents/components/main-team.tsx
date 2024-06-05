@@ -5,13 +5,14 @@ import { CreateNewTeamButton } from './button';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import TeamList from './team-list';
-import { teams } from '../data/team';
+import { Teams } from '../data/team';
 
 interface MainTeamProps {
+	teams: Teams;
 	children?: React.ReactNode;
 }
 
-export default function MainTeam({ children }: MainTeamProps) {
+export default function MainTeam({ teams, children }: MainTeamProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 
@@ -95,7 +96,7 @@ export default function MainTeam({ children }: MainTeamProps) {
 									<CreateNewTeamButton />
 								</td>
 							</tr>
-							<TeamList team={teams}>{children}</TeamList>
+							<TeamList teams={teams}>{children}</TeamList>
 						</tbody>
 					</table>
 				</div>

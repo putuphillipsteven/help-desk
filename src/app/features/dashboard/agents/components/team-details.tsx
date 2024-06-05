@@ -6,7 +6,7 @@ import { agents } from '../data/agents';
 import { getFormattedEmail, getFormattedString } from '../utils/agents';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useState } from 'react';
-import { getTeamById } from '../hooks/team';
+import { getTeamById } from '../hooks/useTeam';
 import { teams } from '../data/team';
 interface TeamDetailProps {
 	id: string;

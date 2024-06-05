@@ -9,8 +9,10 @@ export interface Team {
 	members: Member[];
 }
 
+export type Teams = Team[];
+
 // Example teams
-export const teams: Team[] = [
+export const teams: Teams = [
 	{
 		id: 1,
 		name: 'Team A',
