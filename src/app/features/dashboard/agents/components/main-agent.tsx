@@ -69,7 +69,7 @@ export default async function MainAgent({ agents, children }: MainAgentProps) {
 										)}
 									</div>
 								</th>
-								<th className='lg:w-fit px-4'>
+								<th className='lg:w-fit'>
 									<div
 										className='centering-flex gap-x-4 cursor-pointer'
 										onClick={() => handleSort('ro')}

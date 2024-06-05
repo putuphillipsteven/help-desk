@@ -1,4 +1,5 @@
 import MainAgents from '@/app/features/dashboard/agents/main-agents';
+import { Suspense } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
