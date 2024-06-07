@@ -17,7 +17,7 @@ export default function TeamList({ teams, children }: TeamListProps) {
 	const pathname = usePathname();
 	const renderedTeams = teams?.map((team) => {
 		return (
-			<>
+			<Fragment key={team.id}>
 				<tr
 					key={team.id}
 					className={clsx('h-fit', {
@@ -74,7 +74,7 @@ export default function TeamList({ teams, children }: TeamListProps) {
 						{children}
 					</td>
 				</tr>
-			</>
+			</Fragment>
 		);
 	});
 	return <Fragment>{renderedTeams}</Fragment>;

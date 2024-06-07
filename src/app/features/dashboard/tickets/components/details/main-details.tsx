@@ -12,7 +12,6 @@ import { useForm } from 'react-hook-form';
 import { ReplyFormData, ReplyFormSchema } from '../../utils/replySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { tickets } from '../../data/tickets';
-import { Suspense } from 'react';
 
 interface DetailsMainProps {
 	id: string;

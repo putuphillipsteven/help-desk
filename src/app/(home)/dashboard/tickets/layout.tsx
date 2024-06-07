@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 		return isNotMainPage.test(pathname);
 	};
 	return (
-		<div className='flex flex-col w-full min-h-screen overflow-hidden no-scrollbar'>
+		<div className='flex flex-col w-full min-h-screen overflow-y-auto overflow-x-hidden no-scrollbar'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col lg:flex-row'>
 				{!handlePathname(pathname) && (

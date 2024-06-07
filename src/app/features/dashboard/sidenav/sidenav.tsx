@@ -61,7 +61,7 @@ export default function SideNav() {
 						/>
 						<NavLink
 							sideNavDisplay={sideNavDisplay}
-							destination='#'
+							destination='reports'
 							notification={2}
 							label='Reports'
 							icon={<MdOutlineShowChart className='text-base-300 text-2xl' />}
