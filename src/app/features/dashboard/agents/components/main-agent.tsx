@@ -16,9 +16,9 @@ export default async function MainAgent({ agents, children }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 
+	const params = new URLSearchParams(searchParams);
 	const name = searchParams.get('na');
 	const role = searchParams.get('ro');
-	const params = new URLSearchParams(searchParams);
 
 	useEffect(() => {
 		if (!params.get('na') && !params.get('ro')) {
