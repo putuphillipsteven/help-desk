@@ -18,6 +18,7 @@ export default function AGAFilter() {
 	const renderedFilters = filters?.map((filter: Filter, index) => {
 		return (
 			<p
+				key={filter.label}
 				className={clsx('text-sm cursor-pointer px-2  hover:font-medium', {
 					'text-primary font-bold border-b-2 border-primary': tAFilter === filter.query,
 				})}

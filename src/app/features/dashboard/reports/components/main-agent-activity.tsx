@@ -1,6 +1,5 @@
 import AGAInputs from './agent-activity/ag-a-inputs';
 import AGAFilter from './agent-activity/ag-filter';
-import TEAInputs from './team-activity/te-a-inputs';
 
 export default function MainAgentActivity() {
 	return (

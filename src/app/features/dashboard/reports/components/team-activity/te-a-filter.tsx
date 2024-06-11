@@ -19,7 +19,8 @@ export default function TEAFilter() {
 	const renderedFilters = filters?.map((filter: Filter, index) => {
 		return (
 			<p
-				className={clsx('text-sm cursor-pointer px-2  hover:font-medium', {
+				key={filter.label}
+				className={clsx('text-sm cursor-pointer px-2  hover:font-medium h-full', {
 					'text-primary font-bold border-b-2 border-primary': tAFilter === filter.query,
 				})}
 				onClick={() => {

@@ -48,6 +48,7 @@ const config: Config = {
 					'secondary-content': '#EFF6FF',
 					neutral: '#D4D4D4',
 					info: '#EAB308',
+					success: '#22C55E',
 					warning: '#EAB308',
 					error: '#FF472E',
 					'alert-content': '#ffffff',
