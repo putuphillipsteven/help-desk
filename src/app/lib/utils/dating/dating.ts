@@ -1,3 +1,5 @@
+import { logging } from '../logging/logging';
+
 // Function to format date as mm--dd--yyyy
 export const formatDate = (date: Date): string => {
 	const mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -114,5 +116,22 @@ export const getNextDayDate = (dateString1: string, dateString2: string): string
 		return formatToName(`${year}-${month}-${day}`);
 	} else {
 		return `${formatToName(dateString1)} - ${formatToName(dateString2)}`; // Return null if the difference is not one day
+	}
+};
+
+export const getDiffDays = (startDate: string, endDate: string): string => {
+	const diffMilliseconds = Math.abs(new Date(startDate).getTime() - new Date(endDate).getTime());
+	const twoDayMilliseconds = 48 * 60 * 60 * 1000;
+	const oneWeekMilliseconds = 192 * 60 * 60 * 1000;
+
+	logging('[diffMS]', diffMilliseconds);
+	logging('[two]', twoDayMilliseconds);
+	logging('[week]', oneWeekMilliseconds);
+	if (diffMilliseconds === twoDayMilliseconds) {
+		return 'day';
+	} else if (diffMilliseconds === oneWeekMilliseconds) {
+		return 'week';
+	} else {
+		return 'month';
 	}
 };

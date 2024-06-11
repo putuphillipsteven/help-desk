@@ -1,8 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
-import { formatDay } from '../lib/utils/dating/dating';
+import { formatDay, getDiffDays } from '../lib/utils/dating/dating';
 import { useRouter, useSearchParams } from 'next/navigation';
+import clsx from 'clsx';
 
 export default function DayInput() {
 	const dayInputRef = useRef<HTMLInputElement>(null);
@@ -10,6 +11,8 @@ export default function DayInput() {
 	const router = useRouter();
 	const params = new URLSearchParams(searchParams);
 
+	const startDate = params.get('tasd');
+	const endDate = params.get('taed');
 	const handleDayInputRef = () => {
 		if (dayInputRef.current?.value) {
 			params.set('tasd', formatDay(dayInputRef.current?.value.toString()).startDate);
@@ -23,13 +26,24 @@ export default function DayInput() {
 	};
 
 	return (
-		<div className='dropdown'>
-			<div tabIndex={0} className='p-2 cursor-pointer'>
-				<p className='text-primary-text'>Day</p>
-			</div>
-			<ul
+		<div className='dropdown flex flex-col items-end gap-y-8 h-full'>
+			<div
 				tabIndex={0}
-				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
+					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'day',
+				})}
+			>
+				<p
+					className={clsx('', {
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'day',
+					})}
+				>
+					Day
+				</p>
+			</div>
+			<div
+				tabIndex={0}
+				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md mt-14 w-fit'
 			>
 				<input
 					ref={dayInputRef}
@@ -39,7 +53,7 @@ export default function DayInput() {
 					}
 					onChange={handleDayInputRef}
 				/>
-			</ul>
+			</div>
 		</div>
 	);
 }

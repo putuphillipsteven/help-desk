@@ -3,6 +3,7 @@ import MainTeamActivity from './components/main-team-activity';
 import MainTicketActivity from './components/main-ticket-activity';
 import MainReportInputs from './components/main-reports-inputs';
 import MainReportDisplayDate from './components/main-report-display-date';
+import ExpendableInput from '@/app/components/expendable-input';
 
 export default function MainReports() {
 	return (
@@ -12,6 +13,7 @@ export default function MainReports() {
 					<p>Reports</p>
 				</div>
 				<div className='centering-flex h-full p-2 gap-x-2 w-fit'>
+					<ExpendableInput />
 					<MainReportDisplayDate />
 					<MainReportInputs />
 				</div>

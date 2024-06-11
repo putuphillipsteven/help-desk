@@ -2,14 +2,19 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useRef } from 'react';
-import { formatWeek } from '../lib/utils/dating/dating';
+import { formatWeek, getDiffDays } from '../lib/utils/dating/dating';
 import { logging } from '../lib/utils/logging/logging';
+import clsx from 'clsx';
 
 export default function WeekInput() {
 	const weekInputRef = useRef<HTMLInputElement>(null);
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const params = new URLSearchParams(searchParams);
+
+	const startDate = params.get('tasd');
+	const endDate = params.get('taed');
+
 	const handleWeekInput = () => {
 		if (weekInputRef.current?.valueAsDate) {
 			logging('[weekInput]', weekInputRef.current.valueAsDate);
@@ -23,13 +28,24 @@ export default function WeekInput() {
 		}
 	};
 	return (
-		<div className='dropdown'>
-			<div tabIndex={0} className='p-2 cursor-pointer'>
-				<p className='text-primary-text'>Week</p>
-			</div>
-			<ul
+		<div className='dropdown flex flex-col items-end gap-y-8 h-full'>
+			<div
 				tabIndex={0}
-				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
+					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'week',
+				})}
+			>
+				<p
+					className={clsx('', {
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'week',
+					})}
+				>
+					Week
+				</p>
+			</div>
+			<div
+				tabIndex={0}
+				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md mt-14 w-fit'
 			>
 				<input
 					ref={weekInputRef}
@@ -40,7 +56,7 @@ export default function WeekInput() {
 					onChange={handleWeekInput}
 					autoComplete='off'
 				/>
-			</ul>
+			</div>
 		</div>
 	);
 }

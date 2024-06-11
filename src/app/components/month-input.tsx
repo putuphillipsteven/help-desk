@@ -3,15 +3,20 @@
 import { useRef } from 'react';
 import { logging } from '../lib/utils/logging/logging';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { formatMonth } from '../lib/utils/dating/dating';
+import { formatMonth, getDiffDays } from '../lib/utils/dating/dating';
+import clsx from 'clsx';
 
 export default function MonthInput() {
 	const monthInputRef = useRef<HTMLInputElement>(null);
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const params = new URLSearchParams(searchParams);
+	const startDate = params.get('tasd');
+	const endDate = params.get('taed');
+
 	const handleMonthInput = () => {
 		logging('[monthInput]', monthInputRef.current?.valueAsDate);
+
 		if (monthInputRef.current?.valueAsDate) {
 			params.set('tasd', formatMonth(monthInputRef.current?.valueAsDate.toString()).startDate);
 			params.set('taed', formatMonth(monthInputRef.current?.valueAsDate.toString()).endDate);
@@ -23,13 +28,24 @@ export default function MonthInput() {
 		}
 	};
 	return (
-		<div className='dropdown'>
-			<div tabIndex={0} className='p-2 cursor-pointer'>
-				<p className='text-primary-text'>Month</p>
+		<div className='dropdown flex flex-col items-end gap-y-8 h-full'>
+			<div
+				tabIndex={0}
+				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
+					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'month',
+				})}
+			>
+				<p
+					className={clsx('', {
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'month',
+					})}
+				>
+					Month
+				</p>
 			</div>
 			<ul
 				tabIndex={0}
-				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+				className='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md mt-14 w-fit'
 			>
 				<input
 					type='month'

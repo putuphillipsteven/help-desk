@@ -28,7 +28,6 @@ export default function MainReportInputs() {
 
 	return (
 		<Fragment>
-			<ExpendableInput />
 			<DayInput />
 			<WeekInput />
 			<MonthInput />
