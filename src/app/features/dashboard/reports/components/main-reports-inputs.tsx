@@ -27,10 +27,12 @@ export default function MainReportInputs() {
 		if (!params.get('tasd') && !params.get('taed')) {
 			params.set('tasd', formatDay(defaultDate.toString()).startDate);
 			params.set('taed', formatDay(defaultDate.toString()).endDate);
+			params.set('tesd', formatDay(defaultDate.toString()).startDate);
+			params.set('teed', formatDay(defaultDate.toString()).endDate);
+			params.set('tefi', 'op');
 			params.set('agsd', formatDay(defaultDate.toString()).startDate);
 			params.set('aged', formatDay(defaultDate.toString()).endDate);
-			params.set('tesd', formatDay(defaultDate.toString()).endDate);
-			params.set('teed', formatDay(defaultDate.toString()).endDate);
+			params.set('agfi', 'op');
 			router.replace(`?${params.toString()}`);
 		}
 	}, [params, router]);
