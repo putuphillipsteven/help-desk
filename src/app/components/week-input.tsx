@@ -6,7 +6,12 @@ import { formatWeek, getDiffDays } from '../lib/utils/dating/dating';
 import { logging } from '../lib/utils/logging/logging';
 import clsx from 'clsx';
 
-export default function WeekInput() {
+interface WeekInputProps {
+	usage?: string;
+	isGLobal: boolean;
+}
+
+export default function WeekInput({ isGLobal }: WeekInputProps) {
 	const weekInputRef = useRef<HTMLInputElement>(null);
 	const searchParams = useSearchParams();
 	const router = useRouter();
@@ -32,12 +37,13 @@ export default function WeekInput() {
 			<div
 				tabIndex={0}
 				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
-					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'week',
+					'bg-primary text-white':
+						getDiffDays(startDate || '', endDate || '') === 'week' && isGLobal,
 				})}
 			>
 				<p
 					className={clsx('', {
-						'text-white': getDiffDays(startDate || '', endDate || '') === 'week',
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'week' && isGLobal,
 					})}
 				>
 					Week

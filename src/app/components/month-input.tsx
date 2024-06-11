@@ -6,7 +6,11 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { formatMonth, getDiffDays } from '../lib/utils/dating/dating';
 import clsx from 'clsx';
 
-export default function MonthInput() {
+interface MonthInputProps {
+	usage?: string;
+	isGLobal: boolean;
+}
+export default function MonthInput({ isGLobal }: MonthInputProps) {
 	const monthInputRef = useRef<HTMLInputElement>(null);
 	const searchParams = useSearchParams();
 	const router = useRouter();
@@ -32,12 +36,13 @@ export default function MonthInput() {
 			<div
 				tabIndex={0}
 				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
-					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'month',
+					'bg-primary text-white':
+						getDiffDays(startDate || '', endDate || '') === 'month' && isGLobal,
 				})}
 			>
 				<p
 					className={clsx('', {
-						'text-white': getDiffDays(startDate || '', endDate || '') === 'month',
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'month' && isGLobal,
 					})}
 				>
 					Month

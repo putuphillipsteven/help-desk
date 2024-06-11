@@ -1,16 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
-import { formatDay, getDiffDays, handleUsageDay } from '../lib/utils/dating/dating';
 import { useRouter, useSearchParams } from 'next/navigation';
 import clsx from 'clsx';
+import { getDiffDays, handleUsageDay } from '@/app/lib/utils/dating/dating';
 
-interface DayInputProps {
-	usage?: string;
-	isGLobal: boolean;
-}
-
-export default function DayInput({ usage, isGLobal }: DayInputProps) {
+export default function TADayInput() {
 	const dayInputRef = useRef<HTMLInputElement>(null);
 	const searchParams = useSearchParams();
 	const router = useRouter();
@@ -20,7 +15,7 @@ export default function DayInput({ usage, isGLobal }: DayInputProps) {
 	const endDate = params.get('taed');
 	const handleDayInputRef = () => {
 		if (dayInputRef.current?.value) {
-			handleUsageDay(usage || '', params, router, dayInputRef);
+			handleUsageDay('ticket', params, router, dayInputRef);
 		}
 	};
 
@@ -29,13 +24,12 @@ export default function DayInput({ usage, isGLobal }: DayInputProps) {
 			<div
 				tabIndex={0}
 				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
-					'bg-primary text-white':
-						getDiffDays(startDate || '', endDate || '') === 'day' && isGLobal,
+					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'day',
 				})}
 			>
 				<p
 					className={clsx('', {
-						'text-white': getDiffDays(startDate || '', endDate || '') === 'day' && isGLobal,
+						'text-white': getDiffDays(startDate || '', endDate || '') === 'day',
 					})}
 				>
 					Day

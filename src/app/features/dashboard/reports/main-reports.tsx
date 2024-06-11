@@ -13,21 +13,19 @@ export default function MainReports() {
 					<p>Reports</p>
 				</div>
 				<div className='centering-flex h-full p-2 gap-x-2 w-fit'>
-					<ExpendableInput />
-					<MainReportDisplayDate />
 					<MainReportInputs />
 				</div>
 			</div>
 			<div className='body-reports w-full flex-1  flex flex-col gap-y-2 p-2'>
 				<div className='flex-1 w-full flex gap-x-2'>
-					<div className='flex-1'>
+					<div className='flex-1 bg-white'>
 						<MainTicketActivity />
 					</div>
-					<div className='flex-1'>
+					<div className='flex-1 bg-white'>
 						<MainTeamActivity />
 					</div>
 				</div>
-				<div className='flex-1 w-full'>
+				<div className='flex-1 w-full bg-white'>
 					<MainAgentActivity />
 				</div>
 			</div>

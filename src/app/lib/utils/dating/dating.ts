@@ -1,4 +1,6 @@
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { logging } from '../logging/logging';
+import { RefObject } from 'react';
 
 // Function to format date as mm--dd--yyyy
 export const formatDate = (date: Date): string => {
@@ -123,15 +125,104 @@ export const getDiffDays = (startDate: string, endDate: string): string => {
 	const diffMilliseconds = Math.abs(new Date(startDate).getTime() - new Date(endDate).getTime());
 	const twoDayMilliseconds = 48 * 60 * 60 * 1000;
 	const oneWeekMilliseconds = 192 * 60 * 60 * 1000;
-
-	logging('[diffMS]', diffMilliseconds);
-	logging('[two]', twoDayMilliseconds);
-	logging('[week]', oneWeekMilliseconds);
 	if (diffMilliseconds === twoDayMilliseconds) {
 		return 'day';
 	} else if (diffMilliseconds === oneWeekMilliseconds) {
 		return 'week';
 	} else {
 		return 'month';
+	}
+};
+
+export const handleUsageDay = (
+	usage: string,
+	params: URLSearchParams,
+	router: AppRouterInstance,
+	dayInputRef: RefObject<HTMLInputElement>,
+) => {
+	if (dayInputRef.current?.value) {
+		if (usage === 'ticket') {
+			params.set('tasd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('taed', formatDay(dayInputRef.current?.value.toString()).endDate);
+			router.replace(`?${params.toString()}`);
+		} else if (usage === 'team') {
+			params.set('tesd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('teed', formatDay(dayInputRef.current?.value.toString()).endDate);
+			router.replace(`?${params.toString()}`);
+		} else if (usage === 'agent') {
+			params.set('agsd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('aged', formatDay(dayInputRef.current?.value.toString()).endDate);
+			router.replace(`?${params.toString()}`);
+		} else {
+			params.set('tasd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('taed', formatDay(dayInputRef.current?.value.toString()).endDate);
+			params.set('agsd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('aged', formatDay(dayInputRef.current?.value.toString()).endDate);
+			params.set('tesd', formatDay(dayInputRef.current?.value.toString()).startDate);
+			params.set('teed', formatDay(dayInputRef.current?.value.toString()).endDate);
+			router.replace(`?${params.toString()}`);
+		}
+	}
+};
+export const handleUsageMonth = (
+	usage: string,
+	params: URLSearchParams,
+	router: AppRouterInstance,
+	monthInputRef: RefObject<HTMLInputElement>,
+) => {
+	if (monthInputRef.current?.valueAsDate) {
+		const startDate = formatMonth(monthInputRef.current.valueAsDate.toString()).startDate;
+		const endDate = formatMonth(monthInputRef.current.valueAsDate.toString()).endDate;
+
+		if (usage === 'ticket') {
+			params.set('tasd', startDate);
+			params.set('taed', endDate);
+		} else if (usage === 'team') {
+			params.set('tesd', startDate);
+			params.set('teed', endDate);
+		} else if (usage === 'agent') {
+			params.set('agsd', startDate);
+			params.set('aged', endDate);
+		} else {
+			params.set('tasd', startDate);
+			params.set('taed', endDate);
+			params.set('agsd', startDate);
+			params.set('aged', endDate);
+			params.set('tesd', startDate);
+			params.set('teed', endDate);
+		}
+		router.replace(`?${params.toString()}`);
+	}
+};
+
+export const handleUsageWeek = (
+	usage: string,
+	params: URLSearchParams,
+	router: AppRouterInstance,
+	weekInputRef: RefObject<HTMLInputElement>,
+) => {
+	if (weekInputRef.current?.valueAsDate) {
+		logging('[weekInput]', weekInputRef.current.valueAsDate);
+		const startDate = formatWeek(weekInputRef.current.valueAsDate.toString()).startDate;
+		const endDate = formatWeek(weekInputRef.current.valueAsDate.toString()).endDate;
+
+		if (usage === 'ticket') {
+			params.set('tasd', startDate);
+			params.set('taed', endDate);
+		} else if (usage === 'team') {
+			params.set('tesd', startDate);
+			params.set('teed', endDate);
+		} else if (usage === 'agent') {
+			params.set('agsd', startDate);
+			params.set('aged', endDate);
+		} else {
+			params.set('tasd', startDate);
+			params.set('taed', endDate);
+			params.set('agsd', startDate);
+			params.set('aged', endDate);
+			params.set('tesd', startDate);
+			params.set('teed', endDate);
+		}
+		router.replace(`?${params.toString()}`);
 	}
 };

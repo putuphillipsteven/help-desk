@@ -35,7 +35,7 @@ export default function ExpendableInput() {
 		setInputDisplay(!inputDisplay);
 	};
 	return (
-		<div className='centering-flex gap-x-2 h-full' ref={containerRef}>
+		<div className='centering-flex gap-x-2 h-full px-2' ref={containerRef}>
 			{inputDisplay && (
 				<input
 					ref={inputRef}
