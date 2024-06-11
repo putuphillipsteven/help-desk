@@ -1,10 +1,11 @@
 import AGAInputs from './agent-activity/ag-a-inputs';
+import AGAFilter from './agent-activity/ag-filter';
 import TEAInputs from './team-activity/te-a-inputs';
 
 export default function MainAgentActivity() {
 	return (
-		<div className='w-full h-full flex flex-col shadow-lg p-2 rounded-md'>
-			<div className='header-reports w-full h-[3em] flex justify-between'>
+		<div className='w-full h-full flex flex-col shadow-lg rounded-md'>
+			<div className='header-reports w-full h-[3em] flex justify-between px-2'>
 				<div className='centering-flex px-2'>
 					<p>Agent Activity</p>
 				</div>
@@ -12,9 +13,8 @@ export default function MainAgentActivity() {
 					<AGAInputs />
 				</div>
 			</div>
-
 			<div className='body-ticket-activity flex-1 w-full'>
-				<p>Body</p>
+				<AGAFilter />
 			</div>
 		</div>
 	);

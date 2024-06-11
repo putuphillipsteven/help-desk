@@ -117,7 +117,7 @@ export const getNextDayDate = (dateString1: string, dateString2: string): string
 		// Construct the formatted date string
 		return formatToName(`${year}-${month}-${day}`);
 	} else {
-		return `${formatToName(dateString1)} - ${formatToName(dateString2)}`; // Return null if the difference is not one day
+		return `${formatToName(dateString1)} - ${formatToName(dateString2)}`;
 	}
 };
 
