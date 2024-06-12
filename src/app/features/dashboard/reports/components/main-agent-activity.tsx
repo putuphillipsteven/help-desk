@@ -1,7 +1,12 @@
+import Link from 'next/link';
 import AGAInputs from './agent-activity/ag-a-inputs';
 import AGAFilter from './agent-activity/ag-filter';
 
-export default function MainAgentActivity() {
+interface MainAgentActivityProps {
+	children: React.ReactNode;
+}
+
+export default function MainAgentActivity({ children }: MainAgentActivityProps) {
 	return (
 		<div className='w-full h-full flex flex-col gap-y-4 shadow-lg rounded-md'>
 			<div className='header-reports w-full h-[3em] flex justify-between px-2'>
@@ -14,6 +19,7 @@ export default function MainAgentActivity() {
 			</div>
 			<div className='body-ticket-activity flex-1 w-full'>
 				<AGAFilter />
+				<Link href={'1'}>Test</Link>
 			</div>
 		</div>
 	);

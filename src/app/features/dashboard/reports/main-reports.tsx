@@ -3,7 +3,11 @@ import MainTeamActivity from './components/main-team-activity';
 import MainTicketActivity from './components/main-ticket-activity';
 import MainReportInputs from './components/main-reports-inputs';
 
-export default function MainReports() {
+interface MainReportsProps {
+	children: React.ReactNode;
+}
+
+export default function MainReports({ children }: MainReportsProps) {
 	return (
 		<div className='main-reports w-full h-full flex flex-col'>
 			<div className='header-reports w-full h-[3em] flex justify-between  border-b border-neutral'>
@@ -24,7 +28,7 @@ export default function MainReports() {
 					</div>
 				</div>
 				<div className='flex-1 w-full bg-white'>
-					<MainAgentActivity />
+					<MainAgentActivity>{children}</MainAgentActivity>
 				</div>
 			</div>
 		</div>
