@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import AGAInputs from './agent-activity/ag-a-inputs';
-import AGAFilter from './agent-activity/ag-filter';
+import AGAInputs from './agent-activity/date-filter/ag-ac-date-filter';
+import AgAcDateFilter from './agent-activity/date-filter/ag-ac-date-filter';
 
 interface MainAgentActivityProps {
 	children: React.ReactNode;
@@ -14,13 +13,10 @@ export default function MainAgentActivity({ children }: MainAgentActivityProps) 
 					<p className='text-xl font-medium'>Agent Activity</p>
 				</div>
 				<div className='centering-flex h-full p-2 gap-x-2 w-fit'>
-					<AGAInputs />
+					<AgAcDateFilter />
 				</div>
 			</div>
-			<div className='body-ticket-activity flex-1 w-full'>
-				<AGAFilter />
-				<Link href={'1'}>Test</Link>
-			</div>
+			<div className='body-ticket-activity flex-1 w-full'></div>
 		</div>
 	);
 }
