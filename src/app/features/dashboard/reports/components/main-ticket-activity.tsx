@@ -66,7 +66,7 @@ export default function MainTicketActivity() {
 		<div className='w-full h-full flex flex-col shadow-lg p-2 rounded-md'>
 			<div className='header-reports w-full h-[3em] flex justify-between'>
 				<div className='centering-flex px-2'>
-					<p>Ticket Activity</p>
+					<p className='font-medium text-xl'>Ticket Activity</p>
 				</div>
 				<div className='centering-flex p-2 gap-x-2 w-fit'>
 					<TADisplayDate />

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Filter, filters } from '../filter';
+import { Filter, filters } from '../../filter';
 import { logging } from '@/app/lib/utils/logging/logging';
 import clsx from 'clsx';
 
@@ -20,7 +20,7 @@ export default function TEAFilter() {
 		return (
 			<p
 				key={filter.label}
-				className={clsx('text-sm cursor-pointer px-2  hover:font-medium h-full', {
+				className={clsx('text-sm cursor-pointer px-2 pb-1  hover:font-medium h-full', {
 					'text-primary font-bold border-b-2 border-primary': tAFilter === filter.query,
 				})}
 				onClick={() => {
