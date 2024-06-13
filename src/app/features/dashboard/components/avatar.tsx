@@ -9,6 +9,7 @@ interface ProfileAvatarProps {
 	name?: string;
 	companyName?: string;
 	agents?: number;
+	email?: string;
 }
 
 interface ProfileAvatarState {}
@@ -23,13 +24,13 @@ export default class ProfileAvatar extends Component<ProfileAvatarProps, Profile
 		return (
 			<div className='profile-avatar centering-flex gap-x-4 w-full '>
 				<div className='avatar placeholder'>
-					<div className='bg-neutral text-neutral-content rounded-full w-12'>
+					<div className='bg-neutral text-neutral-content rounded-full w-10'>
 						<span>{getInitials(this.props.name || 'User Name')}</span>
 					</div>
 				</div>
 				<div className='flex flex-col'>
-					<p className='text-xs'>Username</p>
-					<p className='text-xs text-neutral-text'>email@email.com</p>
+					<p className='text-xs'>{this.props.name}</p>
+					<p className='text-xs text-neutral-text'>{this.props.email}</p>
 				</div>
 			</div>
 		);

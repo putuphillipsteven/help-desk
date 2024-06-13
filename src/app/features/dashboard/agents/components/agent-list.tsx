@@ -3,48 +3,39 @@
 import { Fragment } from 'react';
 import { Agents } from '../data/agents';
 import clsx from 'clsx';
-import { getInitials } from '@/app/lib/utils/naming/naming';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { getAgentId } from '../utils/agents';
+import ProfileAvatar from '../../components/avatar';
+import { logging } from '@/app/lib/utils/logging/logging';
 
 interface AgentListProps {
 	agents: Agents;
-	children?: React.ReactNode;
 }
 
-export default function AgentList({ agents, children }: AgentListProps) {
+export default function AgentList({ agents }: AgentListProps) {
+	const router = useRouter();
 	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const agentId = searchParams.get('agId');
+	const name = searchParams.get('na');
+	const role = searchParams.get('ro');
+	const sort = name ? `na=${name}` : `ro=${role}`;
 	const renderedAgents = agents?.map((agent) => {
 		return (
 			<Fragment key={agent.id}>
 				<tr
-					className={clsx('h-fit', {
+					className={clsx('h-fit cursor-pointer', {
 						'bg-primary-content border-l-4 border-primary':
 							getAgentId(pathname) === String(agent.id),
 					})}
+					onClick={() => {
+						router.replace(`${pathname}?${sort}&agId=${agent.id}`);
+					}}
 				>
 					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
-						<div className='centering-flex gap-x-6'>
-							{/* <div className='avatar'>
-							<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
-								<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-							</div>
-						</div> */}
-							<div className='avatar placeholder w-10'>
-								<div className='bg-neutral text-neutral-content rounded-full w-12'>
-									<span>{getInitials(agent.name)}</span>
-								</div>
-							</div>
-							<div className='flex flex-col'>
-								<Link href={`/dashboard/agents/agent/${agent.id}?na=asc`}>
-									<p className='text-xs'>{agent.name}</p>
-									<p className='text-xs text-neutral-text'>{agent.email}</p>
-								</Link>
-							</div>
-						</div>
+						<ProfileAvatar avatarType='profile' name={agent.name} email={agent.email} />
 					</td>
-					<td className=''>
+					<td>
 						<div
 							className={clsx('badge border-none', {
 								'bg-neutral text-primary-text': agent.role === 'Agent',
@@ -70,9 +61,7 @@ export default function AgentList({ agents, children }: AgentListProps) {
 							getAgentId(pathname) === String(agent.id),
 					})}
 				>
-					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'>
-						{children}
-					</td>
+					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'></td>
 				</tr>
 			</Fragment>
 		);

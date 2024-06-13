@@ -3,10 +3,11 @@
 import { LiaSortAlphaDownSolid, LiaSortAlphaUpSolid } from 'react-icons/lia';
 import AddNewAgentButton from './button';
 import AgentList from './agent-list';
-import { Agents, agents } from '../data/agents';
+import { Agents } from '../data/agents';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { Suspense, useEffect } from 'react';
+import { useEffect } from 'react';
 import { logging } from '@/app/lib/utils/logging/logging';
+import clsx from 'clsx';
 
 interface MainAgentProps {
 	agents: Agents;
@@ -16,8 +17,9 @@ interface MainAgentProps {
 export default function MainAgent({ agents, children }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
-
 	const params = new URLSearchParams(searchParams);
+	const agentId = searchParams.get('agId');
+	const agentParams = agentId ? `&agId=${agentId}` : '';
 	const name = searchParams.get('na');
 	const role = searchParams.get('ro');
 
@@ -30,25 +32,28 @@ export default function MainAgent({ agents, children }: MainAgentProps) {
 
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
-		logging('[newParams]', newParams);
 		if (sort === 'na') {
 			newParams.delete('ro');
+			newParams.delete('agId');
 			const currentSort = newParams.get('na');
-			if (currentSort === 'asc') {
-				newParams.set('na', 'desc');
-			} else {
+			logging('na', currentSort);
+			if (currentSort === 'desc') {
 				newParams.set('na', 'asc');
+			} else {
+				newParams.set('na', 'desc');
 			}
 		} else if (sort === 'ro') {
 			newParams.delete('na');
+			newParams.delete('agId');
 			const currentSort = newParams.get('ro');
-			if (currentSort === 'asc') {
-				newParams.set('ro', 'desc');
-			} else {
+			logging('ro', currentSort);
+			if (currentSort === 'desc') {
 				newParams.set('ro', 'asc');
+			} else {
+				newParams.set('ro', 'desc');
 			}
 		}
-		router.replace(`?${newParams.toString()}`);
+		router.replace(`?${newParams.toString()}${agentParams}`);
 	};
 
 	return (
@@ -65,9 +70,19 @@ export default function MainAgent({ agents, children }: MainAgentProps) {
 									>
 										<p className='font-medium'>Name</p>
 										{name === 'desc' ? (
-											<LiaSortAlphaUpSolid className='text-2xl text-primary-text' />
+											<LiaSortAlphaUpSolid
+												className={clsx('text-2xl', {
+													'text-info-text': name,
+													'text-primary-text': !name,
+												})}
+											/>
 										) : (
-											<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
+											<LiaSortAlphaDownSolid
+												className={clsx('text-2xl', {
+													'text-info-text': name,
+													'text-primary-text': !name,
+												})}
+											/>
 										)}
 									</div>
 								</th>
@@ -78,9 +93,19 @@ export default function MainAgent({ agents, children }: MainAgentProps) {
 									>
 										<p className='font-medium'>Role</p>
 										{role === 'desc' ? (
-											<LiaSortAlphaUpSolid className='text-2xl text-primary-text' />
+											<LiaSortAlphaUpSolid
+												className={clsx('text-2xl', {
+													'text-info-text': role,
+													'text-primary-text': !role,
+												})}
+											/>
 										) : (
-											<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
+											<LiaSortAlphaDownSolid
+												className={clsx('text-2xl', {
+													'text-info-text': role,
+													'text-primary-text': !role,
+												})}
+											/>
 										)}
 									</div>
 								</th>
@@ -99,7 +124,7 @@ export default function MainAgent({ agents, children }: MainAgentProps) {
 									</div>
 								</td>
 							</tr>
-							<AgentList agents={agents}>{children}</AgentList>
+							<AgentList agents={agents} />
 						</tbody>
 					</table>
 				</div>
