@@ -1,8 +1,5 @@
-'use client';
-
 import React from 'react';
 import { LiaSortAlphaDownSolid } from 'react-icons/lia';
-import { TbEdit } from 'react-icons/tb';
 import AddNewAgentButton from './button';
 
 export default function AgentsSkeleton() {

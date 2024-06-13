@@ -6,13 +6,14 @@ import AgentList from './agent-list';
 import { Agents, agents } from '../data/agents';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Suspense, useEffect } from 'react';
+import { logging } from '@/app/lib/utils/logging/logging';
 
 interface MainAgentProps {
 	agents: Agents;
 	children?: React.ReactNode;
 }
 
-export default async function MainAgent({ agents, children }: MainAgentProps) {
+export default function MainAgent({ agents, children }: MainAgentProps) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 
@@ -29,6 +30,7 @@ export default async function MainAgent({ agents, children }: MainAgentProps) {
 
 	const handleSort = (sort: string) => {
 		const newParams = new URLSearchParams(searchParams);
+		logging('[newParams]', newParams);
 		if (sort === 'na') {
 			newParams.delete('ro');
 			const currentSort = newParams.get('na');
