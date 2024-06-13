@@ -25,8 +25,7 @@ export default function AgentList({ agents }: AgentListProps) {
 			<Fragment key={agent.id}>
 				<tr
 					className={clsx('h-fit cursor-pointer', {
-						'bg-primary-content border-l-4 border-primary':
-							getAgentId(pathname) === String(agent.id),
+						'bg-primary-content border-l-4 border-primary': agentId === String(agent.id),
 					})}
 					onClick={() => {
 						router.replace(`${pathname}?${sort}&agId=${agent.id}`);
