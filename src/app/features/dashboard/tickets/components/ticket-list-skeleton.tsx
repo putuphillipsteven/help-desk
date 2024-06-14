@@ -9,8 +9,8 @@ export default function TicketListSkeleton() {
 			</td>
 			<td className='p-2'>
 				<div className='centering-flex gap-x-2 w-full cursor-pointer'>
-					<div className='avatar placeholder w-8'>
-						<div className='bg-neutral skeleton rounded-full w-8 h-8'></div>
+					<div className='avatar placeholder'>
+						<div className='bg-neutral skeleton rounded-full w-10 h-10'></div>
 					</div>
 					<div className='flex flex-col'>
 						<p className='text-xs bg-neutral skeleton w-24 h-2 '></p>
