@@ -11,7 +11,7 @@ import { getTicketsById } from '../../hooks/useTickets';
 import { useForm } from 'react-hook-form';
 import { ReplyFormData, ReplyFormSchema } from '../../utils/replySchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { tickets } from '../../data/tickets';
+import { tickets } from '../../data/dummyTickets';
 
 interface DetailsMainProps {
 	id: string;

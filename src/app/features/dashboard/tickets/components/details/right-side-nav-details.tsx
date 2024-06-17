@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { SlOptions } from 'react-icons/sl';
-import { Ticket } from '../../data/tickets';
+import { Ticket } from '../../data/dummyTickets';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import clsx from 'clsx';
 

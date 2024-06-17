@@ -1,4 +1,4 @@
-import { Ticket } from '../data/tickets';
+import { Ticket } from '../data/dummyTickets';
 
 export const getTicketsById = (id: string, tickets: Ticket[]): Promise<Ticket | undefined> => {
 	return new Promise((resolve) => {

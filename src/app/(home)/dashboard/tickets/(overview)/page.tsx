@@ -1,5 +1,5 @@
 import { CreateButton } from '@/app/components/button';
-import TicketListsTable from '@/app/features/dashboard/tickets/components/table/ticket-lists-table';
+import TicketListsTable from '@/app/features/dashboard/tickets/components/ticket-lists/table';
 
 export default async function Page() {
 	return (
