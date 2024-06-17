@@ -10,7 +10,7 @@ export const getTicketsById = (id: string, tickets: Ticket[]): Promise<Ticket | 
 		if (foundTicket) {
 			setTimeout(() => {
 				resolve(foundTicket);
-			}, 1000);
+			}, 4000);
 		}
 	});
 };
