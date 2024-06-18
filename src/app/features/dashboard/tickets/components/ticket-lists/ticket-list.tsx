@@ -19,7 +19,7 @@ export default function TicketList() {
 		} catch (error) {
 			console.error('Failed to fetch tickets:', error);
 		} finally {
-			setLoading(false); // Set loading to false after fetching
+			setLoading(false);
 		}
 	};
 
@@ -30,7 +30,7 @@ export default function TicketList() {
 	const router = useRouter();
 
 	if (loading) {
-		return <TicketListsSkeleton />; // Show skeleton while loading
+		return <TicketListsSkeleton />;
 	}
 
 	const renderedTicketLists = ticketLists?.map((ticket) => (

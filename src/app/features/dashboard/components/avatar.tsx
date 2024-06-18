@@ -3,7 +3,6 @@
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import { Component } from 'react';
 
-// ProfileAvatar Component
 interface ProfileAvatarProps {
 	avatarType: 'profile' | 'company';
 	name?: string;
@@ -24,7 +23,7 @@ export default class ProfileAvatar extends Component<ProfileAvatarProps, Profile
 		return (
 			<div className='profile-avatar centering-flex gap-x-4 w-full '>
 				<div className='avatar placeholder'>
-					<div className='bg-neutral text-neutral-content rounded-full w-10'>
+					<div className='bg-neutral text-neutral-content rounded-full w-8'>
 						<span>{getInitials(this.props.name || 'User Name')}</span>
 					</div>
 				</div>
