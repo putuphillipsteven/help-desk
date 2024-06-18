@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
-import { SlOptions } from 'react-icons/sl';
-import { Ticket } from '../../data/dummyTickets';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import clsx from 'clsx';
+import { TicketProps } from '../../data/dummyTickets';
+import ProfileAvatar from '../../../components/avatar';
 
 type Content = {
-	[key: string]: string | undefined; // Allows keys with string values or undefined
+	[key: string]: string | undefined;
 };
 
 interface Section {
@@ -23,7 +23,7 @@ export default function RightSideNavDetails({
 	status,
 	team,
 	user,
-}: Ticket): JSX.Element {
+}: TicketProps): JSX.Element {
 	const [openSection, setOpenSection] = useState<number | null>(null);
 	const [detailsDisplay, setDetailsDisplay] = useState(false);
 
@@ -115,15 +115,7 @@ export default function RightSideNavDetails({
 												<p className='text-xs text-info-text'>Change</p>
 											</div>
 											<div className='centering-flex gap-x-2'>
-												<div className='avatar placeholder'>
-													<div className='bg-neutral text-primary-text rounded-md w-12'>
-														<span>{getInitials(section?.content.team || 'Team')}</span>
-													</div>
-												</div>
-												<div className='flex flex-col gap-y-1'>
-													<p className='text-xs'>Default Team</p>
-													<p className='text-xs text-neutral-text'>{section.content.team}</p>
-												</div>
+												<ProfileAvatar avatarType='company' companyName={team} />
 											</div>
 										</div>
 										<div className='centering-flex justify-between py-2'>
@@ -136,20 +128,7 @@ export default function RightSideNavDetails({
 													</div>
 												</div>
 												<div className='centering-flex gap-x-4 w-full '>
-													{/* <div className='avatar'>
-													<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
-														<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-													</div>
-												</div> */}
-													<div className='avatar placeholder'>
-														<div className='bg-neutral text-neutral-content rounded-full w-12'>
-															<span>{getInitials(section?.content.user || 'User Name')}</span>
-														</div>
-													</div>
-													<div className='flex flex-col'>
-														<p className='text-xs'>Username</p>
-														<p className='text-xs text-neutral-text'>email@email.com</p>
-													</div>
+													<ProfileAvatar avatarType='profile' name={agent} />
 												</div>
 											</div>
 										</div>
@@ -157,20 +136,11 @@ export default function RightSideNavDetails({
 								)}
 								{section.title === 'Requester' && (
 									<div className='centering-flex gap-x-4 w-full py-2'>
-										{/* <div className='avatar'>
-										<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
-											<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-										</div>
-									</div> */}
-										<div className='avatar placeholder'>
-											<div className='bg-neutral text-neutral-content rounded-full w-12'>
-												<span>{getInitials(section?.content.user || 'User Name')}</span>
-											</div>
-										</div>
-										<div className='flex flex-col'>
-											<p className='text-xs'>Username</p>
-											<p className='text-xs text-neutral-text'>email@email.com</p>
-										</div>
+										<ProfileAvatar
+											avatarType='profile'
+											name={user?.username}
+											email={user?.username}
+										/>
 									</div>
 								)}
 							</div>

@@ -3,7 +3,7 @@ interface User {
 	email: string;
 }
 
-export interface Ticket {
+export interface TicketProps {
 	id: number | undefined;
 	subject: string | undefined;
 	createdAt: string | undefined;
@@ -15,7 +15,7 @@ export interface Ticket {
 	details: string | undefined;
 }
 
-type Tickets = Ticket[];
+export type Tickets = TicketProps[];
 
 export const tickets: Tickets = [
 	{
