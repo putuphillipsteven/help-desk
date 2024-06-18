@@ -1,29 +1,37 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { Ticket, Tickets, TicketsFilters } from '../../data/ticket';
-import { useEffect, useState } from 'react';
 import ProfileAvatar from '../../../components/avatar';
+import { tickets } from '../../data/dummyTickets';
+import { Ticket, TicketProps } from '../../data/ticket';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { TicketListsSkeleton } from '../ticket-list-skeleton';
 
-interface TicketListsProps {
-	filter: TicketsFilters;
-}
-
-export default function TicketList({ filter }: TicketListsProps) {
-	const router = useRouter();
-
+export default function TicketList() {
 	const ticket = new Ticket();
 
-	const [ticketLists, setTicketLists] = useState<Tickets | null>([]);
+	const [ticketLists, setTicketLists] = useState<TicketProps[]>([]);
+	const [loading, setLoading] = useState(true); // Loading state
 
 	const fetchTickets = async () => {
-		const tickets = await ticket.renderTicketLists(filter);
-		setTicketLists(tickets);
+		try {
+			await ticket.getTicketLists(tickets).then((data) => setTicketLists(data));
+		} catch (error) {
+			console.error('Failed to fetch tickets:', error);
+		} finally {
+			setLoading(false); // Set loading to false after fetching
+		}
 	};
 
 	useEffect(() => {
 		fetchTickets();
 	}, []);
+
+	const router = useRouter();
+
+	if (loading) {
+		return <TicketListsSkeleton />; // Show skeleton while loading
+	}
 
 	const renderedTicketLists = ticketLists?.map((ticket) => (
 		<tr key={ticket.id}>
@@ -68,5 +76,6 @@ export default function TicketList({ filter }: TicketListsProps) {
 			</td>
 		</tr>
 	));
-	return renderedTicketLists;
+
+	return <tbody>{renderedTicketLists}</tbody>;
 }

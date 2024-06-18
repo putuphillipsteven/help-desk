@@ -1,8 +1,9 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import TicketList from './ticket-list';
 import { TicketsFilters } from '../../data/ticket';
+import React from 'react';
+import TicketList from './ticket-list';
 
 export default function TicketListsTable() {
 	const searchParams = useSearchParams();
@@ -41,9 +42,7 @@ export default function TicketListsTable() {
 					<th className='font-medium text-primary-text p-2'>Last Message</th>
 				</tr>
 			</thead>
-			<tbody>
-				<TicketList filter={filter} />
-			</tbody>
+			<TicketList />
 		</table>
 	);
 }

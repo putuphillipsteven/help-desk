@@ -1,13 +1,9 @@
-import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
-import { getTickets } from '../hooks/useTickets';
-import { tickets } from './dummyTickets';
-
 interface User {
 	username: string;
 	email: string;
 }
 
-interface TicketProps {
+export interface TicketProps {
 	id: number | undefined;
 	subject: string | undefined;
 	createdAt: string | undefined;
@@ -30,20 +26,14 @@ export interface TicketsFilters {
 	endDate?: string | '';
 }
 
-// const _ticketLists: WeakMap<object, TicketItemProps[]> = new WeakMap<object, TicketItemProps[]>();
-
 export class Ticket {
 	constructor() {}
 
-	async renderTicketLists({
-		assignee = 'all',
-		status = 'open',
-		endDate = '',
-		folder = '',
-		requester = '',
-		startDate = '',
-	}: TicketsFilters) {
-		const ticketsData = await getTickets(tickets);
-		return ticketsData;
+	async getTicketLists(tickets: Tickets): Promise<TicketProps[]> {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve(tickets);
+			}, 4000);
+		});
 	}
 }
