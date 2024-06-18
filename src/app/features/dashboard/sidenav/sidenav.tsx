@@ -75,12 +75,7 @@ export default function SideNav() {
 					<NavLink />
 					<NavLink /> */}
 					</div>
-					<div className='centering-flex gap-x-4 w-full '>
-						{/* <div className='avatar'>
-						<div className='w-10 rounded-full  border-2 border-light-gray-dimata3'>
-							<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-						</div>
-					</div> */}
+					<div className='centering-flex gap-x-4 w-full'>
 						<div className='avatar placeholder'>
 							<div className='bg-neutral text-neutral-content rounded-full w-12'>
 								<span>{getInitials('User Name' || '')}</span>
