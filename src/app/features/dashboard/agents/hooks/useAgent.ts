@@ -1,4 +1,4 @@
-import { Agent, Agents } from '../data/agents';
+import { Agent, Agents } from '../data/dummyAgents';
 
 export const getAgentById = (agents: Agents, id: number): Agent | undefined => {
 	return agents.find((agent) => agent.id === id);

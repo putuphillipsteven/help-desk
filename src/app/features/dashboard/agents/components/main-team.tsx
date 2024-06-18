@@ -5,7 +5,7 @@ import { CreateNewTeamButton } from './button';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import TeamList from './team-list';
-import { Teams } from '../data/team';
+import { Teams } from '../data/dummyTeams';
 
 interface MainTeamProps {
 	teams: Teams;

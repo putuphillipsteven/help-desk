@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment } from 'react';
-import { Agents } from '../data/agents';
+import { Agents } from '../data/dummyAgents';
 import clsx from 'clsx';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { getAgentId } from '../utils/agents';

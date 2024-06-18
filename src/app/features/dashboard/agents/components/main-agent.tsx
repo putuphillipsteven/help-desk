@@ -3,7 +3,7 @@
 import { LiaSortAlphaDownSolid, LiaSortAlphaUpSolid } from 'react-icons/lia';
 import AddNewAgentButton from './button';
 import AgentList from './agent-list';
-import { Agents } from '../data/agents';
+import { Agents } from '../data/dummyAgents';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { logging } from '@/app/lib/utils/logging/logging';

@@ -4,10 +4,10 @@ import { Fragment } from 'react';
 import clsx from 'clsx';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import { usePathname } from 'next/navigation';
-import { Teams } from '../data/team';
+import { Teams } from '../data/dummyTeams';
 import { getTeamId } from '../utils/team';
 import ProfileAvatar from '../../components/avatar';
-import { agents } from '../data/agents';
+import { agents } from '../data/dummyAgents';
 
 interface TeamListProps {
 	teams: Teams;

@@ -2,8 +2,8 @@
 
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import { getAgentById } from '../hooks/useAgent';
-import { agents } from '../data/agents';
-import { getFormattedEmail, getFormattedString } from '../utils/agents';
+import { agents } from '../data/dummyAgents';
+import { getFormattedString } from '../utils/agents';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useState } from 'react';
 import ProfileAvatar from '../../components/avatar';
