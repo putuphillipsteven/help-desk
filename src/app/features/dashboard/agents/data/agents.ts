@@ -1,5 +1,5 @@
 type Team = {
-	name: string; // Allows keys with string values or undefined
+	name: string;
 	leader: string;
 };
 

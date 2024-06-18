@@ -1,8 +1,8 @@
 'use client';
 
 import ProfileAvatar from '../../../components/avatar';
-import { tickets } from '../../data/dummyTickets';
-import { Ticket, TicketProps } from '../../data/ticket';
+import { TicketProps, tickets } from '../../data/dummyTickets';
+import { Ticket } from '../../data/ticket';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TicketListsSkeleton } from '../ticket-list-skeleton';

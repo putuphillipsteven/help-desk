@@ -6,6 +6,7 @@ import { agents } from '../data/agents';
 import { getFormattedEmail, getFormattedString } from '../utils/agents';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { useState } from 'react';
+import ProfileAvatar from '../../components/avatar';
 interface AgentDetailsProps {
 	id: string;
 }
@@ -16,20 +17,7 @@ export default function AgentDetails({ id }: AgentDetailsProps) {
 	return (
 		<div className='w-full h-full flex flex-col gap-y-2 p-2 md:flex'>
 			<div className='hidden lg:flex items-center gap-x-2 w-full '>
-				{/* <div className='avatar'>
-						<div className='w-10 rounded-full  border-2 border-neutral'>
-							<img src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
-						</div>
-					</div> */}
-				<div className='avatar placeholder'>
-					<div className='bg-neutral text-neutral-content rounded-full w-12'>
-						<span>{getInitials(agent?.name || 'User Name')}</span>
-					</div>
-				</div>
-				<div className='flex flex-col'>
-					<p className='text-xs'>{getFormattedString(agent?.name || 'Username')}</p>
-					<p className='text-xs text-neutral-text'>{getFormattedEmail(agent?.email || '@')}</p>
-				</div>
+				<ProfileAvatar avatarType='profile' name={agent?.name} email={agent?.name} />
 			</div>
 			<div className='flex flex-col gap-y-2'>
 				<div

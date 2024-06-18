@@ -3,7 +3,7 @@ import { IoAdd } from 'react-icons/io5';
 export default function AddNewAgentButton() {
 	return (
 		<button className='button-md centering-flex gap-x-6 bg-transparent border-none hover:bg-transparent'>
-			<div className=' w-10 h-10 centering-flex justify-center  bg-primary rounded-full'>
+			<div className=' w-8 h-8 centering-flex justify-center  bg-primary rounded-full'>
 				<IoAdd className='text-2xl text-base-100' />
 			</div>
 			<p className='text-sm'>Add New Agent</p>
@@ -13,7 +13,7 @@ export default function AddNewAgentButton() {
 export function CreateNewTeamButton() {
 	return (
 		<button className='button-md centering-flex gap-x-6 bg-transparent border-none hover:bg-transparent'>
-			<div className=' w-10 h-10 centering-flex justify-center  bg-primary rounded-full'>
+			<div className=' w-8 h-8 centering-flex justify-center  bg-primary rounded-full'>
 				<IoAdd className='text-2xl text-base-100' />
 			</div>
 			<p className='text-sm'>Create New Team</p>

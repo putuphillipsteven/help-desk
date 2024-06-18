@@ -1,13 +1,10 @@
 import { CreateButton } from '@/app/components/button';
 import Alert from '@/app/features/dashboard/sidenav/components/alert';
 import LeftSideNavCreateTickets from '@/app/features/dashboard/tickets/components/create/left-side-nav-create-tickets';
-// import TicketListsTable from '@/app/features/dashboard/tickets/components/ticket-lists/table';
-import React, { Suspense } from 'react';
+import TicketListsTable from '@/app/features/dashboard/tickets/components/ticket-lists/ticket-lists-table';
+import React from 'react';
 
 export default function Page() {
-	const TicketListTable = React.lazy(
-		() => import('@/app/features/dashboard/tickets/components/ticket-lists/ticket-lists-table'),
-	);
 	return (
 		<div className='w-full h-full'>
 			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
@@ -23,9 +20,7 @@ export default function Page() {
 						<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 					</div>
 					<div className='p-2 border-l w-full h-full border-neutral overflow-auto'>
-						<Suspense fallback={<p>Loading Parent...</p>}>
-							<TicketListTable />
-						</Suspense>
+						<TicketListsTable />
 					</div>
 				</div>
 			</div>
