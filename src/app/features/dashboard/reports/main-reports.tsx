@@ -8,6 +8,7 @@ interface MainReportsProps {
 }
 
 export default function MainReports({ children }: MainReportsProps) {
+	console.log(process.env.API_URL);
 	return (
 		<div className='main-reports w-full h-full flex flex-col'>
 			<div className='header-reports w-full h-[3em] flex justify-between  border-b border-neutral'>
