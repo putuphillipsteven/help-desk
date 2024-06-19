@@ -1,4 +1,4 @@
-import { teams } from '@/app/features/dashboard/agents/data/team';
+import { teams } from '@/app/features/dashboard/agents/data/dummyTeams';
 import ProfileAvatar from '@/app/features/dashboard/components/avatar';
 
 export default function TeamList() {
