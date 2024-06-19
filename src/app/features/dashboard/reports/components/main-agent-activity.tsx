@@ -1,11 +1,9 @@
 import AGAInputs from './agent-activity/date-filter/ag-ac-date-filter';
 import AgAcDateFilter from './agent-activity/date-filter/ag-ac-date-filter';
 
-interface MainAgentActivityProps {
-	children: React.ReactNode;
-}
+interface MainAgentActivityProps {}
 
-export default function MainAgentActivity({ children }: MainAgentActivityProps) {
+export default function MainAgentActivity() {
 	return (
 		<div className='w-full h-full flex flex-col gap-y-4 shadow-lg rounded-md'>
 			<div className='header-reports w-full h-[3em] flex justify-between px-2'>

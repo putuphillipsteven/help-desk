@@ -12,6 +12,10 @@ export class Auth {
 		localStorage.setItem('user', JSON.stringify(user));
 	}
 
+	setUserInLocalStoragePMO(user: any) {
+		localStorage.setItem('user', JSON.stringify(user));
+	}
+
 	public async login(data: SignInData) {
 		try {
 			const users = await axiosInstance.get('/users');
@@ -39,11 +43,14 @@ export class Auth {
 	public async pmoLogin(data: SignInData) {
 		try {
 			const extendedData = {
-				...data,
+				username: 'admin',
+				password: 'password123',
 				ipAddress: '127.0.0.1',
 			};
 			const user = await axiosInstancePMO.post('/auth/username-login', extendedData);
 			if (!user) throw new Error('Unexpected Error');
+			this.setUserInLocalStoragePMO(user);
+
 			return {
 				message: 'Loggin Success',
 			};
