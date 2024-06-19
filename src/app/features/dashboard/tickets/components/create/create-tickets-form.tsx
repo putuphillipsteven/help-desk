@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import { CreateTicketSchema, TicketFormData } from '../../utils/ticketSchema';
-import TicketFormFields from './form-field';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AddButton } from '@/app/components/button';
 import CustomQuill from '@/app/components/custom-quill';
