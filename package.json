@@ -4,9 +4,9 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": " next dev -p 8115",
+		"dev": " next dev -p 3000",
 		"build": "next build",
-		"start": "next start -p 8115",
+		"start": "next start -p 3000",
 		"lint": "next lint",
 		"watch-json": "json-server --watch -p3100 src/app/lib/data/users.json"
 	},

@@ -60,13 +60,7 @@ export default function AgentsSkeleton() {
 				</div>
 			</div>
 			<div className='w-[240px] h-full overflow-hidden hidden lg:flex flex-col'>
-				{/* <div className='flex-1 flex flex-col p-4 gap-2'>
-					{Array(1)
-						.fill('')
-						.map((_, index) => (
-							<div key={index} className='skeleton h-4 w-16 bg-gray-200'></div>
-						))}
-				</div> */}
+				
 			</div>
 		</div>
 	);

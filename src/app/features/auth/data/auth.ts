@@ -2,9 +2,7 @@ import { axiosInstance, axiosInstancePMO } from '@/app/lib/utils/axios/axiosInst
 import { SignInData } from '../../login/utils/signInSchema';
 import { User } from '@/app/lib/utils/user/user';
 
-interface PMOLOGIN extends SignInData {
-	ipAddress: string;
-}
+
 export class Auth {
 	constructor() {}
 
@@ -40,7 +38,7 @@ export class Auth {
 		}
 	}
 
-	public async pmoLogin(data: SignInData) {
+	public async pmoLogin() {
 		try {
 			const extendedData = {
 				username: 'admin',

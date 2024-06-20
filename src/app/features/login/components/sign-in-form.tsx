@@ -21,7 +21,7 @@ export default function SignInForm() {
 
 	const onSubmit = async (data: SignInData) => {
 		try {
-			const user = await auth.pmoLogin(data);
+			const user = await auth.pmoLogin();
 			if (user) {
 				reset();
 			}
