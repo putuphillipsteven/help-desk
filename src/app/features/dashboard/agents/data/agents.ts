@@ -22,4 +22,20 @@ export class Agents {
 			}, 2000);
 		});
 	}
+
+	public async getAgentDetails(
+		agents: AgentsProps[],
+		agentId: string,
+	): Promise<AgentsProps | undefined> {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				try {
+					const agent = agents.find((agent) => String(agent.id) === agentId);
+					resolve(agent);
+				} catch (err) {
+					reject(err);
+				}
+			}, 2000);
+		});
+	}
 }

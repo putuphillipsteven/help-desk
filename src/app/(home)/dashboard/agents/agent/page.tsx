@@ -12,14 +12,7 @@ export default async function Page({
 
 	return (
 		<div className='w-full h-full flex bg-base-100'>
-			<div className='flex-1 h-full  flex flex-col overflow-y-hidden'>
-				<div className='w-full h-full overflow-auto md:overflow-hidden border-r border-neutral'>
-					<AgentList page={page} name={name} role={role} agentId={agentId} />
-				</div>
-			</div>
-			<div className='w-[240px] h-full overflow-hidden hidden lg:flex p-2'>
-				<p className='text-neutral text-xs'>Click agent name for details</p>
-			</div>
+			<AgentList page={page} name={name} role={role} agentId={agentId} />
 		</div>
 	);
 }
