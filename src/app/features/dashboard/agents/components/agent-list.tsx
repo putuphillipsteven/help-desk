@@ -20,6 +20,7 @@ export default function AgentList({ agents }: AgentListProps) {
 	const name = searchParams.get('na');
 	const role = searchParams.get('ro');
 	const sort = name ? `na=${name}` : `ro=${role}`;
+
 	const renderedAgents = agents?.map((agent) => {
 		return (
 			<Fragment key={agent.id}>
