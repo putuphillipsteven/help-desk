@@ -15,8 +15,10 @@ export default function TableHeadSort() {
 	const { replace } = useRouter();
 
 	useEffect(() => {
-		params.set('na', 'asc');
-		replace(`${pathname}?${params.toString()}`);
+		if (!nameSort && !roleSort) {
+			params.set('na', 'asc');
+			replace(`${pathname}?${params.toString()}`);
+		}
 	}, []);
 	return (
 		<tr className=''>
