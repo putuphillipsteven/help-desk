@@ -7,7 +7,6 @@ import React from 'react';
 export default function Page() {
 	return (
 		<div className='w-full h-full'>
-			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex'>
 				<div className='w-full lg:w-[240px] h-fit overflow-hidden'>
 					<LeftSideNavCreateTickets />

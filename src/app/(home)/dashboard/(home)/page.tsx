@@ -11,7 +11,6 @@ const Page: React.FC = () => {
 	const [user, setUser] = useState<User | any>(null);
 
 	useEffect(() => {
-		// Fetch user data from local storage
 		const storedUser = localStorage.getItem('user');
 		if (storedUser) {
 			setUser(JSON.parse(storedUser));

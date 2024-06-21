@@ -18,7 +18,6 @@ export default function MainAgents({ children }: MainAgentsProps) {
 
 	return (
 		<div className='w-full h-full'>
-			<Alert msg='Set up email forwarding to see new customer messages on your dashboard.' />
 			<div className='w-full h-full flex flex-col overflow-y-auto no-scrollbar'>
 				<div className='w-full h-full flex flex-col'>
 					<div className='w-full h-12 centering-flex justify-between border-b  border-neutral'>

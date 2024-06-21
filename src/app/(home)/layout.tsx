@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import 'quill/dist/quill.core.css';
 import { Toaster } from 'react-hot-toast';
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
