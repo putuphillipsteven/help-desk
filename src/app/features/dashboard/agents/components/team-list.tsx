@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Teams } from '../data/dummyTeams';
 import { getTeamId } from '../utils/team';
 import ProfileAvatar from '../../components/avatar';
-import { agents } from '../data/dummyAgents';
+import { agentLists } from '../data/dummyAgents';
 
 interface TeamListProps {
 	teams: Teams;
@@ -28,7 +28,11 @@ export default function TeamList({ teams, children }: TeamListProps) {
 				>
 					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
 						<div className='centering-flex gap-x-6 w-full '>
-							<ProfileAvatar avatarType='company' agents={agents.length} companyName={team?.name} />
+							<ProfileAvatar
+								avatarType='company'
+								agents={agentLists.length}
+								companyName={team?.name}
+							/>
 						</div>
 					</td>
 					<td>

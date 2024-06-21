@@ -1,6 +1,7 @@
-import { resolve } from 'path';
-import { Team } from './dummyTeams';
-import { agents } from './dummyAgents';
+type Team = {
+	name: string;
+	leader: string;
+};
 
 export interface AgentsProps {
 	id: number;
@@ -14,10 +15,10 @@ export interface AgentsProps {
 export class Agents {
 	constructor() {}
 
-	public getAgents(paramsAgents: AgentsProps[]): Promise<AgentsProps[]> {
+	public async getAgents(agents: AgentsProps[]): Promise<AgentsProps[]> {
 		return new Promise((resolve) => {
 			setTimeout(() => {
-				resolve(paramsAgents);
+				resolve(agents);
 			}, 2000);
 		});
 	}

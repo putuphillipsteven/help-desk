@@ -1,6 +1,4 @@
 import React from 'react';
-import { LiaSortAlphaDownSolid } from 'react-icons/lia';
-import AddNewAgentButton from './button';
 
 export default function AgentsSkeleton() {
 	return (
@@ -12,14 +10,12 @@ export default function AgentsSkeleton() {
 							<tr className=''>
 								<th className='lg:w-fit px-4 lg:pl-36'>
 									<div className='centering-flex gap-x-4 cursor-pointer'>
-										<p className='font-medium'>Name</p>
-										<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
+										<div className='skeleton h-4 w-16 bg-neutral'></div>
 									</div>
 								</th>
 								<th className='lg:w-fit px-4'>
 									<div className='centering-flex gap-x-4 cursor-pointer'>
-										<p className='font-medium'>Role</p>
-										<LiaSortAlphaDownSolid className='text-2xl text-primary-text' />
+										<div className='skeleton h-4 w-16 bg-neutral'></div>
 									</div>
 								</th>
 								<th className='lg:w-[50%] px-4'>
@@ -32,8 +28,13 @@ export default function AgentsSkeleton() {
 						<tbody>
 							<tr className='h-[3em] w-full'>
 								<td colSpan={3} className='w-full px-4 py-2 lg:pl-20'>
-									<div className='w-full'>
-										<AddNewAgentButton />
+									<div className='w-full centering-flex gap-x-8'>
+										<div className='avatar placeholder'>
+											<div className='bg-neutral skeleton rounded-full w-8 h-8'></div>
+										</div>
+										<div className='flex flex-col gap-y-2'>
+											<div className='skeleton h-2 w-36 bg-neutral'></div>
+										</div>
 									</div>
 								</td>
 							</tr>
@@ -43,15 +44,15 @@ export default function AgentsSkeleton() {
 									<tr key={index} className='h-[3em] w-full'>
 										<td className='px-4 py-2 w-[24em] lg:pl-20 centering-flex gap-x-4'>
 											<div className='avatar placeholder'>
-												<div className='bg-gray-200 skeleton rounded-full w-10 h-10'></div>
+												<div className='bg-neutral skeleton rounded-full w-8 h-8'></div>
 											</div>
 											<div className='flex flex-col gap-y-2'>
-												<div className='skeleton h-4 w-36 bg-gray-200'></div>
-												<div className='skeleton h-2 w-16 bg-gray-200'></div>
+												<div className='skeleton h-2 w-36 bg-neutral'></div>
+												<div className='skeleton h-2 w-16 bg-neutral'></div>
 											</div>
 										</td>
 										<td className='px-4 py-2'>
-											<div className='skeleton h-4 w-16 bg-gray-200'></div>
+											<div className='skeleton h-4 w-16 bg-neutral'></div>
 										</td>
 									</tr>
 								))}
@@ -59,9 +60,7 @@ export default function AgentsSkeleton() {
 					</table>
 				</div>
 			</div>
-			<div className='w-[240px] h-full overflow-hidden hidden lg:flex flex-col'>
-				
-			</div>
+			<div className='w-[240px] h-full overflow-hidden hidden lg:flex flex-col'></div>
 		</div>
 	);
 }

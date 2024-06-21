@@ -1,20 +1,6 @@
-type Team = {
-	name: string;
-	leader: string;
-};
+import { AgentsProps } from './agents';
 
-export interface Agent {
-	id: number;
-	name: string;
-	email: string;
-	role: 'Admin' | 'Agent';
-	invitation?: 'Accepted' | 'Waiting';
-	teams?: Team[];
-}
-
-export type Agents = Agent[];
-
-export const agents: Agents = [
+export const agentLists: AgentsProps[] = [
 	{
 		id: 1,
 		name: 'Agus Sarimurni',

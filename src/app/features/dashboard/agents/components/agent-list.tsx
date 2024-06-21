@@ -1,39 +1,38 @@
-'use client';
-
 import { Fragment } from 'react';
-import { Agents } from '../data/dummyAgents';
 import clsx from 'clsx';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { getAgentId } from '../utils/agents';
 import ProfileAvatar from '../../components/avatar';
-import { logging } from '@/app/lib/utils/logging/logging';
+import AddNewAgentButton from './button';
+import { Agents } from '../data/agents';
+import { agentLists as dummyAgents } from '../data/dummyAgents';
+import TableHeadSort from './table-head-sort';
+import IdURL from './id-url';
 
-interface AgentListProps {
-	agents: Agents;
-}
+export default async function AgentList({
+	page,
+	name,
+	role,
+	agentId,
+}: {
+	page: string;
+	name: string;
+	role: string;
+	agentId: string;
+}) {
+	const agents = new Agents();
+	const agentLists = await agents.getAgents(dummyAgents);
 
-export default function AgentList({ agents }: AgentListProps) {
-	const router = useRouter();
-	const pathname = usePathname();
-	const searchParams = useSearchParams();
-	const agentId = searchParams.get('agId');
-	const name = searchParams.get('na');
-	const role = searchParams.get('ro');
-	const sort = name ? `na=${name}` : `ro=${role}`;
-
-	const renderedAgents = agents?.map((agent) => {
+	const renderedAgents = agentLists?.map((agent) => {
 		return (
 			<Fragment key={agent.id}>
 				<tr
 					className={clsx('h-fit cursor-pointer', {
-						'bg-primary-content border-l-4 border-primary': agentId === String(agent.id),
+						'bg-primary-content border-l-4 border-primary': String(agent?.id) === agentId,
 					})}
-					onClick={() => {
-						router.replace(`${pathname}?${sort}&agId=${agent.id}`);
-					}}
 				>
 					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
-						<ProfileAvatar avatarType='profile' name={agent.name} email={agent.email} />
+						<IdURL agentId={String(agent.id)}>
+							<ProfileAvatar avatarType='profile' name={agent.name} email={agent.email} />
+						</IdURL>
 					</td>
 					<td>
 						<div
@@ -54,17 +53,27 @@ export default function AgentList({ agents }: AgentListProps) {
 						)}
 					</td>
 				</tr>
-				<tr
-					className={clsx('', {
-						hidden: getAgentId(pathname) !== String(agent.id),
-						'bg-primary-content border-l-4 border-primary':
-							getAgentId(pathname) === String(agent.id),
-					})}
-				>
+				<tr>
 					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'></td>
 				</tr>
 			</Fragment>
 		);
 	});
-	return <Fragment>{renderedAgents}</Fragment>;
+	return (
+		<table className='w-full h-fit'>
+			<thead className='h-[3em] border-b border-neutral'>
+				<TableHeadSort />
+			</thead>
+			<tbody>
+				<tr className='h-[3em] w-full'>
+					<td colSpan={3} className='w-full px-4 py-2 lg:pl-20'>
+						<div className='w-full'>
+							<AddNewAgentButton />
+						</div>
+					</td>
+				</tr>
+				{renderedAgents}
+			</tbody>
+		</table>
+	);
 }

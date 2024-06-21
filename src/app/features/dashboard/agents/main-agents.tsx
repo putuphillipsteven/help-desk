@@ -1,7 +1,6 @@
 'use client';
 
-import React, { Fragment } from 'react';
-import Alert from '../sidenav/components/alert';
+import React from 'react';
 import clsx from 'clsx';
 import { checkLinkAgents } from '@/app/lib/utils/routing/routing';
 import Link from 'next/link';
