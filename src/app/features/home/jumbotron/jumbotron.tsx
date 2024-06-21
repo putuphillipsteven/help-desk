@@ -24,8 +24,8 @@ export default function Jumbotron() {
 			<div className='w-[640px] h-auto overflow-hidden rounded-xl shadow-xl'>
 				<img
 					alt='Jumbotron Image'
-					src={'/banner/jumbotron-banner.svg'}
-					className='rounded-xl object-fill overflow-hidden'
+					src='/banner/jumbotron-banner.svg'
+					className='w-full h-full object-cover rounded-xl'
 				/>
 			</div>
 		</div>

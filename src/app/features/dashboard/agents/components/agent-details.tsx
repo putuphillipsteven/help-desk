@@ -15,7 +15,6 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 	useEffect(() => {
 		async function fetchAgentDetails() {
 			try {
-				// Replace this with your actual data fetching logic
 				setLoading(true);
 				const response = await agents.getAgentDetails(agentLists, String(agentId));
 				setAgent(response);
@@ -38,31 +37,31 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 	if (!agentId) {
 		return <p className='text-xs text-neutral'>Click agent name for details</p>;
 	}
+
 	if (agent) {
 		return (
 			<div className='w-full h-full flex flex-col gap-y-2 p-2 md:flex'>
-				<div className='hagentIdden lg:flex items-center gap-x-2 w-full '>
+				<div className='hidden lg:flex items-center gap-x-2 w-full '>
 					<ProfileAvatar avatarType='profile' name={agent?.name} email={agent?.name} />
 				</div>
 				<div className='flex flex-col gap-y-2'>
-					<div
-						className='centering-flex gap-y-2 cursor-pointer'
-						// onClick={() => setShowTeams(!showTeams)}
-					>
+					<div className='centering-flex gap-y-2 cursor-pointer'>
 						<MdKeyboardArrowDown className='text-blue-dimata' />
 						<p className='text-xs'>Teams</p>
 					</div>
-					{/* {showTeams && */}
-					{agent?.teams?.map((team) => {
-						return (
+					{/* {agent?.teams?.length > 0 ? (
+						agent.teams.map((team) => (
 							<div className='centering-flex gap-x-2' key={team.name}>
 								<ProfileAvatar avatarType='company' companyName={team.name} />
 							</div>
-						);
-					})}
-					{/* } */}
+						))
+					) : (
+						<p className='text-xs'>No teams available</p>
+					)} */}
 				</div>
 			</div>
 		);
 	}
+
+	return null;
 }
