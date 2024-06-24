@@ -3,23 +3,23 @@
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import { Component } from 'react';
 
-interface ProfileAvatarProps {
+interface AvatarProps {
 	avatarType: 'profile' | 'company';
 	name?: string;
 	companyName?: string;
-	agents?: number;
+	numberOfAgents?: number;
 	email?: string;
 }
 
-interface ProfileAvatarState {}
+interface AvatarState {}
 
-export default class ProfileAvatar extends Component<ProfileAvatarProps, ProfileAvatarState> {
-	constructor(props: ProfileAvatarProps) {
+export default class Avatar extends Component<AvatarProps, AvatarState> {
+	constructor(props: AvatarProps) {
 		super(props);
 		this.state = {};
 	}
 
-	renderProfileAvatar() {
+	renderAvatar() {
 		return (
 			<div className='profile-avatar centering-flex gap-x-4 w-full '>
 				<div className='avatar placeholder'>
@@ -46,7 +46,7 @@ export default class ProfileAvatar extends Component<ProfileAvatarProps, Profile
 					</div>
 					<div className='flex flex-col gap-y-1'>
 						<p className='text-xs'>{this.props.companyName}</p>
-						<p className='text-xs text-neutral-text'>{this.props.agents} agents</p>
+						<p className='text-xs text-neutral-text'>{this.props.numberOfAgents} agents</p>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,7 @@ export default class ProfileAvatar extends Component<ProfileAvatarProps, Profile
 
 		return (
 			<div className='avatar-container'>
-				{avatarType === 'profile' ? this.renderProfileAvatar() : this.renderCompanyAvatar()}
+				{avatarType === 'profile' ? this.renderAvatar() : this.renderCompanyAvatar()}
 			</div>
 		);
 	}

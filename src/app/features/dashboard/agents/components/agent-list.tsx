@@ -1,6 +1,5 @@
 import { Fragment, Suspense } from 'react';
 import clsx from 'clsx';
-import ProfileAvatar from '../../components/avatar';
 import AddNewAgentButton from './button';
 import { Agents } from '../data/agents';
 import { agentLists as dummyAgents } from '../data/dummyAgents';
@@ -8,6 +7,7 @@ import TableHeadSort from './table-head-sort';
 import IdURL from './id-url';
 import AgentDetails from './agent-details';
 import AgentDetailsSkeleton from './agent-details-skeleton';
+import Avatar from '../../components/avatar';
 
 export default async function AgentList({
 	page,
@@ -32,7 +32,7 @@ export default async function AgentList({
 				>
 					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
 						<IdURL agentId={String(agent.id)}>
-							<ProfileAvatar avatarType='profile' name={agent.name} email={agent.email} />
+							<Avatar avatarType='profile' name={agent.name} email={agent.email} />
 						</IdURL>
 					</td>
 					<td>
@@ -55,7 +55,11 @@ export default async function AgentList({
 					</td>
 				</tr>
 				<tr>
-					<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'></td>
+					{+agentId === agent.id && (
+						<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'>
+							<AgentDetails agentId={agentId} />
+						</td>
+					)}
 				</tr>
 			</Fragment>
 		);

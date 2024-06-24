@@ -1,14 +1,15 @@
 'use client';
 
-import ProfileAvatar from '../../../components/avatar';
 import { TicketProps, tickets } from '../../data/dummyTickets';
 import { Ticket } from '../../data/ticket';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TicketListsSkeleton } from '../ticket-list-skeleton';
+import Avatar from '../../../components/avatar';
 
 export default function TicketList() {
 	const ticket = new Ticket();
+	const router = useRouter();
 
 	const [ticketLists, setTicketLists] = useState<TicketProps[]>([]);
 	const [loading, setLoading] = useState(true); // Loading state
@@ -26,8 +27,6 @@ export default function TicketList() {
 	useEffect(() => {
 		fetchTickets();
 	}, []);
-
-	const router = useRouter();
 
 	if (loading) {
 		return <TicketListsSkeleton />;
@@ -48,11 +47,7 @@ export default function TicketList() {
 						router.push(`tickets/details/${ticket.id}`);
 					}}
 				>
-					<ProfileAvatar
-						avatarType='profile'
-						name={ticket.user?.username}
-						email={ticket.user?.email}
-					/>
+					<Avatar avatarType='profile' name={ticket.user?.username} email={ticket.user?.email} />
 				</div>
 			</td>
 			<td

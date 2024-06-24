@@ -1,10 +1,10 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { handleSort } from '../utils/handleRoute';
-import { useEffect } from 'react';
+// import { handleSort } from '../utils/handleRoute';
 import { LiaSortAlphaDownSolid, LiaSortAlphaUpSolid } from 'react-icons/lia';
 import clsx from 'clsx';
+import { handleSort } from '../utils/handleSort';
 
 export default function TableHeadSort() {
 	const searchParams = useSearchParams();
@@ -14,12 +14,6 @@ export default function TableHeadSort() {
 	const roleSort = params.get('ro') || '';
 	const { replace } = useRouter();
 
-	useEffect(() => {
-		if (!nameSort && !roleSort) {
-			params.set('na', 'asc');
-			replace(`${pathname}?${params.toString()}`);
-		}
-	}, []);
 	return (
 		<tr className=''>
 			<th className='lg:w-fit px-4 lg:pl-36'>

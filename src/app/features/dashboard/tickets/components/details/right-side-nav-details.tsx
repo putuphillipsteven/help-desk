@@ -3,7 +3,7 @@ import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { getInitials } from '@/app/lib/utils/naming/naming';
 import clsx from 'clsx';
 import { TicketProps } from '../../data/dummyTickets';
-import ProfileAvatar from '../../../components/avatar';
+import Avatar from '../../../components/avatar';
 
 type Content = {
 	[key: string]: string | undefined;
@@ -115,7 +115,7 @@ export default function RightSideNavDetails({
 												<p className='text-xs text-info-text'>Change</p>
 											</div>
 											<div className='centering-flex gap-x-2'>
-												<ProfileAvatar avatarType='company' companyName={team} />
+												<Avatar avatarType='company' companyName={team} />
 											</div>
 										</div>
 										<div className='centering-flex justify-between py-2'>
@@ -128,7 +128,7 @@ export default function RightSideNavDetails({
 													</div>
 												</div>
 												<div className='centering-flex gap-x-4 w-full '>
-													<ProfileAvatar avatarType='profile' name={agent} />
+													<Avatar avatarType='profile' name={agent} />
 												</div>
 											</div>
 										</div>
@@ -136,11 +136,7 @@ export default function RightSideNavDetails({
 								)}
 								{section.title === 'Requester' && (
 									<div className='centering-flex gap-x-4 w-full py-2'>
-										<ProfileAvatar
-											avatarType='profile'
-											name={user?.username}
-											email={user?.username}
-										/>
+										<Avatar avatarType='profile' name={user?.username} email={user?.username} />
 									</div>
 								)}
 							</div>

@@ -6,8 +6,8 @@ import { getInitials } from '@/app/lib/utils/naming/naming';
 import { usePathname } from 'next/navigation';
 import { Teams } from '../data/dummyTeams';
 import { getTeamId } from '../utils/team';
-import ProfileAvatar from '../../components/avatar';
 import { agentLists } from '../data/dummyAgents';
+import Avatar from '../../components/avatar';
 
 interface TeamListProps {
 	teams: Teams;
@@ -28,9 +28,9 @@ export default function TeamList({ teams, children }: TeamListProps) {
 				>
 					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
 						<div className='centering-flex gap-x-6 w-full '>
-							<ProfileAvatar
+							<Avatar
 								avatarType='company'
-								agents={agentLists.length}
+								numberOfAgents={agentLists.length}
 								companyName={team?.name}
 							/>
 						</div>

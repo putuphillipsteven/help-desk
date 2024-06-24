@@ -1,11 +1,11 @@
 'use client';
 
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import ProfileAvatar from '../../components/avatar';
 import { Agents, AgentsProps } from '../data/agents';
 import { agentLists } from '../data/dummyAgents';
 import AgentDetailsSkeleton from './agent-details-skeleton';
 import { useEffect, useState } from 'react';
+import Avatar from '../../components/avatar';
 
 export default function AgentDetails({ agentId }: { agentId?: string }) {
 	const agents = new Agents();
@@ -40,24 +40,24 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 
 	if (agent) {
 		return (
-			<div className='w-full h-full flex flex-col gap-y-2 p-2 md:flex'>
+			<div className='w-full h-full flex flex-col gap-y-4 p-2 md:flex'>
 				<div className='hidden lg:flex items-center gap-x-2 w-full '>
-					<ProfileAvatar avatarType='profile' name={agent?.name} email={agent?.name} />
+					<Avatar avatarType='profile' name={agent?.name} email={agent?.email} />
 				</div>
 				<div className='flex flex-col gap-y-2'>
-					<div className='centering-flex gap-y-2 cursor-pointer'>
+					<div className='centering-flex gap-x-2 cursor-pointer'>
 						<MdKeyboardArrowDown className='text-blue-dimata' />
 						<p className='text-xs'>Teams</p>
 					</div>
-					{/* {agent?.teams?.length > 0 ? (
-						agent.teams.map((team) => (
+					{agent?.teams && agent?.teams?.length > 0 ? (
+						agent?.teams?.map((team) => (
 							<div className='centering-flex gap-x-2' key={team.name}>
-								<ProfileAvatar avatarType='company' companyName={team.name} />
+								<Avatar avatarType='company' companyName={team.name} />
 							</div>
 						))
 					) : (
-						<p className='text-xs'>No teams available</p>
-					)} */}
+						<p className='text-xs text-neutral-text'>Not on any team</p>
+					)}
 				</div>
 			</div>
 		);
