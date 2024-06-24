@@ -28,10 +28,10 @@ export default function MainAgents({ children }: MainAgentsProps) {
 									})}
 								>
 									<Link
-										href={'/dashboard/agents/agent?na=asc'}
+										href={'/dashboard/agents/agent'}
 										className='text-primary-text text-lg font-medium'
 									>
-										Agent(3)
+										Agent
 									</Link>
 								</div>
 								<div
@@ -40,10 +40,10 @@ export default function MainAgents({ children }: MainAgentsProps) {
 									})}
 								>
 									<Link
-										href={'/dashboard/agents/team?na=asc'}
+										href={'/dashboard/agents/team'}
 										className='text-primary-text text-lg font-medium'
 									>
-										Team(3)
+										Team
 									</Link>
 								</div>
 							</div>

@@ -1,4 +1,4 @@
-import AgentList from '@/app/features/dashboard/agents/components/agent-list';
+import MainAgent from '@/app/features/dashboard/agents/components/agents/main-agent';
 
 export default async function Page({
 	searchParams,
@@ -12,7 +12,7 @@ export default async function Page({
 
 	return (
 		<div className='w-full h-full flex bg-base-100'>
-			<AgentList page={page} name={name} role={role} agentId={agentId} />
+			<MainAgent page={page} name={name} role={role} agentId={agentId} />
 		</div>
 	);
 }

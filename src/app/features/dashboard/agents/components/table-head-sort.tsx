@@ -1,12 +1,16 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-// import { handleSort } from '../utils/handleRoute';
 import { LiaSortAlphaDownSolid, LiaSortAlphaUpSolid } from 'react-icons/lia';
 import clsx from 'clsx';
 import { handleSort } from '../utils/handleSort';
+import { Fragment } from 'react';
 
-export default function TableHeadSort() {
+interface TableHeadSort {
+	uses: 'agent' | 'team';
+}
+
+export default function TableHeadSort({ uses }: TableHeadSort) {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const params = new URLSearchParams(searchParams);
@@ -42,12 +46,16 @@ export default function TableHeadSort() {
 			<th className='lg:w-fit'>
 				<div
 					className='centering-flex gap-x-4 cursor-pointer'
-					onClick={() => handleSort('role', nameSort, roleSort, replace, searchParams, pathname)}
+					onClick={() => {
+						uses === 'agent' &&
+							handleSort('role', nameSort, roleSort, replace, searchParams, pathname);
+					}}
 				>
-					<p className='font-medium'>Role</p>
+					<p className='font-medium'>{uses === 'agent' ? 'Role' : 'Agent'}</p>
 					{roleSort === 'desc' ? (
 						<LiaSortAlphaUpSolid
 							className={clsx('text-2xl', {
+								hidden: uses === 'team',
 								'text-black': roleSort !== 'desc',
 								'text-primary': roleSort === 'desc',
 							})}
@@ -55,6 +63,7 @@ export default function TableHeadSort() {
 					) : (
 						<LiaSortAlphaDownSolid
 							className={clsx('text-2xl', {
+								hidden: uses === 'team',
 								'text-black': roleSort !== 'asc',
 								'text-primary': roleSort === 'asc',
 							})}

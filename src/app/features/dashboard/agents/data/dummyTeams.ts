@@ -1,18 +1,7 @@
-interface Member {
-	name: string;
-	role: string;
-}
-
-export interface Team {
-	id: number;
-	name: string;
-	members: Member[];
-}
-
-export type Teams = Team[];
+import { TeamsProps } from './teams';
 
 // Example teams
-export const teams: Teams = [
+export const teamLists: TeamsProps[] = [
 	{
 		id: 1,
 		name: 'Team A',

@@ -1,8 +1,13 @@
-import MainTeam from '@/app/features/dashboard/agents/components/main-team';
-import { teams } from '@/app/features/dashboard/agents/data/dummyTeams';
-import { getTeams } from '@/app/features/dashboard/agents/hooks/useTeam';
+import MainTeam from '@/app/features/dashboard/agents/components/team/main-team';
 
-export default async function Page() {
-	const teamLists = await getTeams(teams);
-	return <MainTeam teams={teamLists} />;
+export default async function Page({
+	searchParams,
+}: {
+	searchParams: { page?: string; na?: string; ro?: string; teId?: string };
+}) {
+	const page = searchParams?.page || '';
+	const name = searchParams?.na || '';
+	const teamId = searchParams?.teId || '';
+
+	return <MainTeam name={name} page={page} teamId={teamId} />;
 }

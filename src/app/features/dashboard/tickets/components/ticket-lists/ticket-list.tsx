@@ -5,7 +5,7 @@ import { Ticket } from '../../data/ticket';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TicketListsSkeleton } from '../ticket-list-skeleton';
-import Avatar from '../../../components/avatar';
+import { ProfileAvatar } from '../../../components/avatar';
 
 export default function TicketList() {
 	const ticket = new Ticket();
@@ -47,7 +47,7 @@ export default function TicketList() {
 						router.push(`tickets/details/${ticket.id}`);
 					}}
 				>
-					<Avatar avatarType='profile' name={ticket.user?.username} email={ticket.user?.email} />
+					<ProfileAvatar name={ticket.user?.username || ''} email={ticket.user?.email || ''} />
 				</div>
 			</td>
 			<td
