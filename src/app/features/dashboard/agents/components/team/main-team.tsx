@@ -2,8 +2,8 @@ import { CreateNewTeamButton } from '../button';
 import { Suspense } from 'react';
 import TableHeadSort from '../table-head-sort';
 import TeamList from './team-list';
-import AgentDetailsSkeleton from '../agents/agent-details-skeleton';
 import TeamDetails from './team-details';
+import TeamDetailsSkeleton from './team-details-skeleton';
 
 interface MainTeamProps {
 	page: string;
@@ -22,7 +22,7 @@ export default async function MainTeam({ teamId, name, page }: MainTeamProps) {
 						</thead>
 						<tbody>
 							<tr className='h-[3em] w-full'>
-								<td colSpan={3} className='w-full h-full px-4 py-2 lg:pl-20'>
+								<td colSpan={3} className='w-full h-full px-4 py-2 lg:pl-16'>
 									<CreateNewTeamButton />
 								</td>
 							</tr>
@@ -31,8 +31,8 @@ export default async function MainTeam({ teamId, name, page }: MainTeamProps) {
 					</table>
 				</div>
 			</div>
-			<div className='w-[240px] h-full overflow-hidden hidden lg:flex'>
-				<Suspense fallback={<AgentDetailsSkeleton />}>
+			<div className='w-[240px] h-full overflow-hidden hidden lg:flex p-2'>
+				<Suspense fallback={<TeamDetailsSkeleton />}>
 					<TeamDetails teamId={teamId} />
 				</Suspense>
 			</div>

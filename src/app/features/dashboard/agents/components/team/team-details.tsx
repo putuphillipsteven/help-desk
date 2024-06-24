@@ -44,7 +44,7 @@ export default function TeamDetails({ teamId }: TeamDetailProps) {
 	}
 
 	return (
-		<div className='w-full h-full flex flex-col gap-y-2 p-2 md:flex'>
+		<div className='w-full h-full flex flex-col gap-y-4 md:flex'>
 			<div className='hidden lg:flex items-center gap-x-2 w-full '>
 				<CompanyAvatar
 					numberOfAgents={String(team?.members?.length)}

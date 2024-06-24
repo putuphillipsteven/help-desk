@@ -27,11 +27,11 @@ export default async function MainAgent({
 		return (
 			<Fragment key={agent.id}>
 				<tr
-					className={clsx('h-fit cursor-pointer', {
+					className={clsx('cursor-pointer h-[4em]', {
 						'bg-primary-content border-l-4 border-primary': String(agent?.id) === agentId,
 					})}
 				>
-					<td className='centering-flex h-full px-4 py-2 lg:pl-20 lg:py-2'>
+					<td className='centering-flex h-full px-4 w-fit lg:pl-16'>
 						<AgentIdURL agentId={String(agent.id)}>
 							<ProfileAvatar name={agent.name} email={agent.email} />
 						</AgentIdURL>
@@ -72,9 +72,9 @@ export default async function MainAgent({
 					<thead className='h-[3em] border-b border-neutral'>
 						<TableHeadSort uses='agent' />
 					</thead>
-					<tbody>
+					<tbody className='w-full'>
 						<tr className='h-[3em] w-full'>
-							<td colSpan={3} className='w-full px-4 py-2 lg:pl-20'>
+							<td colSpan={3} className='w-full px-4 py-2 lg:pl-16'>
 								<div className='w-full'>
 									<AddNewAgentButton />
 								</div>

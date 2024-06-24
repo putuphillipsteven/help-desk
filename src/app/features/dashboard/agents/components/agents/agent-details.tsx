@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { Agents, AgentsProps } from '../../data/agents';
 import { agentLists } from '../../data/dummyAgents';
 import { CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
+import TeamDetailsSkeleton from '../team/team-details-skeleton';
 
 export default function AgentDetails({ agentId }: { agentId?: string }) {
 	const agents = new Agents();
@@ -42,11 +43,11 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 
 	if (agent) {
 		return (
-			<div className='w-full h-full flex flex-col gap-y-4 p-2 md:flex'>
-				<div className='hidden lg:flex items-center gap-x-2 w-full '>
+			<div className='w-full h-full flex flex-col gap-y-4 md:flex'>
+				<div className='hidden lg:flex items-center w-full '>
 					<ProfileAvatar name={agent?.name} email={agent?.email} />
 				</div>
-				<div className='flex flex-col gap-y-2' onClick={() => setShowTeam(!showTeam)}>
+				<div className='flex flex-col gap-y-4' onClick={() => setShowTeam(!showTeam)}>
 					{agent?.teams && (
 						<div className='centering-flex gap-x-2 cursor-pointer'>
 							{showTeam ? (
