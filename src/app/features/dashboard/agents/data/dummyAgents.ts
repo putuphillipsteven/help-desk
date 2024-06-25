@@ -7,6 +7,7 @@ export const agentLists: AgentsProps[] = [
 		email: 'sarimurni@gmail.com',
 		role: 'Agent',
 		teams: [{ name: 'Dimata', leader: 'I Ketut Kartika Tanjana' }],
+		invitation: 'Waiting',
 	},
 	{
 		id: 2,

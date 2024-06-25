@@ -27,18 +27,18 @@ export default async function MainAgent({
 		return (
 			<Fragment key={agent.id}>
 				<tr
-					className={clsx('cursor-pointer h-[4em]', {
+					className={clsx('h-[4em]', {
 						'bg-primary-content border-l-4 border-primary': String(agent?.id) === agentId,
 					})}
 				>
-					<td className='centering-flex h-full px-4 w-fit lg:pl-16'>
+					<td className='w-full centering-flex h-full px-4 lg:pl-16 cursor-pointer'>
 						<AgentIdURL agentId={String(agent.id)}>
 							<ProfileAvatar name={agent.name} email={agent.email} />
 						</AgentIdURL>
 					</td>
-					<td>
+					<td className='w-[1%] whitespace-nowrap'>
 						<div
-							className={clsx('badge border-none', {
+							className={clsx('badge border-none font-medium text-xs h-[1.5em] w-[4em]', {
 								'bg-neutral text-primary-text': agent.role === 'Agent',
 								'bg-primary text-base-100': agent.role === 'Admin',
 							})}
@@ -46,7 +46,7 @@ export default async function MainAgent({
 							{agent.role}
 						</div>
 					</td>
-					<td>
+					<td className='px-4'>
 						{agent.invitation === 'Waiting' && (
 							<div className='hidden lg:flex lg:flex-col gap-y-1 '>
 								<p className='text-xs'>Invitation sent</p>
@@ -59,11 +59,19 @@ export default async function MainAgent({
 					{activeAgents && (
 						<td
 							colSpan={3}
-							className={clsx('px-4 pt-0 pb-2 lg:pl-20  lg:hidden', {
+							className={clsx('px-4 pt-0 pb-2 gap-y-2 lg:pl-20  lg:hidden', {
 								'bg-primary-content border-l-4 border-primary': String(agent?.id) === agentId,
 							})}
 						>
-							<AgentDetails agentId={agentId} />
+							<div className='w-full flex flex-col gap-y-2'>
+								{agent.invitation === 'Waiting' && (
+									<div className='flex flex-col gap-y-0 '>
+										<p className='text-xs'>Invitation sent</p>
+										<p className='text-xs text-info-text'>Sent a reminder</p>
+									</div>
+								)}
+								<AgentDetails agentId={agentId} />
+							</div>
 						</td>
 					)}
 				</tr>
@@ -73,16 +81,14 @@ export default async function MainAgent({
 	return (
 		<div className='w-full h-full flex overflow-auto md:overflow-hidden'>
 			<div className='flex-1 h-full  flex flex-col overflow-y-hidden border-r border-neutral'>
-				<table className='w-full h-fit'>
+				<table className='max-w-full h-fit'>
 					<thead className='h-[3em] border-b border-neutral'>
 						<TableHeadSort uses='agent' />
 					</thead>
 					<tbody className='w-full'>
-						<tr className='h-[3em] w-full'>
-							<td colSpan={3} className='w-full px-4 py-2 lg:pl-16'>
-								<div className='w-full'>
-									<AddNewAgentButton />
-								</div>
+						<tr className='h-[3em]'>
+							<td colSpan={3} className='px-4 py-2 lg:pl-16'>
+								<AddNewAgentButton />
 							</td>
 						</tr>
 						{renderedAgents}

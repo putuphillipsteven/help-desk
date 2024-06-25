@@ -23,21 +23,21 @@ export default function TableHeadSort({ uses }: TableHeadSort) {
 	console.log(!!nameSort);
 	return (
 		<tr>
-			<th className='lg:w-fit px-4 lg:pl-[7.2em]'>
+			<th className='px-4 w-[50%] lg:pl-[7.2em]'>
 				<div
-					className='centering-flex gap-x-4 cursor-pointer relative'
+					className='centering-flex gap-x-1 cursor-pointer relative'
 					onClick={() => handleSort('name', nameSort, roleSort, replace, searchParams, pathname)}
 				>
 					<p className='font-medium'>Name</p>
 					<div className='centering-flex relative h-full'>
 						<FaCaretDown
-							className={clsx('absolute text-2xl -top-[50%] translate-y-[50%]', {
+							className={clsx('absolute text-md lg:text-2xl -top-[50%] translate-y-[50%]', {
 								'text-neutral': nameSort && nameSort === 'desc',
 								'text-primary': nameSort && nameSort !== 'desc',
 							})}
 						/>
 						<FaCaretUp
-							className={clsx('text-2xl ml-4 self-center', {
+							className={clsx('text-md lg:text-2xl ml-[.65em] lg:ml-4 self-center', {
 								'text-neutral': nameSort && nameSort === 'asc',
 								'text-primary': nameSort && nameSort !== 'asc',
 							})}
@@ -45,9 +45,9 @@ export default function TableHeadSort({ uses }: TableHeadSort) {
 					</div>
 				</div>
 			</th>
-			<th className='lg:w-fit'>
+			<th className='w-[1%] whitespace-nowrap'>
 				<div
-					className='centering-flex gap-x-4 cursor-pointer'
+					className={'centering-flex gap-x-1 cursor-pointer'}
 					onClick={() => {
 						uses === 'agent' &&
 							handleSort('role', nameSort, roleSort, replace, searchParams, pathname);
@@ -57,13 +57,13 @@ export default function TableHeadSort({ uses }: TableHeadSort) {
 					{uses === 'agent' && (
 						<div className='centering-flex relative h-full'>
 							<FaCaretDown
-								className={clsx('absolute text-2xl -top-[50%] translate-y-[50%]', {
+								className={clsx('absolute text-md lg:text-2xl -top-[50%] translate-y-[50%]', {
 									'text-neutral': roleSort && roleSort === 'desc',
 									'text-primary': roleSort && roleSort !== 'desc',
 								})}
 							/>
 							<FaCaretUp
-								className={clsx('text-2xl ml-4 self-center', {
+								className={clsx('text-md lg:text-2xl ml-[.65em] lg:ml-4 self-center', {
 									'text-neutral': roleSort && roleSort === 'asc',
 									'text-primary': roleSort && roleSort !== 'asc',
 								})}
@@ -72,11 +72,7 @@ export default function TableHeadSort({ uses }: TableHeadSort) {
 					)}
 				</div>
 			</th>
-			<th className='lg:w-[50%] px-4'>
-				<div className='centering-flex gap-x-2'>
-					<p className='text-blue-dimata-2'></p>
-				</div>
-			</th>
+			<th className={'hidden xs:flex px-4'}></th>
 		</tr>
 	);
 }

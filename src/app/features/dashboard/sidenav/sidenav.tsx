@@ -19,75 +19,73 @@ export default function SideNav() {
 	};
 
 	return (
-		<Fragment>
-			<div
-				className={clsx(
-					'bg-base-100 h-screen flex flex-col justify-between drop-shadow-lg relative transition ease-out duration-300 overflow-hidden',
-					{
-						'w-[4em] px-[8px] py-[20px] centering-flex-col': !sideNavDisplay,
-						'md:w-[240px] p-[20px]': sideNavDisplay,
-					},
-				)}
-			>
-				<div className='flex flex-col gap-y-6'>
-					<Link className={'centering-flex gap-x-4 w-fit overflow-hidden'} href={'/dashboard'}>
-						<div className='rounded-md bg-primary'>
-							<RxTriangleDown className='text-base-100 text-4xl' />
-						</div>
-						<h3 className={clsx('', { hidden: !sideNavDisplay })}>Helpdesk</h3>
-					</Link>
-					<div className='flex flex-col gap-y-2'>
-						<div
-							className={clsx(
-								'w-fit centering-flex justify-start p-2 rounded-md hover:cursor-pointer',
-							)}
-							onClick={toggleSideNav}
-						>
-							<GiHamburgerMenu className='text-2xl text-primary-text' />
-						</div>
-						<NavLink
-							sideNavDisplay={sideNavDisplay}
-							destination='tickets'
-							notification={1}
-							label='Tickets'
-							icon={<TbLayoutGridAdd className='text-base-300 text-2xl' />}
-						/>
-						<NavLink
-							sideNavDisplay={sideNavDisplay}
-							destination='agents/agent'
-							notification={2}
-							label='Agents'
-							icon={<CgProfile className='text-base-300 text-2xl' />}
-						/>
-						<NavLink
-							sideNavDisplay={sideNavDisplay}
-							destination='reports'
-							notification={2}
-							label='Reports'
-							icon={<MdOutlineShowChart className='text-base-300 text-2xl' />}
-						/>
-						{/* <NavLink /> */}
+		<div
+			className={clsx(
+				'bg-base-100 h-screen flex flex-col justify-between drop-shadow-lg transition ease-out duration-300 overflow-hidden sm:relative',
+				{
+					'w-[3.5em] py-[20px] centering-flex-col': !sideNavDisplay,
+					'w-[240px] p-[20px] lg:relative z-20 absolute': sideNavDisplay,
+				},
+			)}
+		>
+			<div className='flex flex-col gap-y-6'>
+				<Link className={'centering-flex gap-x-4 w-fit overflow-hidden'} href={'/dashboard'}>
+					<div className='rounded-md bg-primary'>
+						<RxTriangleDown className='text-base-100 text-4xl' />
 					</div>
+					<h3 className={clsx('', { hidden: !sideNavDisplay })}>Helpdesk</h3>
+				</Link>
+				<div className='flex flex-col gap-y-2'>
+					<div
+						className={clsx(
+							'w-fit centering-flex justify-start p-2 rounded-md hover:cursor-pointer',
+						)}
+						onClick={toggleSideNav}
+					>
+						<GiHamburgerMenu className='text-2xl text-primary-text' />
+					</div>
+					<NavLink
+						sideNavDisplay={sideNavDisplay}
+						destination='tickets'
+						notification={1}
+						label='Tickets'
+						icon={<TbLayoutGridAdd className='text-base-300 text-2xl' />}
+					/>
+					<NavLink
+						sideNavDisplay={sideNavDisplay}
+						destination='agents/agent'
+						notification={2}
+						label='Agents'
+						icon={<CgProfile className='text-base-300 text-2xl' />}
+					/>
+					<NavLink
+						sideNavDisplay={sideNavDisplay}
+						destination='reports'
+						notification={2}
+						label='Reports'
+						icon={<MdOutlineShowChart className='text-base-300 text-2xl' />}
+					/>
+					{/* <NavLink /> */}
 				</div>
-				<div className='flex flex-col gap-y-4'>
-					<div className='flex flex-col gap-y-2'>
-						{/* <NavLink />
+			</div>
+			<div className='flex flex-col gap-y-4'>
+				<div className='flex flex-col gap-y-2'>
+					{/* <NavLink />
 					<NavLink />
 					<NavLink /> */}
+				</div>
+				<div className='centering-flex gap-x-4 w-full'>
+					<div className='avatar placeholder'>
+						<div className='bg-neutral text-neutral-content rounded-full w-12'>
+							<span>{getInitials('User Name' || '')}</span>
+						</div>
 					</div>
-					<div className='centering-flex gap-x-4 w-full'>
-						<div className='avatar placeholder'>
-							<div className='bg-neutral text-neutral-content rounded-full w-12'>
-								<span>{getInitials('User Name' || '')}</span>
-							</div>
-						</div>
-						<div className={clsx('flex flex-col', { hidden: !sideNavDisplay })}>
-							<p className='text-xs'>Username</p>
-							<p className='text-xs'>email@email.com</p>
-						</div>
+					<div className={clsx('flex flex-col', { hidden: !sideNavDisplay })}>
+						<p className='text-xs'>Username</p>
+						<p className='text-xs'>email@email.com</p>
 					</div>
 				</div>
 			</div>
-		</Fragment>
+		</div>
 	);
 }

@@ -1,10 +1,11 @@
 import { CreateButton } from '@/app/components/button';
 import Alert from '@/app/features/dashboard/sidenav/components/alert';
 import LeftSideNavCreateTickets from '@/app/features/dashboard/tickets/components/create/left-side-nav-create-tickets';
+import { TicketListsSkeleton } from '@/app/features/dashboard/tickets/components/ticket-list-skeleton';
 import TicketListsTable from '@/app/features/dashboard/tickets/components/ticket-lists/ticket-lists-table';
-import React from 'react';
+import React, { Suspense } from 'react';
 
-export default function Page() {
+export default async function Page() {
 	return (
 		<div className='w-full h-full flex flex-col lg:flex-row '>
 			<div className='w-full lg:w-[240px] h-auto '>
@@ -18,7 +19,9 @@ export default function Page() {
 					<CreateButton label='Add Filter' variant='outline' href='/dashboard/tickets' />
 				</div>
 				<div className='p-2 border-l w-full h-full border-neutral overflow-auto'>
-					<TicketListsTable />
+					<Suspense fallback={<TicketListsSkeleton />}>
+						<TicketListsTable />
+					</Suspense>
 				</div>
 			</div>
 		</div>

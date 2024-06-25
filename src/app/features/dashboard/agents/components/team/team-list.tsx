@@ -25,7 +25,7 @@ export default async function TeamList({ name, page, teamId }: TeamListProps) {
 						'bg-primary-content border-l-4 border-primary': activeTeams,
 					})}
 				>
-					<td className='centering-flex h-full px-4 py-2 lg:pl-16'>
+					<td className='w-full centering-flex h-full px-4 lg:pl-16 cursor-pointer'>
 						<div className='centering-flex gap-x-6 w-full hover:cursor-pointer'>
 							<TeamIdURL teamId={String(team?.id)}>
 								<CompanyAvatar
@@ -35,19 +35,14 @@ export default async function TeamList({ name, page, teamId }: TeamListProps) {
 							</TeamIdURL>
 						</div>
 					</td>
-					<td>
+					<td className='w-[1%] whitespace-nowrap pr-2'>
 						<div className='avatar-group -space-x-4 w-full'>
 							{team?.members?.map((member) => (
 								<MemberListAvatar key={member?.name} name={member?.name} />
 							))}
 						</div>
 					</td>
-					<td>
-						<div className='hidden'>
-							<p className='text-xs'>Invitation sent</p>
-							<p className='text-xs text-info-text'>Sent a reminder</p>
-						</div>
-					</td>
+					<td className='hidden xs:flex px-1'></td>
 				</tr>
 				{activeTeams && (
 					<tr className='bg-primary-content border-l-4 border-primary'>

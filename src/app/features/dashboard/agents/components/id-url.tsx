@@ -37,5 +37,9 @@ export function TeamIdURL({ teamId, children }: { children: any; teamId: string 
 		replace(`${pathname}?${params.toString()}`);
 	};
 
-	return <div onClick={createPageURL}>{children}</div>;
+	return (
+		<div className='w-full' onClick={createPageURL}>
+			{children}
+		</div>
+	);
 }
