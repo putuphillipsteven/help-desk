@@ -6,7 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { TicketListsSkeleton } from '../ticket-list-skeleton';
 import { ProfileAvatar } from '../../../components/avatar';
-
+import { HiOutlineDotsHorizontal } from 'react-icons/hi';
+import PrioritySymbol from './components/priority-symbol';
 export default function TicketList() {
 	const ticket = new Ticket();
 	const router = useRouter();
@@ -56,7 +57,10 @@ export default function TicketList() {
 					router.push(`tickets/details/${ticket.id}`);
 				}}
 			>
-				<p className='text-sm w-full line-clamp-2'>{ticket.subject}</p>
+				<div className='centering-flex gap-x-2'>
+					<PrioritySymbol priority={ticket?.priority} />
+					<p className='text-sm w-full line-clamp-2'>{ticket.subject}</p>
+				</div>
 			</td>
 			<td className='p-2'>
 				<p className='text-sm line-clamp-2'>{ticket.agent}</p>
@@ -67,7 +71,10 @@ export default function TicketList() {
 				</div>
 			</td>
 			<td className='p-2'>
-				<p className='text-sm line-clamp-2'>Last 5 minutes</p>
+				<p className='text-sm line-clamp-2'>5 minutes ago</p>
+			</td>
+			<td>
+				<HiOutlineDotsHorizontal className='text-black text-2xl' />
 			</td>
 		</tr>
 	));

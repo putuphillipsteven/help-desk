@@ -40,6 +40,7 @@ export default function TicketListsTable() {
 					<th className='font-medium text-primary-text p-2'>Agent</th>
 					<th className='font-medium text-primary-text p-2'>Status</th>
 					<th className='font-medium text-primary-text p-2'>Last Message</th>
+					<th className='font-medium text-primary-text p-2'></th>
 				</tr>
 			</thead>
 			<TicketList />

@@ -43,7 +43,7 @@ export const tickets: Tickets = [
 		},
 		team: 'Dimata',
 		agent: 'Unassigned',
-		priority: 'Low',
+		priority: 'Medium',
 		status: 'Open',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque nisi pulvinar mi blandit fermentum. Cras justo elit, ullamcorper et tristique vitae, rhoncus sed enim. Phasellus porta sagittis commodo. Pellentesque maximus feugiat gravida. Donec vulputate facilisis enim, sit amet tempor turpis maximus eget. Donec convallis consequat turpis, a finibus ex.',
@@ -59,7 +59,7 @@ export const tickets: Tickets = [
 		team: 'Dimata',
 
 		agent: 'Pasek Okasana',
-		priority: 'Low',
+		priority: 'High',
 		status: 'Open',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque nisi pulvinar mi blandit fermentum. Cras justo elit, ullamcorper et tristique vitae, rhoncus sed enim. Phasellus porta sagittis commodo. Pellentesque maximus feugiat gravida. Donec vulputate facilisis enim, sit amet tempor turpis maximus eget. Donec convallis consequat turpis, a finibus ex.',

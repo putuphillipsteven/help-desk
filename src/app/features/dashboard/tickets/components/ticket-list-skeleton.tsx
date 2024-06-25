@@ -18,7 +18,7 @@ function TicketListSkeleton() {
 				</div>
 			</td>
 			<td className='cursor-pointer p-2 w-full'>
-				<p className='text-sm bg-neutral skeleton  w-full  h-4'></p>
+				<p className='text-sm bg-neutral skeleton  w-50  h-4'></p>
 			</td>
 			<td className='p-2 w-fit'>
 				<p className='text-sm bg-neutral skeleton w-20 h-4'></p>
