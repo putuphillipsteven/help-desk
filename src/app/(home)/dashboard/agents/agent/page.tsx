@@ -1,4 +1,6 @@
+import AgentsSkeleton from '@/app/features/dashboard/agents/components/agents-skeleton';
 import MainAgent from '@/app/features/dashboard/agents/components/agents/main-agent';
+import { Suspense } from 'react';
 
 export default async function Page({
 	searchParams,
@@ -12,7 +14,9 @@ export default async function Page({
 
 	return (
 		<div className='w-full h-full flex bg-base-100'>
-			<MainAgent page={page} name={name} role={role} agentId={agentId} />
+			<Suspense fallback={<AgentsSkeleton />}>
+				<MainAgent page={page} name={name} role={role} agentId={agentId} />
+			</Suspense>
 		</div>
 	);
 }

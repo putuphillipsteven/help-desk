@@ -4,7 +4,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { useEffect, useState } from 'react';
 import { Teams, TeamsProps } from '../../data/teams';
 import { teamLists } from '../../data/dummyTeams';
-import { CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
+import { CompanyAvatar, ProfileAvatar, TeamDetailsAvatar } from '../../../components/avatar';
 import TeamDetailsSkeleton from './team-details-skeleton';
 
 interface TeamDetailProps {
@@ -46,25 +46,25 @@ export default function TeamDetails({ teamId }: TeamDetailProps) {
 	return (
 		<div className='w-full h-full flex flex-col gap-y-4 md:flex'>
 			<div className='hidden lg:flex items-center gap-x-2 w-full '>
-				<CompanyAvatar
-					numberOfAgents={String(team?.members?.length)}
+				<TeamDetailsAvatar
+					numberOfAgents={team?.members?.length || 0}
 					teamName={team?.name || ''}
 					key={team?.name}
 				/>
 			</div>
-			<div className='flex flex-col gap-y-4'>
+			<div className='flex flex-col gap-y-2'>
 				<div
 					className='centering-flex gap-x-2 cursor-pointer'
 					onClick={() => setShowAgents(!showAgents)}
 				>
 					{showAgents ? (
-						<MdKeyboardArrowDown className='text-neutral' />
+						<MdKeyboardArrowDown className='text-primary' />
 					) : (
 						<MdKeyboardArrowUp className='text-neutral' />
 					)}
 					<p className='text-xs'>Members</p>
 				</div>
-				<div className='flex flex-col gap-y-4'>
+				<div className='flex flex-col gap-y-2'>
 					{showAgents &&
 						team?.members?.map((member) => {
 							return <ProfileAvatar key={member.name} name={member.name} email={member.role} />;

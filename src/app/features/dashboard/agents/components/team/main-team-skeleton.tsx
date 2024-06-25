@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AgentsSkeleton() {
+export default function MainTeamSkeleton() {
 	return (
 		<div className='w-full h-full flex bg-base-100'>
 			<div className='flex-1 h-full flex flex-col overflow-y-hidden'>
@@ -44,15 +44,21 @@ export default function AgentsSkeleton() {
 									<tr key={index} className='h-[3em] w-full'>
 										<td className='px-4 py-2 h-[4em] w-[24em] lg:pl-16 centering-flex gap-x-4'>
 											<div className='avatar placeholder'>
-												<div className='bg-neutral skeleton rounded-full w-[2.5em] h-[2.5em]'></div>
+												<div className='bg-neutral skeleton rounded-md w-[2.5em] h-[2.5em]'></div>
 											</div>
 											<div className='flex flex-col gap-y-2'>
-												<div className='skeleton h-2 w-36 bg-neutral'></div>
+												<div className='skeleton h-2 w-20 bg-neutral'></div>
 												<div className='skeleton h-2 w-16 bg-neutral'></div>
 											</div>
 										</td>
 										<td className='px-4 py-2'>
-											<div className='skeleton h-4 w-16 bg-neutral'></div>
+											<div className='avatar-group -space-x-4 w-full'>
+												{Array(3)
+													.fill('')
+													.map(() => (
+														<div className='bg-neutral skeleton rounded-full w-[3em] h-[3em] border-4 border-white'></div>
+													))}
+											</div>
 										</td>
 									</tr>
 								))}

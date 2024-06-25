@@ -84,3 +84,25 @@ export function AgentDetailsAvatar({
 		</div>
 	);
 }
+
+export function TeamDetailsAvatar({
+	teamName,
+	numberOfAgents,
+}: {
+	teamName: string;
+	numberOfAgents: number;
+}) {
+	return (
+		<div className='centering-flex gap-x-2 w-full'>
+			<div className='avatar placeholder'>
+				<div className='bg-neutral text-neutral-content rounded-md w-[4em] border-primary-content outline-none'>
+					<span>{getInitials(teamName || 'User Name')}</span>
+				</div>
+			</div>
+			<div className='flex flex-col gap-y-1'>
+				<p className='text-xs'>{teamName || 'Username'}</p>
+				<p className='text-xs text-neutral-text'>{numberOfAgents || 0} agents</p>
+			</div>
+		</div>
+	);
+}

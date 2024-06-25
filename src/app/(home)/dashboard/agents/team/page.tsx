@@ -1,4 +1,6 @@
 import MainTeam from '@/app/features/dashboard/agents/components/team/main-team';
+import MainTeamSkeleton from '@/app/features/dashboard/agents/components/team/main-team-skeleton';
+import { Suspense } from 'react';
 
 export default async function Page({
 	searchParams,
@@ -9,5 +11,9 @@ export default async function Page({
 	const name = searchParams?.na || '';
 	const teamId = searchParams?.teId || '';
 
-	return <MainTeam name={name} page={page} teamId={teamId} />;
+	return (
+		<Suspense fallback={<MainTeamSkeleton />}>
+			<MainTeam name={name} page={page} teamId={teamId} />;
+		</Suspense>
+	);
 }
