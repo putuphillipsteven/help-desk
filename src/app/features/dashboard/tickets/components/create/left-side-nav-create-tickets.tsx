@@ -35,7 +35,7 @@ export default function LeftSideNavCreateTickets() {
 				<p className='font-medium'>Tickets</p>
 				<CreateButton label='New Tickets' variant='filled' href='/dashboard/tickets/create' />
 			</div>
-			<div className={clsx('w-full h-fit flex flex-col gap-y-4 p-2')}>
+			<div className={'w-full h-fit flex flex-col gap-y-4 p-2'}>
 				<input
 					type='text'
 					className='input input-sm rounded-lg bg-base-200 text-primary-text placeholder:text-base-300 border-none focus:ring-0 focus:border-none focus:outline-0'
