@@ -1,6 +1,7 @@
 'use client';
 
 import { getInitials } from '@/app/lib/utils/naming/naming';
+import clsx from 'clsx';
 
 export function ProfileAvatar({ email, name }: { name: string | ''; email: string | '' }) {
 	return (
@@ -47,6 +48,38 @@ export function MemberListAvatar({ name }: { name: string }) {
 		<div className='avatar placeholder' key={name}>
 			<div className='bg-neutral text-neutral-content rounded-full w-[2.5em] border-primary-content outline-none'>
 				<span>{getInitials(name || 'User Name')}</span>
+			</div>
+		</div>
+	);
+}
+
+export function AgentDetailsAvatar({
+	name,
+	role,
+	email,
+}: {
+	name: string;
+	role: string;
+	email: string;
+}) {
+	return (
+		<div className='centering-flex gap-x-2 w-full'>
+			<div className='avatar placeholder'>
+				<div className='bg-neutral text-neutral-content rounded-full w-[4em] border-primary-content outline-none'>
+					<span>{getInitials(name || 'User Name')}</span>
+				</div>
+			</div>
+			<div className='flex flex-col gap-y-1'>
+				<div
+					className={clsx('badge border-none w-fit px-[.25em] py-[.5em] text-xs', {
+						'bg-neutral text-primary-text': role === 'Agent',
+						'bg-primary text-base-100': role === 'Admin',
+					})}
+				>
+					{role}
+				</div>
+				<p className='text-xs'>{name || 'Username'}</p>
+				<p className='text-xs text-neutral-text'>{email}</p>
 			</div>
 		</div>
 	);

@@ -6,7 +6,7 @@ import AgentDetailsSkeleton from './agent-details-skeleton';
 import { useEffect, useState } from 'react';
 import { Agents, AgentsProps } from '../../data/agents';
 import { agentLists } from '../../data/dummyAgents';
-import { CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
+import { AgentDetailsAvatar, CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
 import TeamDetailsSkeleton from '../team/team-details-skeleton';
 
 export default function AgentDetails({ agentId }: { agentId?: string }) {
@@ -45,13 +45,13 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 		return (
 			<div className='w-full h-full flex flex-col gap-y-4 md:flex'>
 				<div className='hidden lg:flex items-center w-full '>
-					<ProfileAvatar name={agent?.name} email={agent?.email} />
+					<AgentDetailsAvatar name={agent?.name} role={agent?.role} email={agent?.email} />
 				</div>
-				<div className='flex flex-col gap-y-4' onClick={() => setShowTeam(!showTeam)}>
+				<div className='flex flex-col gap-y-2' onClick={() => setShowTeam(!showTeam)}>
 					{agent?.teams && (
 						<div className='centering-flex gap-x-2 cursor-pointer'>
 							{showTeam ? (
-								<MdKeyboardArrowDown className='text-blue-dimata' />
+								<MdKeyboardArrowDown className='text-primary' />
 							) : (
 								<MdKeyboardArrowUp className='text-blue-dimata' />
 							)}

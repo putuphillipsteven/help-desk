@@ -57,7 +57,12 @@ export default async function MainAgent({
 				</tr>
 				<tr>
 					{activeAgents && (
-						<td colSpan={3} className='px-4 py-2 lg:pl-20 lg:py-2 lg:hidden'>
+						<td
+							colSpan={3}
+							className={clsx('px-4 pt-0 pb-2 lg:pl-20  lg:hidden', {
+								'bg-primary-content border-l-4 border-primary': String(agent?.id) === agentId,
+							})}
+						>
 							<AgentDetails agentId={agentId} />
 						</td>
 					)}
