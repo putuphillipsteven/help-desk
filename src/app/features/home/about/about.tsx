@@ -29,7 +29,7 @@ export default function About() {
 				<GradientButton colour='purple' text='Seamless Multi-Channel Engagement' />
 				<GradientButton colour='green' text='Efficiently Scale Operations' />
 
-				<button className='btn btn-lg w-fit text-white text-sm uppercase rounded-4xl'>
+				<button className='btn btn-lg bg-[#303030] w-fit text-white text-sm uppercase rounded-4xl'>
 					Try For Free
 				</button>
 			</div>

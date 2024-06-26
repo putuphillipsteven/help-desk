@@ -4,7 +4,7 @@ import GradientButton from '../components/gradient-button';
 
 export default function Integration() {
 	return (
-		<div className='home-section py-16 centering-flex-col gap-y-8 bg-purple-dimata relative'>
+		<div className='home-section py-16 centering-flex-col gap-y-8 bg-purple relative'>
 			<SectionButton colour='purple' text='Integration' />
 			<h2 className='text-3xl font-light text-white text-center'>
 				Connect With Your Customers <br />

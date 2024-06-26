@@ -13,10 +13,10 @@ export default function Jumbotron() {
 					tickets all-in-one Primarily software.
 				</p>
 				<div className='centering-flex gap-x-4'>
-					<button className='btn btn-lg text-white text-sm uppercase rounded-4xl'>
+					<button className='btn btn-lg bg-[#303030] text-white text-sm uppercase rounded-4xl'>
 						Get Started
 					</button>
-					<button className='btn btn-lg btn-ghost bg-light-gray-dimata text-black-dimata text-sm uppercase rounded-4xl'>
+					<button className='btn btn-lg bg-base-200 text-primary-text text-sm uppercase rounded-4xl'>
 						Request A Demo
 					</button>
 				</div>

@@ -1,19 +1,23 @@
 import { Testimony as TestimonyType } from '@/app/lib/data/testimonials';
 import Image from 'next/image';
 
+interface TestimonyProps extends TestimonyType {
+	isActive: boolean;
+}
+
 export default function Testimony({
 	userName,
 	company,
 	logo,
 	position,
 	testimony,
-	avatar,
 	id,
-}: TestimonyType) {
+	isActive,
+}: TestimonyProps) {
 	return (
 		<div
 			id={`item${id}`}
-			className='card w-[400px] bg-light-gray-dimata text-black-dimata carousel-item'
+			className={`card bg-light-gray text-black-dimata ${isActive ? 'active' : ''}`}
 		>
 			<div className='card-body'>
 				<div className='flex flex-col gap-y-2'>
