@@ -5,6 +5,7 @@ import { ProfileAvatar } from '../../../components/avatar';
 import { Ticket } from '../../data/ticket';
 import { tickets } from '../../data/dummyTickets';
 import { TicketListsSkeleton } from '../ticket-list-skeleton';
+import Link from 'next/link';
 
 export default async function TicketListsTable() {
 	const ticket = new Ticket();
@@ -19,7 +20,9 @@ export default async function TicketListsTable() {
 			</td>
 			<td className='p-2'>
 				<div className='centering-flex gap-x-2 w-full cursor-pointer'>
-					<ProfileAvatar name={ticket.user?.username || ''} email={ticket.user?.email || ''} />
+					<Link href={`tickets/details/${ticket?.id}`}>
+						<ProfileAvatar name={ticket.user?.username || ''} email={ticket.user?.email || ''} />
+					</Link>
 				</div>
 			</td>
 			<td className='cursor-pointer p-2'>
