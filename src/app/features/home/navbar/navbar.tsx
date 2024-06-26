@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function NavBar() {
 	return (
@@ -8,22 +9,30 @@ export default function NavBar() {
 				<p className='font-bold'>Dimata Help Desk</p>
 			</a>
 			<div className='centering-flex'>
-				<ul className='centering-flex gap-x-8 px-1 font-medium text-white mr-16'>
-					<li>
-						<a className=''>Home</a>
+				<ul className='centering-flex gap-x-8 px-1 font-medium mr-16 text-white'>
+					<li className=''>
+						<Link href={'#'} className=''>
+							Home
+						</Link>
 					</li>
 					<li>
-						<a className=''>Fitur</a>
+						<Link href={'#'} className=''>
+							Fitur
+						</Link>
 					</li>
 					<li>
-						<a className=''>Solusi</a>
+						<Link href={'#'} className=''>
+							Solusi
+						</Link>
 					</li>
 					<li>
-						<a className=''>Harga</a>
+						<Link href={'#'} className=''>
+							Harga
+						</Link>
 					</li>
 				</ul>
-				<button className='btn btn-lg btn-ghost bg-light-gray-dimata1 hover:bg-gray-200 text-black-dimata text-md uppercase rounded-4xl px-10'>
-					Login
+				<button className='btn btn-lg btn-ghost bg-base-100 hover:bg-gray-200 text-primary-text text-md uppercase rounded-4xl px-10'>
+					<Link href={'/signin'}>Login</Link>
 				</button>
 			</div>
 		</div>
