@@ -1,5 +1,6 @@
 import AGAInputs from './agent-activity/date-filter/ag-ac-date-filter';
 import AgAcDateFilter from './agent-activity/date-filter/ag-ac-date-filter';
+import AgAStatusFilter from './agent-activity/status-filter/ag-a-status-filter';
 
 interface MainAgentActivityProps {}
 
@@ -14,7 +15,9 @@ export default function MainAgentActivity() {
 					<AgAcDateFilter />
 				</div>
 			</div>
-			<div className='body-ticket-activity flex-1 w-full'></div>
+			<div className='body-team-activity flex-1 h-full w-full'>
+				<AgAStatusFilter />
+			</div>
 		</div>
 	);
 }

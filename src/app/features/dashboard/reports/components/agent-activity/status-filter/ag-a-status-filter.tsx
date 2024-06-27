@@ -1,15 +1,15 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Filter, filters } from '../filter';
+import { Filter, filters } from '../../filter';
 import clsx from 'clsx';
 
-export default function AGAFilter() {
+export default function AgAStatusFilter() {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const params = new URLSearchParams(searchParams);
 
-	const tAFilter = params.get('agfi');
+	const agFilter = params.get('agfi');
 
 	const handleFilter = (params: URLSearchParams, query: string) => {
 		params.set('agfi', query);
@@ -19,8 +19,8 @@ export default function AGAFilter() {
 		return (
 			<p
 				key={filter.label}
-				className={clsx('text-sm cursor-pointer px-2  hover:font-medium', {
-					'text-primary font-bold border-b-2 border-primary': tAFilter === filter.query,
+				className={clsx('text-sm cursor-pointer px-2 pb-1  hover:font-medium h-full', {
+					'text-primary font-bold border-b-2 border-primary': agFilter === filter.query,
 				})}
 				onClick={() => {
 					handleFilter(params, filter.query);

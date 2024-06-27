@@ -15,7 +15,7 @@ export default function MainTeamActivity() {
 					<TEADateFilter />
 				</div>
 			</div>
-			<div className='header-team-activity flex-1 h-full w-full'>
+			<div className='body-team-activity flex-1 h-full w-full'>
 				<TEAFilter />
 				<Suspense fallback={<TeamListSkeleton />}>
 					<TeamList />

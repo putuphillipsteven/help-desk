@@ -6,12 +6,16 @@ import { FaRegCalendar } from 'react-icons/fa';
 
 export default function TEADisplayDate() {
 	const searchParams = useSearchParams();
-	const ticketActivityStartDate = searchParams.get('tesd');
-	const ticketActivityEndDate = searchParams.get('teed');
+	const teamActivityStartDate = searchParams.get('tesd');
+	const teamActivityEndDate = searchParams.get('teed');
 	return (
 		<div className='p-2 border border-primary-text font-medium h-full centering-flex gap-x-4 rounded-md'>
 			<p className='text-sm'>
-				{getNextDayDate(ticketActivityStartDate || '', ticketActivityEndDate || '') || ''}
+				{!teamActivityStartDate ? (
+					<span className='loading loading-dots loading-xs'></span>
+				) : (
+					getNextDayDate(teamActivityStartDate || '', teamActivityEndDate || '') || ''
+				)}
 			</p>
 			<FaRegCalendar className='text-primary-text text-sm' />
 		</div>

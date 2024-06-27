@@ -1,11 +1,14 @@
-// MainTicketActivity.tsx
 import React from 'react';
 import TicketActicityInputs from './ticket-activity/ticket-activity-inputs';
 import TADisplayDate from './ticket-activity/t-a-display-date';
 import TAChart from './ticket-activity/t-a-chart';
 import { ChartData, ChartOptions } from 'chart.js';
+import { Ticket } from '../../tickets/data/ticket';
+import { tickets } from '../../tickets/data/dummyTickets';
 
-export default function MainTicketActivity() {
+export default async function MainTicketActivity() {
+	const ticket = new Ticket();
+	const ticketList = await ticket.getTicketLists(tickets);
 	const data: ChartData<'bar'> = {
 		labels: ['Open', 'Pending', 'On Hold', 'Solved', 'Closed'],
 		datasets: [
