@@ -6,10 +6,10 @@ import TeamListSkeleton from './skeleton/team-list-skeleton';
 
 export default async function MainTeamActivity() {
 	return (
-		<div className='w-full h-full flex flex-col shadow-lg rounded-md gap-y-4'>
-			<div className='header-team-activity w-full h-[3em] flex justify-between px-2 gap-y-2'>
+		<div className='w-full h-full flex flex-col shadow-lg rounded-md gap-y-8 md:gap-y-4'>
+			<div className='header-team-activity w-full h-[3em] flex flex-col gap-y-2 sm:flex-row sm:gap-x-2 justify-between'>
 				<div className='centering-flex p-2'>
-					<p className='font-medium text-xl'>Team Activity</p>
+					<p className='font-medium text-sm sm:text-xl'>Team Activity</p>
 				</div>
 				<div className='centering-flex h-full p-2 gap-x-2 w-fit'>
 					<TEADateFilter />

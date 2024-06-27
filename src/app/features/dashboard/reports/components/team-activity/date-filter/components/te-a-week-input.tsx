@@ -21,12 +21,15 @@ export default function TEAWeekInput() {
 		<div className='dropdown flex flex-col items-end gap-y-8 h-full'>
 			<div
 				tabIndex={0}
-				className={clsx('px-4 py-2 cursor-pointer h-full centering-flex rounded-md', {
-					'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'week',
-				})}
+				className={clsx(
+					'px-2 py-1 sm:px-4 sm:py-2 cursor-pointer h-full centering-flex rounded-md',
+					{
+						'bg-primary text-white': getDiffDays(startDate || '', endDate || '') === 'week',
+					},
+				)}
 			>
 				<p
-					className={clsx('', {
+					className={clsx('text-xs sm:text-sm', {
 						'text-white': getDiffDays(startDate || '', endDate || '') === 'week',
 					})}
 				>

@@ -13,8 +13,8 @@ export default function MainReportDisplayDate({ isGlobal }: MainReportDisplayDat
 	const ticketActivityStartDate = searchParams.get('tasd');
 	const ticketActivityEndDate = searchParams.get('taed');
 	return (
-		<div className='p-2 border border-primary-text font-medium h-full centering-flex gap-x-4 rounded-md'>
-			<p className='text-sm'>
+		<div className='p-1 text-xs md:text-sm border border-primary-text font-medium h-full centering-flex gap-x-2 md:gap-x-4 rounded-md'>
+			<p className='text-xs md:text-sm'>
 				{!ticketActivityStartDate ? (
 					<span className='loading loading-dots loading-xs'></span>
 				) : isGlobal ? (
@@ -23,7 +23,7 @@ export default function MainReportDisplayDate({ isGlobal }: MainReportDisplayDat
 					'Mixed'
 				)}
 			</p>
-			<FaRegCalendar className='text-primary-text text-sm' />
+			<FaRegCalendar className='text-primary-text text-xs md:text-sm' />
 		</div>
 	);
 }

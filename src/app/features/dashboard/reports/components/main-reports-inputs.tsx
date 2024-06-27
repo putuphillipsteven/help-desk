@@ -38,12 +38,14 @@ export default function MainReportInputs() {
 	}, [params, router]);
 
 	return (
-		<Fragment>
+		<div className='w-full flex flex-col gap-y-2 sm:flex-row sm:items-center gap-x-2'>
 			<ExpendableInput />
-			<MainReportDisplayDate isGlobal={isGlobal} />
-			<DayInput isGLobal={isGlobal} />
-			<WeekInput isGLobal={isGlobal} />
-			<MonthInput isGLobal={isGlobal} />
-		</Fragment>
+			<div className='centering-flex gap-x-2'>
+				<MainReportDisplayDate isGlobal={isGlobal} />
+				<DayInput isGLobal={isGlobal} />
+				<WeekInput isGLobal={isGlobal} />
+				<MonthInput isGLobal={isGlobal} />
+			</div>
+		</div>
 	);
 }

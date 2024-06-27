@@ -66,10 +66,10 @@ export default async function MainTicketActivity() {
 	};
 
 	return (
-		<div className='w-full h-full flex flex-col shadow-lg p-2 rounded-md'>
-			<div className='header-reports w-full h-[3em] flex justify-between'>
-				<div className='centering-flex px-2'>
-					<p className='font-medium text-xl'>Ticket Activity</p>
+		<div className='w-full h-full flex flex-col gap-y-4 shadow-lg p-2 rounded-md'>
+			<div className='header-reports w-full h-[3em] flex flex-col gap-y-2 sm:flex-row sm:gap-x-2 justify-between'>
+				<div className='px-2'>
+					<p className='font-medium text-sm sm:text-xl'>Ticket Activity</p>
 				</div>
 				<div className='centering-flex p-2 gap-x-2 w-fit'>
 					<TADisplayDate />
@@ -79,7 +79,7 @@ export default async function MainTicketActivity() {
 			<div className='body-ticket-activity flex-1 w-full px-2'>
 				<TAChart data={data} options={options} />
 			</div>
-			<div className='centering-flex justify-between w-full px-16'>
+			<div className='hidden md:centering-flex md:justify-between md:w-full md:px-16'>
 				<div className='centering-flex gap-x-2'>
 					<div className='w-6 h-6 rounded-full centering-flex-col justify-center bg-primary text-white text-xs'>
 						4
