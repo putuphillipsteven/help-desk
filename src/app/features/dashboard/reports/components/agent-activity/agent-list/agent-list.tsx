@@ -1,7 +1,7 @@
-import { Agents } from '../../../agents/data/agents';
-import { agentLists as dummyAgents } from '../../../agents/data/dummyAgents';
-import { ProfileAvatar } from '../../../components/avatar';
-import IdURL from './agent-details/id-url';
+import { Agents } from '../../../../agents/data/agents';
+import { agentLists as dummyAgents } from '../../../../agents/data/dummyAgents';
+import { ProfileAvatar } from '../../../../components/avatar';
+import IdURL from '../agent-details/id-url';
 
 export default async function AgentList() {
 	const agent = new Agents();

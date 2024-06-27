@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import AgentDetails from './agent-activity/agent-details/agent-details';
-import AgentList from './agent-activity/agent-list';
+import AgentList from './agent-activity/agent-list/agent-list';
 import AgAcDateFilter from './agent-activity/date-filter/ag-ac-date-filter';
 import AgAStatusFilter from './agent-activity/status-filter/ag-a-status-filter';
+import AgentListSkeleton from './agent-activity/agent-list/agent-list-skeleton';
 
-export default function MainAgentActivity({ agid }: { agid: string }) {
+export default async function MainAgentActivity({ agid }: { agid: string }) {
 	return (
 		<div className='w-full h-full flex flex-col gap-y-4 shadow-lg rounded-md'>
 			<div className='header-reports w-full h-[3em] flex justify-between px-2'>
@@ -18,10 +20,14 @@ export default function MainAgentActivity({ agid }: { agid: string }) {
 				<AgAStatusFilter />
 				<div className='w-full h-full flex px-2'>
 					<div className='flex-1 '>
-						<AgentList />
+						<Suspense fallback={<AgentListSkeleton />}>
+							<AgentList />
+						</Suspense>
 					</div>
 					<div className='w-[30em] border-l border-neutral px-2'>
-						<AgentDetails agentId={agid} />
+						<Suspense fallback={<p className='text-xs text-primary-text'>Details</p>}>
+							<AgentDetails agentId={agid} />
+						</Suspense>
 					</div>
 				</div>
 			</div>
