@@ -2,8 +2,10 @@ import MainAgentActivity from './components/main-agent-activity';
 import MainTeamActivity from './components/main-team-activity';
 import MainTicketActivity from './components/main-ticket-activity';
 import MainReportInputs from './components/main-reports-inputs';
+import { Suspense } from 'react';
+import TicketActivitySkeleton from './components/skeleton/ticket-activity-skeleton';
 
-export default function MainReports() {
+export default async function MainReports() {
 	return (
 		<div className='main-reports w-full h-full flex flex-col'>
 			<div className='header-reports w-full h-[3em] flex justify-between  border-b border-neutral'>
@@ -17,7 +19,9 @@ export default function MainReports() {
 			<div className='body-reports w-full flex-1  flex flex-col gap-y-2 p-2'>
 				<div className='flex-1 w-full flex gap-x-2'>
 					<div className='flex-1 bg-white'>
-						<MainTicketActivity />
+						<Suspense fallback={<TicketActivitySkeleton />}>
+							<MainTicketActivity />
+						</Suspense>
 					</div>
 					<div className='flex-1 bg-white'>
 						<MainTeamActivity />

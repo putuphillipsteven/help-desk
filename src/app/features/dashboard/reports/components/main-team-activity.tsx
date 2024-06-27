@@ -1,6 +1,8 @@
 import TEAFilter from './team-activity/status-filter/te-a-status-filter';
 import TEADateFilter from './team-activity/date-filter/te-a-date-filter';
 import TeamList from './team-activity/team-list/team-list';
+import { Suspense } from 'react';
+import TeamListSkeleton from './skeleton/team-list-skeleton';
 
 export default function MainTeamActivity() {
 	return (
@@ -15,7 +17,9 @@ export default function MainTeamActivity() {
 			</div>
 			<div className='header-team-activity flex-1 h-full w-full'>
 				<TEAFilter />
-				<TeamList />
+				<Suspense fallback={<TeamListSkeleton />}>
+					<TeamList />
+				</Suspense>
 			</div>
 		</div>
 	);

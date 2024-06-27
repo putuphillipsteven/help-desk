@@ -1,7 +1,10 @@
-import { teamLists } from '@/app/features/dashboard/agents/data/dummyTeams';
+import { teamLists as dummyTeams } from '@/app/features/dashboard/agents/data/dummyTeams';
+import { Teams } from '@/app/features/dashboard/agents/data/teams';
 import { CompanyAvatar } from '@/app/features/dashboard/components/avatar';
 
-export default function TeamList() {
+export default async function TeamList() {
+	const team = new Teams();
+	const teamLists = await team.getTeams(dummyTeams);
 	const renderedTeams = teamLists?.map((team) => {
 		return (
 			<div className=' centering-flex w-full gap-x-8' key={team.name}>
