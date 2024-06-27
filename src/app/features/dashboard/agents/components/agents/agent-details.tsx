@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import { Agents, AgentsProps } from '../../data/agents';
 import { agentLists } from '../../data/dummyAgents';
 import { AgentDetailsAvatar, CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
-import TeamDetailsSkeleton from '../team/team-details-skeleton';
 
 export default function AgentDetails({ agentId }: { agentId?: string }) {
 	const agents = new Agents();

@@ -4,7 +4,7 @@ import TeamList from './team-activity/team-list/team-list';
 import { Suspense } from 'react';
 import TeamListSkeleton from './skeleton/team-list-skeleton';
 
-export default function MainTeamActivity() {
+export default async function MainTeamActivity() {
 	return (
 		<div className='w-full h-full flex flex-col shadow-lg rounded-md gap-y-4'>
 			<div className='header-team-activity w-full h-[3em] flex justify-between px-2 gap-y-2'>

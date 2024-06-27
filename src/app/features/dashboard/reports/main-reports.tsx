@@ -4,10 +4,19 @@ import MainTicketActivity from './components/main-ticket-activity';
 import MainReportInputs from './components/main-reports-inputs';
 import { Suspense } from 'react';
 import TicketActivitySkeleton from './components/skeleton/ticket-activity-skeleton';
+import { ReportPageParams } from '@/app/(home)/dashboard/reports/page';
 
-export default async function MainReports() {
+export default async function MainReports({
+	aged,
+	agsd,
+	taed,
+	tasd,
+	teed,
+	tesd,
+	agid,
+}: ReportPageParams) {
 	return (
-		<div className='main-reports w-full h-full flex flex-col'>
+		<div className='main-reports w-full min-h-screen flex flex-col'>
 			<div className='header-reports w-full h-[3em] flex justify-between  border-b border-neutral'>
 				<div className='centering-flex px-2'>
 					<p>Reports</p>
@@ -28,7 +37,7 @@ export default async function MainReports() {
 					</div>
 				</div>
 				<div className='flex-1 w-full bg-white'>
-					<MainAgentActivity />
+					<MainAgentActivity agid={agid} />
 				</div>
 			</div>
 		</div>

@@ -3,6 +3,12 @@ type Team = {
 	leader: string;
 };
 
+type Ticket = {
+	requester: string;
+	subject: string;
+	priority: string;
+};
+
 export interface AgentsProps {
 	id: number;
 	name: string;
@@ -10,6 +16,7 @@ export interface AgentsProps {
 	role: 'Admin' | 'Agent';
 	invitation?: 'Accepted' | 'Waiting';
 	teams?: Team[];
+	tickets?: Ticket[];
 }
 
 export class Agents {

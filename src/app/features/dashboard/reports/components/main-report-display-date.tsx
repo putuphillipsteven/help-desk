@@ -10,8 +10,8 @@ interface MainReportDisplayDateProps {
 export default function MainReportDisplayDate({ isGlobal }: MainReportDisplayDateProps) {
 	const router = useRouter();
 	const searchParams = useSearchParams();
-	const ticketActivityStartDate = searchParams.get('tasd' || '---');
-	const ticketActivityEndDate = searchParams.get('taed' || '---');
+	const ticketActivityStartDate = searchParams.get('tasd');
+	const ticketActivityEndDate = searchParams.get('taed');
 	return (
 		<div className='p-2 border border-primary-text font-medium h-full centering-flex gap-x-4 rounded-md'>
 			<p className='text-sm'>

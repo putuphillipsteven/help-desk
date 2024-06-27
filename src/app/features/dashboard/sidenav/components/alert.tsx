@@ -1,8 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-import { useState } from 'react';
-import { RxCross2 } from 'react-icons/rx';
+import { useEffect, useState } from 'react';
 
 interface AlertProps {
 	msg: string;
@@ -10,14 +9,24 @@ interface AlertProps {
 
 export default function Alert({ msg }: AlertProps) {
 	const [alertDisplay, setAlertDisplay] = useState(true);
+	let dashboardChildren: HTMLElement | null;
 
 	const toggleAlert = () => {
 		setAlertDisplay(false);
+		if (dashboardChildren) {
+			dashboardChildren?.classList?.remove('mt-[3em]');
+		}
 	};
+
+	useEffect(() => {
+		if (typeof document !== 'undefined') {
+			dashboardChildren = document.getElementById('dashboard-children');
+		}
+	});
 	return (
 		<div
 			className={clsx(
-				'w-full bg-warning p-2 gap-x-4 gap-y-2 flex flex-col justify-center items-center md:flex-row',
+				'w-screen bg-warning p-2 gap-x-4 gap-y-2 flex flex-col justify-center items-center md:flex-row fixed h-[3em]  z-20 shadow-md',
 				{
 					hidden: !alertDisplay,
 				},
