@@ -4,13 +4,14 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 import AgentDetailsSkeleton from './agent-details-skeleton';
 import { useEffect, useState } from 'react';
-import { Agents, AgentsProps } from '../../data/agents';
-import { agentLists } from '../../data/dummyAgents';
 import { AgentDetailsAvatar, CompanyAvatar, ProfileAvatar } from '../../../components/avatar';
+import { AgentController } from '@/app/controller/agent.controller';
+import { agentLists } from '../../data/dummyAgents';
+import { AgentsProps } from '@/app/entities/agent.model';
 
 export default function AgentDetails({ agentId }: { agentId?: string }) {
-	const agents = new Agents();
-	const [agent, setAgent] = useState<AgentsProps>();
+	const agents = new AgentController();
+	const [agent, setAgent] = useState<AgentsProps | undefined>();
 	const [showTeam, setShowTeam] = useState(true);
 	const [loading, setLoading] = useState(false);
 
@@ -18,7 +19,7 @@ export default function AgentDetails({ agentId }: { agentId?: string }) {
 		async function fetchAgentDetails() {
 			try {
 				setLoading(true);
-				const response = await agents.getAgentDetails(agentLists, String(agentId));
+				const response = await agents.getAgentById(agentLists, Number(agentId));
 				setAgent(response);
 			} catch (error) {
 				console.error('Error fetching agent details:', error);

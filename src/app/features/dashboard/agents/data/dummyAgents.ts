@@ -1,4 +1,4 @@
-import { AgentsProps } from './agents';
+import { AgentsProps } from '@/app/entities/agent.model';
 
 export const agentLists: AgentsProps[] = [
 	{

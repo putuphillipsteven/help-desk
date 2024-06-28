@@ -1,11 +1,12 @@
+import { AgentController } from '@/app/controller/agent.controller';
 import { Agents } from '../../../../agents/data/agents';
-import { agentLists as dummyAgents } from '../../../../agents/data/dummyAgents';
 import { ProfileAvatar } from '../../../../components/avatar';
 import IdURL from '../agent-details/id-url';
+import { agentLists as dummyAgents } from '@/app/features/dashboard/agents/data/dummyAgents';
 
 export default async function AgentList() {
-	const agent = new Agents();
-	const agentLists = await agent?.getAgents(dummyAgents);
+	const agent = new AgentController();
+	const agentLists = await agent?.getAgentLists(dummyAgents);
 	const renderedAgentLists = agentLists?.map((agent) => {
 		return (
 			<tr key={agent?.name}>
