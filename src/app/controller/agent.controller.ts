@@ -2,6 +2,7 @@ import { AgentsProps } from '../entities/agent.model';
 
 export class AgentController {
 	constructor() {}
+
 	async getAgentLists(agentLists: AgentsProps[]): Promise<AgentsProps[]> {
 		return new Promise((resolve) => {
 			setTimeout(() => {
@@ -9,6 +10,7 @@ export class AgentController {
 			}, 2000);
 		});
 	}
+
 	async getAgentById(agentLists: AgentsProps[], id: number): Promise<AgentsProps | undefined> {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {

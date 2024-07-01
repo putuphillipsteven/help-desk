@@ -1,15 +1,24 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import PrioritySymbol from './components/priority-symbol';
 import { ProfileAvatar } from '../../../components/avatar';
-import { Ticket } from '../../data/ticket';
-import { tickets } from '../../data/dummyTickets';
-import { TicketListsSkeleton } from '../ticket-list-skeleton';
+import { TicketController } from '@/app/controller/ticket-controller';
+import { TicketInteractor } from '@/app/interactor/ticket-interactor';
+import { TicketRepository } from '@/app/repository/ticket.repository';
 import Link from 'next/link';
 
+const ticketRepository = new TicketRepository();
+const ticketInteractor = new TicketInteractor(ticketRepository);
+const ticketController = new TicketController(ticketInteractor);
+
 export default async function TicketListsTable() {
-	const ticket = new Ticket();
-	const ticketLists = await ticket.getTicketLists(tickets);
+	const ticketLists = await ticketController.onGetTicket({
+		endDate: '2024-06-05T23:59:59',
+		limit: 10,
+		page: 1,
+		startDate: '2024-06-05T00:00:00',
+	});
+
 	const renderedTicketLists = ticketLists?.map((ticket) => (
 		<tr key={ticket.id}>
 			<td className='p-2'>
@@ -21,22 +30,22 @@ export default async function TicketListsTable() {
 			<td className='p-2'>
 				<div className='centering-flex gap-x-2 w-full cursor-pointer'>
 					<Link href={`tickets/details/${ticket?.id}`}>
-						<ProfileAvatar name={ticket.user?.username || ''} email={ticket.user?.email || ''} />
+						<ProfileAvatar name={ticket.customerName || 'Username'} email={'Email undefined'} />
 					</Link>
 				</div>
 			</td>
 			<td className='cursor-pointer p-2'>
 				<div className='centering-flex gap-x-2'>
-					<PrioritySymbol priority={ticket?.priority} />
+					<PrioritySymbol priority={ticket?.serviceLevel} />
 					<p className='text-sm w-full line-clamp-2'>{ticket.subject}</p>
 				</div>
 			</td>
 			<td className='p-2'>
-				<p className='text-sm line-clamp-2'>{ticket.agent}</p>
+				<p className='text-sm line-clamp-2'>Agent undefined</p>
 			</td>
 			<td className='p-2'>
 				<div className='badge bg-primary border-transparent gap-2 text-base-100'>
-					{ticket.status}
+					<p>Status undefined</p>
 				</div>
 			</td>
 			<td className='p-2'>
@@ -47,6 +56,7 @@ export default async function TicketListsTable() {
 			</td>
 		</tr>
 	));
+
 	return (
 		<table className='w-full text-black-dimata border-separate overflow-auto'>
 			<thead className=''>
